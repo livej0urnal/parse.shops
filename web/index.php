@@ -6,7 +6,10 @@ defined('YII_ENV') or define('YII_ENV', 'dev');
 
 require __DIR__ . '/../vendor/autoload.php';
 require __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+require_once __DIR__ . '/../functions.php';
+require_once __DIR__ . '/../web/parsing/simple_html_dom.php';
 
 $config = require __DIR__ . '/../config/web.php';
+
 
 (new yii\web\Application($config))->run();
