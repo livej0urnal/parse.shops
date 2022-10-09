@@ -10,39 +10,6 @@ use yii\bootstrap5\Html;
 $this->title = 'Login';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>Please fill out the following fields to login:</p>
-
-    <?php $form = ActiveForm::begin([
-        'id' => 'login-form',
-        'layout' => 'horizontal',
-        'fieldConfig' => [
-            'template' => "{label}\n{input}\n{error}",
-            'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
-            'inputOptions' => ['class' => 'col-lg-3 form-control'],
-            'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
-        ],
-    ]); ?>
-
-        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-        <?= $form->field($model, 'password')->passwordInput() ?>
-
-        <?= $form->field($model, 'rememberMe')->checkbox([
-            'template' => "<div class=\"col-lg-3 custom-control custom-checkbox\">{input} {label}</div>\n<div class=\"col-lg-8\">{error}</div>",
-        ]) ?>
-
-        <div class="form-group">
-            <div class="col-lg-11">
-                <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-            </div>
-        </div>
-
-    <?php ActiveForm::end(); ?>
-
-</div>
 
 
 <!DOCTYPE html>
@@ -94,37 +61,24 @@ $this->params['breadcrumbs'][] = $this->title;
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
-                            </div>
-                            <div class="form-group">
-                                <label>Password</label>
-                                <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
-                            </div>
-                            <div class="login-checkbox">
-                                <label>
-                                    <input type="checkbox" name="remember">Remember Me
-                                </label>
-                                <label>
-                                    <a href="#">Forgotten Password?</a>
-                                </label>
-                            </div>
-                            <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
-                            <div class="social-login-content">
-                                <div class="social-button">
-                                    <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
-                                    <button class="au-btn au-btn--block au-btn--blue2">sign in with twitter</button>
-                                </div>
-                            </div>
-                        </form>
-                        <div class="register-link">
-                            <p>
-                                Don't you have account?
-                                <a href="#">Sign Up Here</a>
-                            </p>
-                        </div>
+                        <?php $form = ActiveForm::begin([
+                            'id' => 'login-form',
+                            'layout' => 'horizontal',
+                            'fieldConfig' => [
+                                'template' => "{label}\n{input}\n{error}",
+                                'labelOptions' => ['class' => 'col-lg-1 col-form-label mr-lg-3'],
+                                'inputOptions' => ['class' => 'au-input au-input--full'],
+                                'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
+                            ],
+                        ]); ?>
+
+                        <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
+
+                        <?= $form->field($model, 'password')->passwordInput() ?>
+
+                        <?= Html::submitButton('Login', ['class' => 'au-btn au-btn--block au-btn--green m-b-20', 'name' => 'login-button']) ?>
+
+                        <?php ActiveForm::end(); ?>
                     </div>
                 </div>
             </div>
