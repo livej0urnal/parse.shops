@@ -10,4 +10,9 @@ class GmiController extends Controller
     {
         return $this->render('index');
     }
+
+    public function actionParse()
+    {
+        return $this->render('parse');
+    }
 }
