@@ -9,8 +9,6 @@ $htmlgmi = file_get_html($gmi);
         <td><?= $product->title = $product->find('div.product-title' , 0)->innertext; ?></td>
         <br>
         <td><?= $product->sku = $product->find('div.product-description', 0)->innertext; ?></td>
-        <br>
-        <td><?= $product->sku = $product->hasAttribute('style', 'padding-right: 10px; font-weight: bold;color: #575757')->innertext; ?></td>
 
 
     </tr>
