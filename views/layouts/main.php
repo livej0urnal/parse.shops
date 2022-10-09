@@ -54,6 +54,46 @@ AppAsset::register($this);
                                 </li>
                             </ul>
                         </li>
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #2</a>
+                            <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="button.html">GMI - Tranding</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #3</a>
+                            <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="button.html">GMI - Tranding</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #4</a>
+                            <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="button.html">GMI - Tranding</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #5</a>
+                            <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="button.html">GMI - Tranding</a>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="header__tool">
