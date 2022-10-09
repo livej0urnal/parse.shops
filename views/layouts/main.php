@@ -50,7 +50,7 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #1</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="button.html">GMI - Tranding</a>
+                                    <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
                                 </li>
                             </ul>
                         </li>
