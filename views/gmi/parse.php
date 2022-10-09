@@ -9,6 +9,7 @@ $htmlgmi = file_get_html($gmi);
         <td><?= $product->title = $product->find('div.product-title' , 0)->innertext; ?></td>
         <br>
         <td><?= $product->sku = $product->find('div.product-description', 0)->innertext; ?></td>
+        <br>
 
 
     </tr>
