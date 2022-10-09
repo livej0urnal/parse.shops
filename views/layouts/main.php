@@ -34,6 +34,8 @@ AppAsset::register($this);
     <header class="header-desktop3 d-none d-lg-block">
         <div class="section__content section__content--p35">
             <div class="header3-wrap">
+                <div class="header__logo">
+                </div>
                 <div class="header__navbar">
                     <ul class="list-unstyled">
                         <li>
