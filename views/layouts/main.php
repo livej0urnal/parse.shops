@@ -47,10 +47,10 @@ AppAsset::register($this);
                         <li class="has-sub">
                             <a href="#">
                                 <i class="fas fa-desktop"></i>
-                                <span class="bot-line"></span>UI Elements</a>
+                                <span class="bot-line"></span>Package #1</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="button.html">Button</a>
+                                    <a href="button.html">GMI - Tranding</a>
                                 </li>
                             </ul>
                         </li>
