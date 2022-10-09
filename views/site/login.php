@@ -56,11 +56,6 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="container">
             <div class="login-wrap">
                 <div class="login-content">
-                    <div class="login-logo">
-                        <a href="#">
-                            <img src="/images/icon/logo.png" alt="CoolAdmin">
-                        </a>
-                    </div>
                     <div class="login-form">
                         <?php $form = ActiveForm::begin([
                             'id' => 'login-form',
