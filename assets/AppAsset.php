@@ -33,12 +33,10 @@ class AppAsset extends AssetBundle
         '/vendor/select2/select2.min.css',
         '/vendor/perfect-scrollbar/perfect-scrollbar.css',
         '/css/theme.css',
-        '/css/main.css',
+        '/css/main.css'
     ];
     public $js = [
-        '/vendor/jquery-3.2.1.min.js',
-        '/vendor/bootstrap-4.1/popper.min.js',
-        '/vendor/bootstrap-4.1/bootstrap.min.js',
+
         '/vendor/slick/slick.min.js',
         '/vendor/wow/wow.min.js',
         '/vendor/animsition/animsition.min.js',
