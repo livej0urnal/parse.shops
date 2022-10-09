@@ -36,7 +36,7 @@ AppAsset::register($this);
             <div class="header3-wrap">
                 <div class="header__logo">
                     <a href="#">
-                        <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+                        <img src="/images/icon/logo-white.png" alt="CoolAdmin" />
                     </a>
                 </div>
                 <div class="header__navbar">
