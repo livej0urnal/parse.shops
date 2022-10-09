@@ -59,9 +59,7 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #2</a>
                             <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="button.html">GMI - Tranding</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -69,9 +67,7 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #3</a>
                             <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="button.html">GMI - Tranding</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -79,9 +75,7 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #4</a>
                             <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="button.html">GMI - Tranding</a>
-                                </li>
+
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -89,9 +83,7 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #5</a>
                             <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="button.html">GMI - Tranding</a>
-                                </li>
+
                             </ul>
                         </li>
                     </ul>
@@ -103,7 +95,7 @@ AppAsset::register($this);
                                 <img src="/images/icon/avatar-01.jpg" alt="<?= Yii::$app->user->identity->username ?>" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="#">john doe</a>
+                                <a class="js-acc-btn" href="#"><?= Yii::$app->user->identity->username ?></a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
