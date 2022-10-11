@@ -27,13 +27,13 @@ class GmiController extends Controller
             $htmlgmi = file_get_html($link->links);
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
-                $product->sku = $product->find('div.product-description', 0)->innertext;
+                $product->sku = trim($product->find('div.product-description', 0)->innertext);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
-                if($find_product) {
+                if(empty($find_product)) {
                     $new_updates = new GmiUpdates();
-                    $new_updates->sku = $product->sku;
+                    $new_updates->sku_product = $product->sku;
                     $new_updates->price = $product->price;
-                    $new_updates->save();
+                    $new_updates->save(false);
                     $update_products++;
                 }
                 else{
@@ -51,12 +51,12 @@ class GmiController extends Controller
                     $new_product->price = $product->price;
                     $new_product->units = $product->units;
                     $new_product->per = $product->per;
-                    $new_product->save();
+                    $new_product->save(false);
 
                     $new_updates = new GmiUpdates();
-                    $new_updates->sku = $product->sku;
+                    $new_updates->sku_product = $product->sku;
                     $new_updates->price = $product->price;
-                    $new_updates->save();
+                    $new_updates->save(false);
                     $new_products ++ ;
                 }
                 $parse_products ++ ;
