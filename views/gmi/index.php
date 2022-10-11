@@ -17,8 +17,8 @@ use yii\widgets\LinkPager;
                         </button>
                     </form>
 
-                    <div class="col-md-8">
-                        <select name="selectLg" id="selectLg" class="form-control form-control-lg">
+                    <div class="col-md-4">
+                        <select name="select" id="select" class="form-control">
                             <option value="0">Select Manufacture</option>
                             <option value="1">Option #1</option>
                             <option value="2">Option #2</option>
