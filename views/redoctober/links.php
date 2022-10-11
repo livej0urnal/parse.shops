@@ -6,9 +6,9 @@ for ($i = 0; $i < 20; $i = $i + 1) {
     $articles = $htmlgmi->find('article');
 
     if(count($articles) > 1) {
-        $this_link = \app\models\Megafood::findOne(['links' => $gmi_html]);
+        $this_link = \app\models\Redoctober::findOne(['links' => $gmi_html]);
         if(!$this_link) {
-            $link = new \app\models\Megafood();
+            $link = new \app\models\Redoctober();
             $link->links = $gmi_html;
             $link->save();
             $new_link ++;
