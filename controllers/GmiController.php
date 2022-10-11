@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Gmi;
+use yii\db\Expression;
 use yii\web\Controller;
 use Yii;
 use app\models\GmiUpdates;
@@ -15,8 +16,8 @@ class GmiController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = GmiProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = GmiProducts::find()->orderBy(['id' => SORT_ASC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 100, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $query = GmiProducts::find()->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('index' , compact('products', 'pages'));
     }
@@ -41,7 +42,7 @@ class GmiController extends Controller
                     if($need_update->price === $product->price) {
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = $need_update->update_at;
+                        $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
                     else{
@@ -50,7 +51,7 @@ class GmiController extends Controller
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = $need_update->update_at;
+                        $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -73,7 +74,7 @@ class GmiController extends Controller
                     $new_product->price = htmlspecialchars($product->price);
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
-                    $new_product->updated_at = $new_updates->update_at;
+                    $new_product->updated_at = new Expression('NOW()');
                     $new_product->save(false);
 
                     $new_updates = new GmiUpdates();
