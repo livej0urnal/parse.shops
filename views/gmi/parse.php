@@ -2,7 +2,6 @@
 <?php
     $q = 1;
     $i = 1;
-
     $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;
     $htmlgmi = file_get_html($gmi_html);
     $articles = $htmlgmi->find('article');
