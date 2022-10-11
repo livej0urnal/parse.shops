@@ -31,7 +31,5 @@
     <?php $q++; ?>
 
     <?php  endforeach; ?>
-        <?php if(count($articles) === $q) { $i++;} ?>
-<?php else : ?>
-    <?php exit(); ?>
+<?php if(count($articles) === $q) { $i++;} ?>
 <?php endif; ?>
