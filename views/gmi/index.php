@@ -19,7 +19,7 @@
                             <th>Units</th>
                             <th>Per</th>
                             <th>Price</th>
-                            <th>Last Updates</th>
+                            <th>Last Update</th>
                         </tr>
                         </thead>
                         <?php if(!empty($products)) : ?>
@@ -35,7 +35,7 @@
                                     <td><?= $product->price ?></td>
                                     <td>
                                         <?php
-                                            $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => $product->sku])->max('update_at');;
+                                            $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => $product->sku])->max('id');;
 
                                         ?>
                                         <?= Yii::$app->formatter->asDatetime($last_update->update_at, 'short') ?>
