@@ -6,7 +6,8 @@ $htmlgmi = file_get_html($gmi);
 
 <?php  foreach ($htmlgmi->find('article') as $product) :?>
     <tr>
-        <td><?= $product->image = $product->find('img.catalog-img ', 0)->innertext; ?></td>
+        <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
+        <img src="<?= $product->image ?>" alt="">
         <br>
         <td><?= $product->title = $product->find('div.product-title' , 0)->innertext; ?></td>
         <br>
