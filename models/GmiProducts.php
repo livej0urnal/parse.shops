@@ -38,8 +38,8 @@ class GmiProducts extends ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price'], 'required'],
-            [['image', 'title', 'sku', 'article', 'units', 'per'], 'string', 'max' => 255],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
             [['price'], 'trim'],
             [['sku'] , 'unique' , 'comboNotUnique' => 'Username already taken!',  'targetClass' => 'app\models\GmiProducts'],
         ];
@@ -59,6 +59,7 @@ class GmiProducts extends ActiveRecord
             'units' => 'Units',
             'per' => 'Per',
             'price' => 'Price',
+            'updated_at' => 'Updated At'
         ];
     }
 }
