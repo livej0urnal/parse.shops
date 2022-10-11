@@ -134,7 +134,7 @@ AppAsset::register($this);
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="#">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </a>
                                     </div>
                                     <div class="content">
@@ -166,7 +166,7 @@ AppAsset::register($this);
             <div class="container-fluid">
                 <div class="header-mobile-inner">
                     <a class="logo" href="index.html">
-                        <img src="images/icon/logo-white.png" alt="CoolAdmin" />
+                        <img src="/images/icon/logo-white.png" alt="CoolAdmin" />
                     </a>
                     <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -355,7 +355,7 @@ AppAsset::register($this);
             <div class="account-wrap">
                 <div class="account-item account-item--style2 clearfix js-item-menu">
                     <div class="image">
-                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                     </div>
                     <div class="content">
                         <a class="js-acc-btn" href="#">john doe</a>
@@ -364,7 +364,7 @@ AppAsset::register($this);
                         <div class="info clearfix">
                             <div class="image">
                                 <a href="#">
-                                    <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                    <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
                                 </a>
                             </div>
                             <div class="content">
