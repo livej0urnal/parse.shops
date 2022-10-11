@@ -5,10 +5,9 @@
     $gmi_html = $base_html . $i;
     $htmlgmi = file_get_html($gmi_html);
     $articles = $htmlgmi->find('article');
-    if(count($articles) > 1) :
     $q = 1;
 ?>
-
+<?php if(count($articles) >= 1) : ?>
     <?php  foreach ($htmlgmi->find('article') as $product) :?>
         <tr>
             <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
