@@ -20,3 +20,9 @@ li.active> .page-link{
     margin: 20px 0;
     float: right;
 }
+.find-gmi-updates :hover{
+    cursor: pointer;
+}
+.tr-shadow-hidden{
+    /*display: none;*/
+}

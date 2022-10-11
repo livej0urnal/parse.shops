@@ -67,7 +67,7 @@ use yii\widgets\LinkPager;
                         <?php if(!empty($products)) : ?>
                         <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <tr class="tr-shadow">
+                                <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
                                     <td><img src="<?= $product->image ?>" alt="" width="50" height="70"></td>
                                     <td><?= $product->title ?></td>
@@ -79,6 +79,16 @@ use yii\widgets\LinkPager;
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
+                                </tr>
+                                <tr class="tr-shadow-hidden disabled">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

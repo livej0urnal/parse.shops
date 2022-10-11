@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Gmi;
 use yii\db\Expression;
+use yii\helpers\Json;
 use yii\web\Controller;
 use Yii;
 use app\models\GmiUpdates;
@@ -123,5 +124,12 @@ class GmiController extends Controller
             $link->delete();
         }
         return $this->render('links');
+    }
+
+    public function actionUpdates($sku)
+    {
+        $sku = Yii::$app->request->get('sku');
+        $updates = GmiUpdates::find()->where(['sku_product' => $sku])->orderBy(['update_at' => SORT_DESC])->asArray()->all();
+        return Json::encode($updates);
     }
 }
