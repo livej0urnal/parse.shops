@@ -9,6 +9,16 @@ use yii\widgets\LinkPager;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <div class="au-breadcrumb-content">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['gmi/search']) ?>" method="get" value="<?= $q ?>">
+                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku">
+                        <button class="au-btn--submit2" type="submit">
+                            <i class="zmdi zmdi-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-12">
 
                 <div class="table-responsive table-responsive-data2">
                     <?php if (!empty($pages)) : ?>

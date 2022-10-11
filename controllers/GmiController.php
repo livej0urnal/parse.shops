@@ -22,6 +22,16 @@ class GmiController extends Controller
         return $this->render('index' , compact('products', 'pages'));
     }
 
+    public function actionSearch($q)
+    {
+        $q = Yii::$app->request->get('q');
+        $products = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        return $this->render('index' , compact('products', 'pages', 'q'));
+    }
+
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
