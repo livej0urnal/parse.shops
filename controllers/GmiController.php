@@ -39,7 +39,11 @@ class GmiController extends Controller
                         $new_updates = new GmiUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
+                        $product_update = GmiProducts::findOne(['sku' => $product->sku]);
+                        $product_update->price = $new_updates->price;
+                        $product_update->save(false);
                         $new_updates->save(false);
+
                         $update_products++;
                     }
 
