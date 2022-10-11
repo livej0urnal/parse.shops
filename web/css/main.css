@@ -8,3 +8,14 @@
     margin: 0 auto;
     padding: 30px 20px;
 }
+
+.disabled{
+    display: none;
+}
+li.active> .page-link{
+    background: blue;
+    color: white;
+}
+.pagination{
+    margin: 20px 0;
+}

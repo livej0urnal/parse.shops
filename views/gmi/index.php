@@ -9,7 +9,21 @@ use yii\widgets\LinkPager;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+
                 <div class="table-responsive table-responsive-data2">
+                    <?php if (!empty($pages)) : ?>
+                        <div class="demo-inline-spacing">
+                            <!-- Basic Pagination -->
+                            <nav aria-label="Page navigation" class="item-pagination">
+                                <?php echo LinkPager::widget([
+                                    'pagination' => $pages,
+                                    'options' => ['class' => 'pagination tab-paginations'],
+                                    'linkOptions' => ['class' => 'page-link'],
+                                ]); ?>
+                            </nav>
+                            <!--/ Basic Pagination -->
+                        </div>
+                    <?php endif; ?>
                     <table class="table table-data2">
                         <thead>
                         <tr>
