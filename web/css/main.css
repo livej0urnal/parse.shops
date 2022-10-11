@@ -18,4 +18,5 @@ li.active> .page-link{
 }
 .pagination{
     margin: 20px 0;
+    float: right;
 }
