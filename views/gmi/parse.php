@@ -5,7 +5,7 @@
     $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;
     $htmlgmi = file_get_html($gmi_html);
     $articles = $htmlgmi->find('article');
-    if(count($articles) ==  $q) { $i = $i + 1; $q = 1; $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;}
+
 
 ?>
 <?php if(count($articles) > 1) : ?>
@@ -34,6 +34,7 @@
         <br>
 
         <?php $q = $q + 1; ?>
+    <?php if(count($articles) ==  $q) { $i = $i + 1; $q = 1; $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;} ?>
     <?php  endforeach; ?>
 
 
