@@ -29,10 +29,10 @@ class GmiController extends Controller
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
-                if(empty($find_product)) {
+                if(!empty($find_product)) {
                     $new_updates = new GmiUpdates();
-                    $new_updates->sku_product = $product->sku;
-                    $new_updates->price = $product->price;
+                    $new_updates->sku_product = htmlspecialchars($product->sku);
+                    $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
                     $update_products++;
                 }
@@ -40,22 +40,22 @@ class GmiController extends Controller
                     $new_product = new GmiProducts();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
-                    $product->title = $product->find('div.product-title' , 0)->innertext;
-                    $product->article = $product->find('div.product-description', 1)->next_sibling('div')->innertext;
-                    $product->units = $product->find('div.description', 0)->innertext;
-                    $product->per = $product->find('div.description', 1)->innertext;
-                    $product->price = $product->find('div.product-price', 0)->innertext;
+                    $product->title = $product->find('div.product-title' , 0)->plaintext;
+                    $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
+                    $product->units = $product->find('div.description', 0)->plaintext;
+                    $product->per = $product->find('div.description', 1)->plaintext;
+                    $product->price = $product->find('div.product-price', 0)->plaintext;
                     $new_product->image = $product->image;
-                    $new_product->title = $product->title;
-                    $new_product->article = $product->article;
-                    $new_product->price = $product->price;
-                    $new_product->units = $product->units;
-                    $new_product->per = $product->per;
+                    $new_product->title = htmlspecialchars($product->title);
+                    $new_product->article = htmlspecialchars($product->article);
+                    $new_product->price = htmlspecialchars($product->price);
+                    $new_product->units = htmlspecialchars($product->units);
+                    $new_product->per = htmlspecialchars($product->per);
                     $new_product->save(false);
 
                     $new_updates = new GmiUpdates();
-                    $new_updates->sku_product = $product->sku;
-                    $new_updates->price = $product->price;
+                    $new_updates->sku_product = htmlspecialchars($product->sku);
+                    $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
                     $new_products ++ ;
                 }
