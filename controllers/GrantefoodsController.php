@@ -20,7 +20,7 @@ class GrantefoodsController extends Controller
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
-        $links = Redoctober::find()->orderBy(['id' => SORT_DESC])->all();
+        $links = Grantefoods::find()->orderBy(['id' => SORT_DESC])->all();
         $parse_products = 1;
         $new_products = 0;
         $update_products = 0;
@@ -31,20 +31,20 @@ class GrantefoodsController extends Controller
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
-                $find_product = RedoctoberProducts::findOne(['sku' => $product->sku]);
+                $find_product = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = RedoctoberUpdates::findOne(['sku_product' => $product->sku]);
+                    $need_update = GrantefoodsUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
-                        $product_update = RedoctoberProducts::findOne(['sku' => $product->sku]);
+                        $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
                     else{
-                        $new_updates = new RedoctoberUpdates();
+                        $new_updates = new GrantefoodsUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = RedoctoberProducts::findOne(['sku' => $product->sku]);
+                        $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
@@ -55,7 +55,7 @@ class GrantefoodsController extends Controller
 
                 }
                 else{
-                    $new_product = new RedoctoberProducts();
+                    $new_product = new GrantefoodsProducts();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
@@ -72,7 +72,7 @@ class GrantefoodsController extends Controller
                     $new_product->updated_at = new Expression('NOW()');
                     $new_product->save(false);
 
-                    $new_updates = new RedoctoberUpdates();
+                    $new_updates = new GrantefoodsUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
@@ -89,33 +89,33 @@ class GrantefoodsController extends Controller
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
-        $products = RedoctoberProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = RedoctoberProducts::find()->orderBy(['id' => SORT_DESC]);
+        $products = GrantefoodsProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        $query = GrantefoodsProducts::find()->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
-        $products = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $products = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
-        $products = RedoctoberProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RedoctoberProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $products = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 }
