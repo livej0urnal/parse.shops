@@ -29,7 +29,6 @@ class Gmi extends ActiveRecord
         return [
             [['links'], 'required'],
             [['links'], 'string', 'max' => 255],
-            [['links'] , 'unique' , 'comboNotUnique' => 'Username already taken!',  'targetClass' => 'app\models\Gmi'],
         ];
     }
 
