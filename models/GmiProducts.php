@@ -39,7 +39,8 @@ class GmiProducts extends ActiveRecord
     {
         return [
             [['image', 'title', 'sku', 'article', 'units', 'per', 'price'], 'required'],
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price'], 'string', 'max' => 255],
+            [['image', 'title', 'sku', 'article', 'units', 'per'], 'string', 'max' => 255],
+            [['price'], 'trim'],
             [['sku'] , 'unique' , 'comboNotUnique' => 'Username already taken!',  'targetClass' => 'app\models\GmiProducts'],
         ];
     }
