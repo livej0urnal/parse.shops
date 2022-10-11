@@ -9,7 +9,7 @@
     $q = 1;
 ?>
 <?php if(count($articles) > 1) : ?>
-    Page #<?php echo $q; ?> <br>
+    Page #<?php echo $q; ?> <br><br>
     <?php foreach ($htmlgmi->find('article') as $product) :?>
         <tr>
             <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
@@ -33,9 +33,10 @@
 
         <?php echo $q; ?>
         <br>
+        <br>
 
         <?php $q = $q + 1; ?>
-    <?php if(count($articles) ===  $q) { $i = $i + 1; $q = 1; $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;} ?>
+    <?php if(count($articles) ===  $q) { $i = $i + 1; $q = 1;} ?>
     <?php  endforeach; ?>
 
 
