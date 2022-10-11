@@ -15,7 +15,7 @@ class GmiController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = GmiProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = GmiProducts::find()->orderBy(['id' => SORT_DESC]);
+        $query = GmiProducts::find()->orderBy(['id' => SORT_ASC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 100, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('index' , compact('products', 'pages'));
@@ -41,6 +41,7 @@ class GmiController extends Controller
                     if($need_update->price === $product->price) {
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->updated_at = $need_update->update_at;
                         $product_update->save(false);
                     }
                     else{
@@ -49,6 +50,7 @@ class GmiController extends Controller
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->updated_at = $need_update->update_at;
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -71,12 +73,12 @@ class GmiController extends Controller
                     $new_product->price = htmlspecialchars($product->price);
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
-                    $new_product->save(false);
-
                     $new_updates = new GmiUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
+                    $new_product->updated_at = $new_updates->update_at;
+                    $new_product->save(false);
                     $new_products ++ ;
                 }
                 $parse_products ++ ;

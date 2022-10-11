@@ -51,11 +51,7 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->per ?></td>
                                     <td><?= $product->price ?></td>
                                     <td>
-                                        <?php
-                                            $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => trim($product->sku)])->orderBy(['id' => SORT_DESC])->one();;
-
-                                        ?>
-                                        <?php echo Yii::$app->formatter->asDatetime($last_update->update_at, 'short'); ?>
+                                        <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
