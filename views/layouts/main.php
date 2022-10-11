@@ -58,7 +58,12 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['gmi/parse']) ?>">GMI - Parsing</a>
                                 </li>
-
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['megafood/parse']) ?>">Megafood - Parsing</a>
+                                </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['megafood/links']) ?>">Megafood - Get Links</a>
                                 </li>
