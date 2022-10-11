@@ -28,13 +28,21 @@ class GmiController extends Controller
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
+                $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $new_updates = new GmiUpdates();
-                    $new_updates->sku_product = htmlspecialchars($product->sku);
-                    $new_updates->price = htmlspecialchars($product->price);
-                    $new_updates->save(false);
-                    $update_products++;
+                    $need_update = GmiUpdates::findOne(['sku_product' => $product->sku]);
+                    if($need_update->price === $product->price) {
+
+                    }
+                    else{
+                        $new_updates = new GmiUpdates();
+                        $new_updates->sku_product = htmlspecialchars($product->sku);
+                        $new_updates->price = htmlspecialchars($product->price);
+                        $new_updates->save(false);
+                        $update_products++;
+                    }
+
                 }
                 else{
                     $new_product = new GmiProducts();
@@ -44,7 +52,7 @@ class GmiController extends Controller
                     $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
-                    $product->price = trim($product->find('div.product-price', 0)->plaintext);
+
                     $new_product->image = $product->image;
                     $new_product->title = htmlspecialchars($product->title);
                     $new_product->article = htmlspecialchars($product->article);
