@@ -24,7 +24,7 @@ class GmiController extends Controller
         $update_products = 0;
         foreach ($links as $link)
         {
-            $htmlgmi = file_get_html($link);
+            $htmlgmi = file_get_html($link->links);
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
                 $product->sku = $product->find('div.product-description', 0)->innertext;
