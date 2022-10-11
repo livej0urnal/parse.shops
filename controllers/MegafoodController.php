@@ -8,6 +8,7 @@ use yii\web\Controller;
 use Yii;
 use app\models\Megafood;
 use yii\db\Expression;
+use yii\data\Pagination;
 
 class MegafoodController extends Controller
 {
@@ -58,7 +59,7 @@ class MegafoodController extends Controller
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
+                    $product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext;
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 
@@ -83,5 +84,38 @@ class MegafoodController extends Controller
             }
         }
         return $this->render('parse', compact('links', 'parse_products', 'update_products' , 'new_products'));
+    }
+
+    public function actionIndex()
+    {
+        $id = Yii::$app->request->get('id');
+        $products = MegafoodProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        $query = MegafoodProducts::find()->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+    }
+
+    public function actionSearch($q)
+    {
+        $q = Yii::$app->request->get('q');
+        $products = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+    }
+
+    public function actionManufacture($q)
+    {
+        $q = Yii::$app->request->get('q');
+        $products = MegafoodProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = MegafoodProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 }
