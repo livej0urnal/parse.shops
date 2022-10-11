@@ -8,7 +8,7 @@ use yii\widgets\LinkPager;
 <section class="p-t-20">
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="au-breadcrumb-content">
                     <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['gmi/search']) ?>" method="get" >
                         <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
@@ -16,14 +16,31 @@ use yii\widgets\LinkPager;
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
+                    <?php if(!empty($manufactures)) : ?>
+                    <div class="col-md-4">
+                        <select name="select" id="select-manufacture" class="form-control">
+                            <option value="0">Select Manufacture</option>
+                            <?php foreach ($manufactures as $item) : ?>
+                                <option value="<?= $item->article ?>"><?= $item->article ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <?php endif; ?>
 
                     <div class="col-md-4">
-                        <select name="select" id="select" class="form-control">
-                            <option value="0">Select Manufacture</option>
-                            <option value="1">Option #1</option>
-                            <option value="2">Option #2</option>
-                            <option value="3">Option #3</option>
-                        </select>
+                        <?php if (!empty($pages)) : ?>
+                            <div class="demo-inline-spacing">
+                                <!-- Basic Pagination -->
+                                <nav aria-label="Page navigation" class="item-pagination">
+                                    <?php echo LinkPager::widget([
+                                        'pagination' => $pages,
+                                        'options' => ['class' => 'pagination tab-paginations'],
+                                        'linkOptions' => ['class' => 'page-link'],
+                                    ]); ?>
+                                </nav>
+                                <!--/ Basic Pagination -->
+                            </div>
+                        <?php endif; ?>
                     </div>
 
                 </div>
@@ -32,19 +49,7 @@ use yii\widgets\LinkPager;
             <div class="col-md-12">
 
                 <div class="table-responsive table-responsive-data2">
-                    <?php if (!empty($pages)) : ?>
-                        <div class="demo-inline-spacing">
-                            <!-- Basic Pagination -->
-                            <nav aria-label="Page navigation" class="item-pagination">
-                                <?php echo LinkPager::widget([
-                                    'pagination' => $pages,
-                                    'options' => ['class' => 'pagination tab-paginations'],
-                                    'linkOptions' => ['class' => 'page-link'],
-                                ]); ?>
-                            </nav>
-                            <!--/ Basic Pagination -->
-                        </div>
-                    <?php endif; ?>
+
                     <table class="table table-data2">
                         <thead>
                         <tr>

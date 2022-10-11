@@ -19,7 +19,7 @@ class GmiController extends Controller
         $query = GmiProducts::find()->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = GmiProducts::find()->select(['article'])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures'));
     }
 
@@ -30,7 +30,7 @@ class GmiController extends Controller
         $query = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = GmiProducts::find()->select(['article'])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 
