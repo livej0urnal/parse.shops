@@ -7,7 +7,7 @@
     $articles = $htmlgmi->find('article');
     $q = 1;
 ?>
-<?php if(count($articles) >= 1) : ?>
+<?php if(count($articles) > 1) : ?>
     <?php  foreach ($htmlgmi->find('article') as $product) :?>
         <tr>
             <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
