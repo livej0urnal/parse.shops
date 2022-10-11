@@ -28,8 +28,10 @@
 
 
         </tr>
-    <?php $q++; ?>
+
 
     <?php  endforeach; ?>
-<?php if(count($articles) === $q) { $i++;} ?>
+    <?php $q++; ?>
+
 <?php endif; ?>
+<?php if(count($articles) === $q) { $i++; $q = 1;} ?>
