@@ -92,7 +92,7 @@ class GrantefoodsController extends Controller
         $id = Yii::$app->request->get('id');
         $products = GrantefoodsProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
         $query = GrantefoodsProducts::find()->orderBy(['id' => SORT_DESC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 30, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures'));
@@ -103,7 +103,7 @@ class GrantefoodsController extends Controller
         $q = Yii::$app->request->get('q');
         $products = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
         $query = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 30, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
@@ -114,7 +114,7 @@ class GrantefoodsController extends Controller
         $q = Yii::$app->request->get('q');
         $products = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
         $query = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 30, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
