@@ -7,6 +7,7 @@ use yii\web\Controller;
 use Yii;
 use app\models\GmiUpdates;
 use app\models\GmiProducts;
+use yii\data\Pagination;
 
 class GmiController extends Controller
 {
@@ -14,7 +15,10 @@ class GmiController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = GmiProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        return $this->render('index' , compact('products'));
+        $query = GmiProducts::find()->orderBy(['id' => SORT_DESC]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        return $this->render('index' , compact('products', 'pages'));
     }
 
     public function actionParse()

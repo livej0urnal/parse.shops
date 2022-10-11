@@ -1,6 +1,8 @@
 <?php
     use yii\helpers\Url;
     use yii\helpers\Html;
+use yii\widgets\LinkPager;
+
 ?>
 
 <section class="p-t-20">
@@ -36,10 +38,10 @@
                                     <td><?= $product->price ?></td>
                                     <td>
                                         <?php
-                                            $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => trim($product->sku)])->max('id');;
+                                            $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => trim($product->sku)])->orderBy(['id' => SORT_DESC])->one();;
 
                                         ?>
-                                        <?= Yii::$app->formatter->asDatetime($last_update->update_at, 'short') ?>
+                                        <?php echo Yii::$app->formatter->asDatetime($last_update->update_at, 'short'); ?>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -49,6 +51,19 @@
                         <?php endif; ?>
                     </table>
                 </div>
+                <?php if (!empty($pages)) : ?>
+                    <div class="demo-inline-spacing">
+                        <!-- Basic Pagination -->
+                        <nav aria-label="Page navigation" class="item-pagination">
+                            <?php echo LinkPager::widget([
+                                'pagination' => $pages,
+                                'options' => ['class' => 'pagination tab-paginations'],
+                                'linkOptions' => ['class' => 'page-link'],
+                            ]); ?>
+                        </nav>
+                        <!--/ Basic Pagination -->
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>
