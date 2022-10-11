@@ -48,6 +48,7 @@ class AppAsset extends AssetBundle
         '/vendor/chartjs/Chart.bundle.min.js',
         '/vendor/select2/select2.min.js',
         '/js/main.js',
+        '/js/scripts.js',
     ];
     public $depends = [
         //        'yii\web\YiiAsset',
