@@ -33,14 +33,16 @@ class GmiController extends Controller
                 if(!empty($find_product)) {
                     $need_update = GmiUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
-
+                        $product_update = GmiProducts::findOne(['sku' => $product->sku]);
+                        $product_update->price = $product->price;
+                        $product_update->save(false);
                     }
                     else{
                         $new_updates = new GmiUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $new_updates->price;
+                        $product_update->price = $product->price;
                         $product_update->save(false);
                         $new_updates->save(false);
 
