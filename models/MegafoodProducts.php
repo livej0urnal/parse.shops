@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "megafood_products".
@@ -17,7 +18,7 @@ use Yii;
  * @property string $price
  * @property string $updated_at
  */
-class MegafoodProducts extends \yii\db\ActiveRecord
+class MegafoodProducts extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -25,6 +26,11 @@ class MegafoodProducts extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'megafood_products';
+    }
+
+    public function getUpdates()
+    {
+        return $this->hasMany(MegafoodUpdates::className(), ['sku_product' => 'sku']);
     }
 
     /**

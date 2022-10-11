@@ -2,9 +2,12 @@
 
 namespace app\controllers;
 
+use app\models\MegafoodProducts;
+use app\models\MegafoodUpdates;
 use yii\web\Controller;
 use Yii;
 use app\models\Megafood;
+use yii\db\Expression;
 
 class MegafoodController extends Controller
 {
@@ -27,20 +30,20 @@ class MegafoodController extends Controller
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
-                $find_product = GmiProducts::findOne(['sku' => $product->sku]);
+                $find_product = MegafoodProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = GmiUpdates::findOne(['sku_product' => $product->sku]);
+                    $need_update = MegafoodUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
-                        $product_update = GmiProducts::findOne(['sku' => $product->sku]);
+                        $product_update = MegafoodProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
                     else{
-                        $new_updates = new GmiUpdates();
+                        $new_updates = new MegafoodUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = GmiProducts::findOne(['sku' => $product->sku]);
+                        $product_update = MegafoodProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
@@ -51,7 +54,7 @@ class MegafoodController extends Controller
 
                 }
                 else{
-                    $new_product = new GmiProducts();
+                    $new_product = new MegafoodProducts();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
@@ -68,7 +71,7 @@ class MegafoodController extends Controller
                     $new_product->updated_at = new Expression('NOW()');
                     $new_product->save(false);
 
-                    $new_updates = new GmiUpdates();
+                    $new_updates = new MegafoodUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
