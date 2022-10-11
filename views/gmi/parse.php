@@ -1,19 +1,22 @@
+
+
+
+
+
+
 <?php
 
 $gmi = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page=1';
 $htmlgmi = file_get_html($gmi);
-?>
-
-<?php
     $articles = $htmlgmi->find('article');
     echo count($articles);
 ?>
 
 <?php  foreach ($htmlgmi->find('article') as $product) :?>
     <tr>
-<!--        <td>--><?//= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?><!--</td>-->
-<!--        <img src="--><?//= $product->image ?><!--" alt="">-->
-<!--        <br>-->
+        <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
+        <img src="<?= $product->image ?>" alt="">
+        <br>
         <td><?= $product->title = $product->find('div.product-title' , 0)->innertext; ?></td>
         <br>
         <td><?= $product->sku = $product->find('div.product-description', 0)->innertext; ?></td>
