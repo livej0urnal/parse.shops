@@ -29,9 +29,12 @@
 
         </tr>
 
+        <?php echo $q; ?>
+        <br>
 
+        <?php $q = $q + 1; ?>
     <?php  endforeach; ?>
-    <?php $q++; ?>
+
 
 <?php endif; ?>
-<?php if(count($articles) === $q) { $i++; $q = 1;} ?>
+<?php if(count($articles) == $q) { $i = $i + 1; $q = 1;} ?>
