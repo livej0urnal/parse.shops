@@ -1,15 +1,15 @@
 
 <?php
-    $q = 1;
+//    Цикл страниц
     $i = 1;
     $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;
     $htmlgmi = file_get_html($gmi_html);
     $articles = $htmlgmi->find('article');
-
-
+//    Переменная кол-ва товаров
+    $q = 1;
 ?>
 <?php if(count($articles) > 1) : ?>
-    <?php  foreach ($htmlgmi->find('article') as $product) :?>
+    <?php foreach ($htmlgmi->find('article') as $product) :?>
         <tr>
             <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
             <br>
