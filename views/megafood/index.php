@@ -67,7 +67,7 @@ use yii\widgets\LinkPager;
                         <?php if(!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <tr class="tr-shadow">
+                                <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
                                     <td><img src="<?= $product->image ?>" alt="" width="50" height="70"></td>
                                     <td><?= $product->title ?></td>
@@ -80,6 +80,20 @@ use yii\widgets\LinkPager;
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                 </tr>
+                                <?php $updates = \app\models\MegafoodUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php foreach ($updates as $item) : ?>
+                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><?= $item->price ?></td>
+                                        <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                <tr class="spacer"></tr>
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>

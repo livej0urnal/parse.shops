@@ -80,16 +80,20 @@ use yii\widgets\LinkPager;
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                 </tr>
-                                <tr class="tr-shadow-hidden disabled">
+                            <?php $updates = \app\models\GmiUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php foreach ($updates as $item) : ?>
+                                <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
                                     <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td><?= $item->price ?></td>
+                                    <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
                                 </tr>
+                                <?php endforeach; ?>
+                            <tr class="spacer"></tr>
                             <?php endforeach; ?>
                         </tbody>
                         <?php else: ?>
