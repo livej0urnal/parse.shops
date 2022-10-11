@@ -35,6 +35,6 @@
         <?php $q = $q + 1; ?>
     <?php  endforeach; ?>
 
-
+    <?php if(count($articles) ===  $q) { $i = $i + 1; $q = 1;} ?>
 <?php endif; ?>
-<?php if(count($articles) == $q) { $i = $i + 1; $q = 1;} ?>
+
