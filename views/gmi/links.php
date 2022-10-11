@@ -5,8 +5,12 @@ for ($i = 0; $i < 20; $i = $i + 1) {
     $htmlgmi = file_get_html($gmi_html);
     $articles = $htmlgmi->find('article');
     if(count($articles) > 1) {
-        $link = new \app\models\Gmi();
-        $link->links = $gmi_html;
-        $link->save();
+        $this_link = \app\models\Gmi::findOne(['links' => $gmi_html]);
+        if(!$this_link) {
+            $link = new \app\models\Gmi();
+            $link->links = $gmi_html;
+            $link->save();
+        }
+
     }
 }
