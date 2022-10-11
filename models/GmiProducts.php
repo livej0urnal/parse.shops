@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "gmi_products".
@@ -16,7 +17,7 @@ use Yii;
  * @property string $per
  * @property string $price
  */
-class GmiProducts extends \yii\db\ActiveRecord
+class GmiProducts extends ActiveRecord
 {
     /**
      * {@inheritdoc}
