@@ -30,6 +30,7 @@ class GrantefoodsController extends Controller
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
+                $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $find_product = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
@@ -59,7 +60,7 @@ class GrantefoodsController extends Controller
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    $product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext;
+                    $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 
