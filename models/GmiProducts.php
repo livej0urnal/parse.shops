@@ -27,6 +27,11 @@ class GmiProducts extends ActiveRecord
         return 'gmi_products';
     }
 
+    public function getUpdates()
+    {
+        return $this->hasMany(GmiUpdates::className(), ['sku_product' => 'sku']);
+    }
+
     /**
      * {@inheritdoc}
      */
