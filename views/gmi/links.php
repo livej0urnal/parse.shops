@@ -1,0 +1,12 @@
+<?php
+
+for ($i = 0; $i < 20; $i = $i + 1) {
+    $gmi_html = 'https://gmi-trading.itemcatalog.biz/PriceCatalog/ItemsByCategory/?categoryCode=ALL_ITEMS&selectType=CATEG&page='. $i;
+    $htmlgmi = file_get_html($gmi_html);
+    $articles = $htmlgmi->find('article');
+    if(count($articles) > 1) {
+        $link = new \app\models\Gmi();
+        $link->links = $gmi_html;
+        $link->save();
+    }
+}

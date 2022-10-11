@@ -15,4 +15,9 @@ class GmiController extends Controller
     {
         return $this->render('parse');
     }
+
+    public function actionLinks()
+    {
+        return $this->render('links');
+    }
 }
