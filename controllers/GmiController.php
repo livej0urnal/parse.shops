@@ -12,7 +12,9 @@ class GmiController extends Controller
 {
     public function actionIndex()
     {
-        return $this->render('index');
+        $id = Yii::$app->request->get('id');
+        $products = GmiProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        return $this->render('index' , compact('products'));
     }
 
     public function actionParse()
