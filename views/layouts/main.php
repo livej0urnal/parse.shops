@@ -83,6 +83,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['redoctober/links']) ?>">Redoctober - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Grantefoods</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/parse']) ?>">Grantefoods - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/links']) ?>">Grantefoods - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
