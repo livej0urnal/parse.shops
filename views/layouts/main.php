@@ -52,6 +52,12 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
                                 </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['gmi/links']) ?>">GMI - Get Links</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['gmi/parse']) ?>">GMI - Parsing</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">

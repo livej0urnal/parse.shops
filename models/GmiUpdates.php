@@ -37,6 +37,7 @@ class GmiUpdates extends ActiveRecord
             [['sku_product', 'price'], 'required'],
             [['update_at'], 'safe'],
             [['sku_product', 'price'], 'string', 'max' => 255],
+            [['price'], 'trim'],
         ];
     }
 
