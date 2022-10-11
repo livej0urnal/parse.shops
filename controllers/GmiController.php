@@ -73,12 +73,14 @@ class GmiController extends Controller
                     $new_product->price = htmlspecialchars($product->price);
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
+                    $new_product->updated_at = $new_updates->update_at;
+                    $new_product->save(false);
+
                     $new_updates = new GmiUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
-                    $new_product->updated_at = $new_updates->update_at;
-                    $new_product->save(false);
+
                     $new_products ++ ;
                 }
                 $parse_products ++ ;
