@@ -18,7 +18,7 @@ use yii\widgets\LinkPager;
                     </form>
                     <?php if(!empty($manufactures)) : ?>
                     <div class="col-md-4">
-                        <select name="select" id="select-manufacture" class="form-control">
+                        <select name="select" id="select-manufacture" class="form-control" data-value="gmi">
                             <option value="0">Select Manufacture</option>
                             <?php foreach ($manufactures as $item) : ?>
                                 <option value="<?= $item->article ?>"><?= $item->article ?></option>
