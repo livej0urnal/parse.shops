@@ -15,8 +15,6 @@
         <tr>
             <td><?= $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src'); ?></td>
             <br>
-            <img src="<?= $product->image ?>" alt="">
-            <br>
             <td><?= $product->title = $product->find('div.product-title' , 0)->innertext; ?></td>
             <br>
             <td><?= $product->sku = $product->find('div.product-description', 0)->innertext; ?></td>
