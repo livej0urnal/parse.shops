@@ -17,7 +17,7 @@ class GmiController extends Controller
         $id = Yii::$app->request->get('id');
         $products = GmiProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
         $query = GmiProducts::find()->orderBy(['id' => SORT_DESC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         return $this->render('index' , compact('products', 'pages'));
     }

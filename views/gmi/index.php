@@ -8,15 +8,26 @@ use yii\widgets\LinkPager;
 <section class="p-t-20">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['gmi/search']) ?>" method="get" value="<?= $q ?>">
-                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['gmi/search']) ?>" method="get" >
+                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
+
+                    <div class="col-md-8">
+                        <select name="selectLg" id="selectLg" class="form-control form-control-lg">
+                            <option value="0">Select Manufacture</option>
+                            <option value="1">Option #1</option>
+                            <option value="2">Option #2</option>
+                            <option value="3">Option #3</option>
+                        </select>
+                    </div>
+
                 </div>
+
             </div>
             <div class="col-md-12">
 
