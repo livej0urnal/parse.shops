@@ -88,6 +88,12 @@ class GmiController extends Controller
 
     public function actionLinks()
     {
+        $id = Yii::$app->request->get('id');
+        $links = Gmi::find()->all();
+        foreach ($links as $link)
+        {
+            $link->delete();
+        }
         return $this->render('links');
     }
 }
