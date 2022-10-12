@@ -161,6 +161,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['baltic/links']) ?>">Baltic - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zakuson/parse']) ?>">Zakuson - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zakuson/links']) ?>">Zakuson - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
