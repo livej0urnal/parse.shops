@@ -100,7 +100,15 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #3</a>
                             <ul class="header3-sub-list list-unstyled">
-
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Three</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/parse']) ?>">Three - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['three/links']) ?>">Three - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
