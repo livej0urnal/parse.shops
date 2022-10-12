@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use app\models\Gmi;
+use yii\data\Sort;
 use yii\db\Expression;
 use yii\helpers\Json;
 use yii\web\Controller;

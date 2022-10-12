@@ -60,8 +60,8 @@ use yii\widgets\LinkPager;
                             <th>Manufacture</th>
                             <th>Units</th>
                             <th>Per</th>
-                            <th>Price</th>
-                            <th>Last Update</th>
+                            <th><?php echo $sort->link('price'); ?></th>
+                            <th><?php echo $sort->link('updated_at'); ?></th>
                         </tr>
                         </thead>
                         <?php if(!empty($products)) : ?>
