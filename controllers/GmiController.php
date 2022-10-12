@@ -111,20 +111,18 @@ class GmiController extends Controller
                 else{
                     $new_product = new GmiProducts();
                     $new_product->sku = $product->sku;
+
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
 
                     $url = $product->image;
                     $img =  $_SERVER['DOCUMENT_ROOT'] . "/uploads/". $product->sku .".jpg";
                     file_put_contents($img, file_get_contents($url));
-//                    file_put_contents("/uploads/". $product->sku .".jpg", file_get_contents($product->image));
-
 
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
                     $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 
-//                    $new_product->image = $product->image;
                     $new_product->image = "/uploads/". $product->sku .".jpg";
                     $new_product->title = htmlspecialchars($product->title);
                     $new_product->article = htmlspecialchars($product->article);
