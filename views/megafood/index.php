@@ -69,7 +69,7 @@ use yii\widgets\LinkPager;
                             <?php foreach ($products as $product) : ?>
                                 <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
-                                    <td><img src="<?= $product->image ?>" alt="" width="50" height="70"></td>
+                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
