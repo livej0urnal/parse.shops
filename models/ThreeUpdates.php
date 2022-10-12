@@ -23,6 +23,11 @@ class ThreeUpdates extends ActiveRecord
         return 'three_updates';
     }
 
+    public function getProduct()
+    {
+        return $this->hasOne(ThreeProducts::className() , ['sku' => 'sku_product']);
+    }
+
     /**
      * {@inheritdoc}
      */

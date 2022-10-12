@@ -27,6 +27,10 @@ class ThreeProducts extends ActiveRecord
     {
         return 'three_products';
     }
+    public function getUpdates()
+    {
+        return $this->hasMany(ThreeUpdates::className(), ['sku_product' => 'sku']);
+    }
 
     /**
      * {@inheritdoc}

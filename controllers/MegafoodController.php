@@ -58,6 +58,7 @@ class MegafoodController extends Controller
                 else{
                     $new_product = new MegafoodProducts();
                     $new_product->sku = $product->sku;
+
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
                     $product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext;

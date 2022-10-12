@@ -101,10 +101,10 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #3</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Three</a>
+                                    <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">Three</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/parse']) ?>">Three - Parsing</a>
+                                    <a href="<?= \yii\helpers\Url::to(['three/parse']) ?>">Three - Parsing</a>
                                 </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['three/links']) ?>">Three - Get Links</a>
