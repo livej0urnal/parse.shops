@@ -26,3 +26,6 @@ li.active> .page-link{
 .tr-shadow-hidden{
     /*display: none;*/
 }
+.page-content--bgf7{
+    min-height: 200px;
+}
