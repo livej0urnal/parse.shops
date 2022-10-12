@@ -10,7 +10,7 @@ use yii\widgets\LinkPager;
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['tamani/search']) ?>" method="get" >
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['mamta/search']) ?>" method="get" >
                         <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
@@ -18,7 +18,7 @@ use yii\widgets\LinkPager;
                     </form>
                     <?php if(!empty($manufactures)) : ?>
                         <div class="col-md-4">
-                            <select name="select" id="select-manufacture" class="form-control" data-value="tamani">
+                            <select name="select" id="select-manufacture" class="form-control" data-value="mamta">
                                 <option value="0"><?php if($q): ?> <?= $q ?> <?php else : ?> Select Manufacture <?php endif; ?></option>
                                 <?php foreach ($manufactures as $item) : ?>
                                     <option <?php if($q == $item->article): ?> selected <?php endif; ?> value="<?= $item->article ?>"><?= $item->article ?></option>
@@ -80,7 +80,7 @@ use yii\widgets\LinkPager;
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                 </tr>
-                                <?php $updates = \app\models\TamaniUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php $updates = \app\models\MamtaUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                         <td></td>

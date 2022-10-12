@@ -126,7 +126,15 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #4</a>
                             <ul class="header3-sub-list list-unstyled">
-
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['mamta/parse']) ?>">Mamta - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['mamta/links']) ?>">Mamta - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
