@@ -152,7 +152,15 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #5</a>
                             <ul class="header3-sub-list list-unstyled">
-
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['baltic/parse']) ?>">Baltic - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['baltic/links']) ?>">Baltic - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
