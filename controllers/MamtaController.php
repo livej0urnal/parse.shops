@@ -61,6 +61,9 @@ class MamtaController extends Controller
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
                     $product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext;
+                    if($product->article != null) {
+                        $product->article = $product->find('div.product-description', 1)->next_sibling('div')->plaintext;
+                    }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 
