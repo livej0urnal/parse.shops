@@ -27,5 +27,5 @@ li.active> .page-link{
     /*display: none;*/
 }
 .page-content--bgf7{
-    min-height: 200px;
+    min-height:500px!important;
 }
