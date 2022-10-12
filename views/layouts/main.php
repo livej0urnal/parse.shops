@@ -135,6 +135,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['mamta/links']) ?>">Mamta - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['alex/parse']) ?>">Alexmeat - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['alex/links']) ?>">Alexmeat - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
