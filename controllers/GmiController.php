@@ -83,7 +83,7 @@ class GmiController extends Controller
             $htmlgmi = file_get_html($link->links);
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
-                $product->sku = trim($product->find('div.product-description', 0)->innertext);
+                $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
