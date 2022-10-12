@@ -21,7 +21,10 @@ class ZakusonUpdates extends \yii\db\ActiveRecord
     {
         return 'zakuson_updates';
     }
-
+    public function getProduct()
+    {
+        return $this->hasOne(ZakusonProducts::className() , ['sku' => 'sku_product']);
+    }
     /**
      * {@inheritdoc}
      */
