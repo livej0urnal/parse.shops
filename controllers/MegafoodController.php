@@ -66,7 +66,7 @@ class MegafoodController extends Controller
                     $product->per = $product->find('div.description', 1)->plaintext;
 
                     $new_product->image = $product->image;
-                    $new_product->title = htmlspecialchars($product->title);
+                    $new_product->title = $product->title;
                     $new_product->article = htmlspecialchars($product->article);
                     $new_product->price = htmlspecialchars($product->price);
                     $new_product->units = htmlspecialchars($product->units);

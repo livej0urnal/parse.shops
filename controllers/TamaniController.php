@@ -60,12 +60,17 @@ class TamaniController extends Controller
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    $product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext;
+                    if(empty($product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext)) {
+                        $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
+                    }
+                    else{
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->next_sibling('div')->plaintext;
+                    }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 
                     $new_product->image = $product->image;
-                    $new_product->title = htmlspecialchars($product->title);
+                    $new_product->title = $product->title;
                     $new_product->article = htmlspecialchars($product->article);
                     $new_product->price = htmlspecialchars($product->price);
                     $new_product->units = htmlspecialchars($product->units);
