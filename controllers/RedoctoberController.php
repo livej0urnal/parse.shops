@@ -30,6 +30,7 @@ class RedoctoberController extends Controller
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
+                $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $find_product = RedoctoberProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {

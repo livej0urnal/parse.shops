@@ -84,6 +84,7 @@ class GmiController extends Controller
             $articles = $htmlgmi->find('article');
             foreach ($articles as $product) {
                 $product->sku = trim($product->find('div.product-description', 0)->innertext);
+                $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
@@ -148,7 +149,7 @@ class GmiController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = GmiProducts::find()->all();
-        ini_set('max_execution_time', 900);
+        ini_set('max_execution_time', 2000);
         foreach ($products as $product)
         {
             $url = $product->image;
