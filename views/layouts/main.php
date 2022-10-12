@@ -109,6 +109,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['three/links']) ?>">Three - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">Tamani</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['tamani/parse']) ?>">Tamani - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['tamani/links']) ?>">Tamani - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
