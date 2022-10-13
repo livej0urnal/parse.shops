@@ -105,6 +105,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['grantefoods/links']) ?>">Grantefoods - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['lea/links']) ?>">Lea - Get Links</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['lea/parse']) ?>">Lea - Parsing</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
