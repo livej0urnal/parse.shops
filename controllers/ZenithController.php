@@ -4,13 +4,13 @@ namespace app\controllers;
 
 use Yii;
 use yii\web\Controller;
-use app\models\Tamani;
-use app\models\TamaniProducts;
-use app\models\TamaniUpdates;
+use app\models\Zenith;
+use app\models\ZenithProducts;
+use app\models\ZenithUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class TamaniController extends Controller
+class ZenithController extends Controller
 {
     public function actionLinks()
     {
@@ -20,7 +20,7 @@ class TamaniController extends Controller
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
-        $links = Tamani::find()->orderBy(['id' => SORT_DESC])->all();
+        $links = Zenith::find()->orderBy(['id' => SORT_DESC])->all();
         $parse_products = 1;
         $new_products = 0;
         $update_products = 0;
@@ -32,20 +32,20 @@ class TamaniController extends Controller
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
-                $find_product = TamaniProducts::findOne(['sku' => $product->sku]);
+                $find_product = ZenithProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = TamaniUpdates::findOne(['sku_product' => $product->sku]);
+                    $need_update = ZenithUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
-                        $product_update = TamaniProducts::findOne(['sku' => $product->sku]);
+                        $product_update = ZenithProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
                     else{
-                        $new_updates = new TamaniUpdates();
+                        $new_updates = new ZenithUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = TamaniProducts::findOne(['sku' => $product->sku]);
+                        $product_update = ZenithProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
@@ -56,7 +56,7 @@ class TamaniController extends Controller
 
                 }
                 else{
-                    $new_product = new TamaniProducts();
+                    $new_product = new ZenithProducts();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
@@ -64,7 +64,7 @@ class TamaniController extends Controller
                         $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                     }
                     else{
-                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->next_sibling('div')->plaintext;
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->plaintext;
                     }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
@@ -78,7 +78,7 @@ class TamaniController extends Controller
                     $new_product->updated_at = new Expression('NOW()');
                     $new_product->save(false);
 
-                    $new_updates = new TamaniUpdates();
+                    $new_updates = new ZenithUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
                     $new_updates->save(false);
@@ -95,33 +95,33 @@ class TamaniController extends Controller
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
-        $products = TamaniProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = TamaniProducts::find()->orderBy(['id' => SORT_DESC]);
+        $products = ZenithProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
+        $query = ZenithProducts::find()->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = TamaniProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = ZenithProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
-        $products = TamaniProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = TamaniProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $products = ZenithProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = ZenithProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = TamaniProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = ZenithProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
-        $products = TamaniProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = TamaniProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $products = ZenithProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
+        $query = ZenithProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = TamaniProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = ZenithProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
     }
 }

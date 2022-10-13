@@ -179,6 +179,15 @@ AppAsset::register($this);
                                 <i class="fas fa-desktop"></i>
                                 <span class="bot-line"></span>Package #6</a>
                             <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zenith/parse']) ?>">zenith - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zenith/links']) ?>">zenith - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>

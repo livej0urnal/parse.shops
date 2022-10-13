@@ -93,7 +93,7 @@ class MegafoodController extends Controller
         $id = Yii::$app->request->get('id');
         $products = MegafoodProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
         $query = MegafoodProducts::find()->orderBy(['id' => SORT_DESC]);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures'));

@@ -145,27 +145,6 @@ class GmiController extends Controller
         return $this->render('parse', compact('links', 'parse_products', 'update_products' , 'new_products'));
     }
 
-    public function actionDownload()
-    {
-        $id = Yii::$app->request->get('id');
-        $products = GmiProducts::find()->all();
-        ini_set('max_execution_time', 2000);
-        foreach ($products as $product)
-        {
-            $url = $product->image;
-            $img =  $_SERVER['DOCUMENT_ROOT'] . "/uploads/". $product->sku .".jpg";
-
-            if($url != "/uploads/". $product->sku .".jpg") {
-                if($url != '/Content/Images/NoImage.png') {
-                    file_put_contents($img, file_get_contents($url));
-                    $product->image = "/uploads/". $product->sku .".jpg";
-                    $product->save(false);
-                }
-
-            }
-
-        }
-    }
 
     public function actionLinks()
     {
