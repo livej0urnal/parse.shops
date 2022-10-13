@@ -67,6 +67,8 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['megafood/links']) ?>">Megafood - Get Links</a>
                                 </li>
+
+
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -187,6 +189,15 @@ AppAsset::register($this);
                                 </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['zenith/links']) ?>">zenith - Get Links</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['royal/parse']) ?>">Royal - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['royal/links']) ?>">Royal - Get Links</a>
                                 </li>
                             </ul>
                         </li>
