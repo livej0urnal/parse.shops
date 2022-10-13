@@ -141,6 +141,16 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['tamani/links']) ?>">Tamani - Get Links</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['psv/parse']) ?>">psv - Parsing</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['psv/links']) ?>">psv - Get Links</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
