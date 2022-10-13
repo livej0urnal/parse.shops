@@ -27,7 +27,7 @@ class GmiController extends Controller
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
         $query = GmiProducts::find()->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 20, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));

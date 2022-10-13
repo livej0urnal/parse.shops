@@ -173,6 +173,14 @@ AppAsset::register($this);
                                 </li>
                             </ul>
                         </li>
+
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #6</a>
+                            <ul class="header3-sub-list list-unstyled">
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="header__tool">
