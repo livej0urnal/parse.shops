@@ -68,6 +68,16 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['megafood/links']) ?>">Megafood - Get Links</a>
                                 </li>
 
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria - Tranding</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['euphoria/links']) ?>">Euphoria - Get Links</a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['euphoria/parse']) ?>">Euphoria - Parsing</a>
+                                </li>
+
 
                             </ul>
                         </li>

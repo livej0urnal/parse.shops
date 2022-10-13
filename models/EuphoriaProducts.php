@@ -27,6 +27,11 @@ class EuphoriaProducts extends \yii\db\ActiveRecord
         return 'euphoria_products';
     }
 
+    public function getUpdates()
+    {
+        return $this->hasMany(EuphoriaUpdates::className(), ['sku_product' => 'sku']);
+    }
+
     /**
      * {@inheritdoc}
      */
