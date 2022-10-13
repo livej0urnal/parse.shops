@@ -53,32 +53,11 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['gmi/links']) ?>">GMI - Get Links</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['gmi/parse']) ?>">GMI - Parsing</a>
-                                </li>
-                                <li>
                                     <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['megafood/parse']) ?>">Megafood - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['megafood/links']) ?>">Megafood - Get Links</a>
-                                </li>
-
-                                <li>
                                     <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
                                 </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['euphoria/links']) ?>">Euphoria - Get Links</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['euphoria/parse']) ?>">Euphoria - Parsing</a>
-                                </li>
-
-
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -90,30 +69,11 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['redoctober/index']) ?>">Redoctober</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['redoctober/parse']) ?>">Redoctober - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['redoctober/links']) ?>">Redoctober - Get Links</a>
-                                </li>
-
-                                <li>
                                     <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Grantefoods</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/parse']) ?>">Grantefoods - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/links']) ?>">Grantefoods - Get Links</a>
                                 </li>
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['lea/links']) ?>">Lea - Get Links</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['lea/parse']) ?>">Lea - Parsing</a>
                                 </li>
                             </ul>
                         </li>
@@ -125,31 +85,13 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">Three</a>
                                 </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['three/parse']) ?>">Three - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['three/links']) ?>">Three - Get Links</a>
-                                </li>
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">Tamani</a>
                                 </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['tamani/parse']) ?>">Tamani - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['tamani/links']) ?>">Tamani - Get Links</a>
-                                </li>
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['psv/parse']) ?>">psv - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['psv/links']) ?>">psv - Get Links</a>
                                 </li>
                             </ul>
                         </li>
@@ -161,21 +103,9 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
                                 </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['mamta/parse']) ?>">Mamta - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['mamta/links']) ?>">Mamta - Get Links</a>
-                                </li>
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['alex/parse']) ?>">Alexmeat - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['alex/links']) ?>">Alexmeat - Get Links</a>
                                 </li>
                             </ul>
                         </li>
@@ -187,21 +117,9 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
                                 </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['baltic/parse']) ?>">Baltic - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['baltic/links']) ?>">Baltic - Get Links</a>
-                                </li>
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zakuson/parse']) ?>">Zakuson - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zakuson/links']) ?>">Zakuson - Get Links</a>
                                 </li>
                             </ul>
                         </li>
@@ -215,19 +133,7 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zenith/parse']) ?>">zenith - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zenith/links']) ?>">zenith - Get Links</a>
-                                </li>
-                                <li>
                                     <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['royal/parse']) ?>">Royal - Parsing</a>
-                                </li>
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['royal/links']) ?>">Royal - Get Links</a>
                                 </li>
                             </ul>
                         </li>
