@@ -69,7 +69,7 @@ AppAsset::register($this);
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria - Tranding</a>
+                                    <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
                                 </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['euphoria/links']) ?>">Euphoria - Get Links</a>
