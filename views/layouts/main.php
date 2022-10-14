@@ -139,6 +139,10 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['eic/index']) ?>">Eic</a>
+                                </li>
                             </ul>
                         </li>
 
