@@ -121,6 +121,10 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
                                 </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
+                                </li>
                             </ul>
                         </li>
 
