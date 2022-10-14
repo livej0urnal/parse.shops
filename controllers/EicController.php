@@ -64,7 +64,7 @@ class EicController extends Controller
                         $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                     }
                     else{
-                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->plaintext;
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->next_sibling('div')->plaintext;
                     }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
