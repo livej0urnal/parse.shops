@@ -26,7 +26,10 @@ class NatarsProducts extends \yii\db\ActiveRecord
     {
         return 'natars_products';
     }
-
+    public function getUpdates()
+    {
+        return $this->hasMany(NatarsUpdates::className(), ['sku_product' => 'sku']);
+    }
     /**
      * {@inheritdoc}
      */
