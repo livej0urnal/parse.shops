@@ -135,6 +135,9 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
                                 </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['sakhalin/index']) ?>">Sakhalin</a>
+                                </li>
                             </ul>
                         </li>
                     </ul>
