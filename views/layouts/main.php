@@ -58,6 +58,9 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
                                 </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="has-sub">
@@ -74,6 +77,9 @@ AppAsset::register($this);
 
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
+                                </li>
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
                                 </li>
                             </ul>
                         </li>
@@ -93,17 +99,6 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a href="#">
-                                <i class="fas fa-desktop"></i>
-                                <span class="bot-line"></span>Package #4</a>
-                            <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
-                                </li>
-
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
                                 </li>
@@ -112,26 +107,7 @@ AppAsset::register($this);
                         <li class="has-sub">
                             <a href="#">
                                 <i class="fas fa-desktop"></i>
-                                <span class="bot-line"></span>Package #5</a>
-                            <ul class="header3-sub-list list-unstyled">
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
-                                </li>
-
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
-                                </li>
-
-                                <li>
-                                    <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
-                                </li>
-                            </ul>
-                        </li>
-
-                        <li class="has-sub">
-                            <a href="#">
-                                <i class="fas fa-desktop"></i>
-                                <span class="bot-line"></span>Package #6</a>
+                                <span class="bot-line"></span>Package #4</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
@@ -145,8 +121,27 @@ AppAsset::register($this);
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['stradiva/index']) ?>">Stradiva</a>
                                 </li>
+
+
                             </ul>
                         </li>
+                        <li class="has-sub">
+                            <a href="#">
+                                <i class="fas fa-desktop"></i>
+                                <span class="bot-line"></span>Package #5</a>
+                            <ul class="header3-sub-list list-unstyled">
+
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
+                                </li>
+
+                                <li>
+                                    <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
+                                </li>
+                            </ul>
+                        </li>
+
                     </ul>
                 </div>
                 <div class="header__tool">
