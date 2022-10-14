@@ -9,7 +9,7 @@ use yii\widgets\LinkPager;
         <div class="row">
             <div class="col-md-12">
                 <h1 class="title-4">Seller:
-                    <span>Alex's Meat Distributors Corp.</span>
+                    <span><?= Html::encode($this->title) ?></span>
                 </h1>
                 <hr class="line-seprate">
             </div>

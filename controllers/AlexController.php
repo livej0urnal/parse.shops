@@ -10,7 +10,7 @@ use app\models\AlexmeatUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class AlexController extends Controller
+class AlexController extends AppController
 {
     public function actionLinks()
     {
@@ -100,6 +100,7 @@ class AlexController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('Alex\'s Meat Distributors Corp.');
         return $this->render('index' , compact('products', 'pages', 'manufactures'));
     }
 
