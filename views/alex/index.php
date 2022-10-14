@@ -4,7 +4,18 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
 ?>
-
+<section class="welcome p-t-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title-4">Seller:
+                    <span>Alex's Meat Distributors Corp.</span>
+                </h1>
+                <hr class="line-seprate">
+            </div>
+        </div>
+    </div>
+</section>
 <section class="p-t-20">
     <div class="container">
         <div class="row">
@@ -62,6 +73,7 @@ use yii\widgets\LinkPager;
                             <th>Per</th>
                             <th>Price</th>
                             <th>Last Update</th>
+                            <th>Seller</th>
                         </tr>
                         </thead>
                         <?php if(!empty($products)) : ?>
@@ -79,6 +91,7 @@ use yii\widgets\LinkPager;
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
+                                    <td>alexmeat</td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
@@ -91,9 +104,11 @@ use yii\widgets\LinkPager;
                                         <td></td>
                                         <td><?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+
                                     </tr>
                                 <?php endforeach; ?>
                                 <tr class="spacer"></tr>
+
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
