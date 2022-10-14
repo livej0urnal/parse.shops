@@ -102,6 +102,7 @@ use yii\widgets\LinkPager;
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
                                         <td><?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
