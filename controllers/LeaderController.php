@@ -60,12 +60,18 @@ class LeaderController extends Controller
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    if(empty($product->article =  $product->find('div.product-description', 0)->next_sibling('div')->plaintext)) {
-                        $product->article = $product->find('div.product-description ', 0)->next_sibling('div')->plaintext;
-                    }
-                    else{
+                    $product->article = 'No value';
+                    if(empty($product->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext)) {
+
                         $product->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext;
                     }
+                    else{
+                        if(!empty($product->find('div.description', 0))) {
+                            $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
+                        }
+
+                    }
+
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
 

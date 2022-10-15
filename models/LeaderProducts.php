@@ -38,7 +38,7 @@ class LeaderProducts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
+            [['image', 'title', 'sku',  'units', 'per', 'price', 'updated_at'], 'required'],
             [['price'], 'string'],
             [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
         ];
