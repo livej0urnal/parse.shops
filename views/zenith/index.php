@@ -4,14 +4,25 @@ use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
 ?>
-
+<section class="welcome p-t-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title-4">Seller:
+                    <span><?= Html::encode($this->title) ?></span>
+                </h1>
+                <hr class="line-seprate">
+            </div>
+        </div>
+    </div>
+</section>
 <section class="p-t-20">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
                     <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['zenith/search']) ?>" method="get" >
-                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
+                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
@@ -60,8 +71,10 @@ use yii\widgets\LinkPager;
                             <th>Manufacture</th>
                             <th>Units</th>
                             <th>Per</th>
-                            <th>Price</th>
-                            <th>Last Update</th>
+                            <th><?php echo $sort->link('price'); ?></th>
+                            <th><?php echo $sort->link('updated_at'); ?></th>
+                            <th><?php echo $sort->link('instock'); ?></th>
+                            <th>Seller</th>
                         </tr>
                         </thead>
                         <?php if(!empty($products)) : ?>
@@ -79,6 +92,8 @@ use yii\widgets\LinkPager;
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
+                                    <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
+                                    <td>zenith</td>
                                 </tr>
                                 <?php $updates = \app\models\ZenithUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
@@ -89,11 +104,15 @@ use yii\widgets\LinkPager;
                                         <td></td>
                                         <td></td>
                                         <td></td>
+                                        <td></td>
+                                        <td></td>
                                         <td><?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+
                                     </tr>
                                 <?php endforeach; ?>
                                 <tr class="spacer"></tr>
+
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
