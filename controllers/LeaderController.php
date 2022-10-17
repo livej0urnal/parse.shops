@@ -128,7 +128,7 @@ class LeaderController extends AppController
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaderProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Natars NY Food Corp');
+        $this->setMeta('Leader Foods Inc');
         return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
