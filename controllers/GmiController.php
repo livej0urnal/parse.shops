@@ -99,6 +99,7 @@ class GmiController extends AppController
                     if($need_update->price === $product->price) {
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->instock = '1';
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
@@ -108,6 +109,7 @@ class GmiController extends AppController
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->instock = '1';
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                         $new_updates->save(false);
@@ -136,6 +138,7 @@ class GmiController extends AppController
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
                     $new_product->save(false);
 
                     $new_updates = new GmiUpdates();
@@ -160,6 +163,13 @@ class GmiController extends AppController
         foreach ($links as $link)
         {
             $link->delete();
+        }
+
+        $products = GmiProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
         }
         return $this->render('links');
     }
