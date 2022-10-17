@@ -73,6 +73,7 @@ use yii\widgets\LinkPager;
                             <th>Per</th>
                             <th>Price</th>
                             <th>Last Update</th>
+                            <th>In Stock</th>
                             <th>Seller</th>
                         </tr>
                         </thead>
@@ -91,6 +92,7 @@ use yii\widgets\LinkPager;
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
+                                    <td><?php if($product->instock === null) : ?> Out <?php else : ?> In <?php endif; ?></td>
                                     <td>alexmeat</td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
