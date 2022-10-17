@@ -149,6 +149,8 @@ class SiteController extends AppController
         $users = User::find()->all();
 
 
+
+
         $this->setMeta('Dashboard Panel');
         return $this->render('index', compact('products', 'out_stock', 'date_today', 'today', 'users'));
     }
