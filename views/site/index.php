@@ -42,7 +42,7 @@
 <!-- END WELCOME-->
 <?php
 
-if ($this->beginCache('statics', ['duration' => 0]))  : ?>
+if ($this->beginCache('statics', ['duration' => 3600]))  : ?>
 <section class="statistic statistic2">
     <div class="container">
         <div class="row">

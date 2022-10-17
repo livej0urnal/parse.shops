@@ -126,16 +126,6 @@ class SiteController extends AppController
             }
         }
 
-        $total_today = new Setting();
-        $total_today->name = 'today';
-        $total_today->value = $today;
-        $total_today->save();
-
-        $out_stock = new Setting();
-        $out_stock->name = 'out_stock';
-        $out_stock->value = $out_stock;
-        $out_stock->save();
-
 
 
 
