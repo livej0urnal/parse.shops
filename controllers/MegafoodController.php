@@ -131,7 +131,7 @@ class MegafoodController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku', $q])->orderBy($sort->orders);
+        $query = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();

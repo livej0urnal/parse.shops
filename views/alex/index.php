@@ -22,7 +22,7 @@ use yii\widgets\LinkPager;
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
                     <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['alex/search']) ?>" method="get" >
-                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
+                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
