@@ -15,6 +15,10 @@ class AlexController extends AppController
 {
     public function actionLinks()
     {
+        $links = Alexmeat::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
         $products = AlexmeatProducts::find()->all();
         foreach ($products as $product)
         {
