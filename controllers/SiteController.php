@@ -84,31 +84,36 @@ class SiteController extends AppController
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
-        $products = [];
-        $products_alex = AlexmeatProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_baltic = BalticProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_eic = EicProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_euphoria = EuphoriaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_gmi = GmiProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_grantefoods = GrantefoodsProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_lea = LeaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_leader = LeaderProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_mamta = MamtaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_megafood = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_natars = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_psv = PsvProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_redoctober = RedoctoberProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_royal = RoyalProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_sakhalin = SakhalinProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_stradiva = StradivaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_tamani = TamaniProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_three = ThreeProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_zakuson = ZakusonProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_zenith = ZenithProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+        $cache = Yii::$app->cache;
+        if (!$products = $cache->get('TaglistWidget_init')){
+            //Получаем данные из таблицы (модель TagPost)
+            $products = array();
+            $products_alex = AlexmeatProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_baltic = BalticProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_eic = EicProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_euphoria = EuphoriaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_gmi = GmiProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_grantefoods = GrantefoodsProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_lea = LeaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_leader = LeaderProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_mamta = MamtaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_megafood = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_natars = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_psv = PsvProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_redoctober = RedoctoberProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_royal = RoyalProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_sakhalin = SakhalinProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_stradiva = StradivaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_tamani = TamaniProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_three = ThreeProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_zakuson = ZakusonProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products_zenith = ZenithProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
+            $products = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
+                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
 
-
-        $products = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-                                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+            //Устанавливаем зависимость кеша от кол-ва записей в таблице
+            $cache->set('TaglistWidget_init', $products);
+        }
 
         $out_stock = 0;
         $today = 0;
