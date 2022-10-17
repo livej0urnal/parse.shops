@@ -11,8 +11,9 @@ use Yii;
 use app\models\GmiUpdates;
 use app\models\GmiProducts;
 use yii\data\Pagination;
+use app\controllers\AppController;
 
-class GmiController extends Controller
+class GmiController extends AppController
 {
     public function actionIndex()
     {
@@ -23,6 +24,7 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
@@ -30,6 +32,7 @@ class GmiController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
@@ -41,6 +44,7 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
@@ -48,6 +52,7 @@ class GmiController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
@@ -59,6 +64,7 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
@@ -66,6 +72,7 @@ class GmiController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures' , 'sort'));
     }
 

@@ -138,6 +138,7 @@ class AlexController extends AppController
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('Alex\'s Meat Distributors Corp.');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
@@ -157,6 +158,7 @@ class AlexController extends AppController
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('Alex\'s Meat Distributors Corp.');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 }
