@@ -83,26 +83,26 @@ class SiteController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $products = [];
-        $products_alex = AlexmeatProducts::find()->all();
-        $products_baltic = BalticProducts::find()->all();
-        $products_eic = EicProducts::find()->all();
-        $products_euphoria = EuphoriaProducts::find()->all();
-        $products_gmi = GmiProducts::find()->all();
-        $products_grantefoods = GrantefoodsProducts::find()->all();
-        $products_lea = LeaProducts::find()->all();
-        $products_leader = LeaderProducts::find()->all();
-        $products_mamta = MamtaProducts::find()->all();
-        $products_megafood = MegafoodProducts::find()->all();
-        $products_natars = MegafoodProducts::find()->all();
-        $products_psv = PsvProducts::find()->all();
-        $products_redoctober = RedoctoberProducts::find()->all();
-        $products_royal = RoyalProducts::find()->all();
-        $products_sakhalin = SakhalinProducts::find()->all();
-        $products_stradiva = StradivaProducts::find()->all();
-        $products_tamani = TamaniProducts::find()->all();
-        $products_three = ThreeProducts::find()->all();
-        $products_zakuson = ZakusonProducts::find()->all();
-        $products_zenith = ZenithProducts::find()->all();
+        $products_alex = AlexmeatProducts::find()->select(['id'])->all();
+        $products_baltic = BalticProducts::find()->select(['id'])->all();
+        $products_eic = EicProducts::find()->select(['id'])->all();
+        $products_euphoria = EuphoriaProducts::find()->select(['id'])->all();
+        $products_gmi = GmiProducts::find()->select(['id'])->all();
+        $products_grantefoods = GrantefoodsProducts::find()->select(['id'])->all();
+        $products_lea = LeaProducts::find()->select(['id'])->all();
+        $products_leader = LeaderProducts::find()->select(['id'])->all();
+        $products_mamta = MamtaProducts::find()->select(['id'])->all();
+        $products_megafood = MegafoodProducts::find()->select(['id'])->all();
+        $products_natars = MegafoodProducts::find()->select(['id'])->all();
+        $products_psv = PsvProducts::find()->select(['id'])->all();
+        $products_redoctober = RedoctoberProducts::find()->select(['id'])->all();
+        $products_royal = RoyalProducts::find()->select(['id'])->all();
+        $products_sakhalin = SakhalinProducts::find()->select(['id'])->all();
+        $products_stradiva = StradivaProducts::find()->select(['id'])->all();
+        $products_tamani = TamaniProducts::find()->select(['id'])->all();
+        $products_three = ThreeProducts::find()->select(['id'])->all();
+        $products_zakuson = ZakusonProducts::find()->select(['id'])->all();
+        $products_zenith = ZenithProducts::find()->select(['id'])->all();
 
         $products = count($products_baltic) + count($products_alex) + count($products_eic) + count($products_euphoria) + count($products_gmi) + count($products_grantefoods)
             + count($products_lea) + count($products_leader) + count($products_mamta) + count($products_megafood) + count($products_natars) + count($products_psv)
