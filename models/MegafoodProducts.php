@@ -39,9 +39,11 @@ class MegafoodProducts extends ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
-            [['price'], 'string'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at', 'instock'], 'required'],
             [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
+            [['price'], 'trim'],
+            [['instock'], 'integer'],
+            [['sku'] , 'unique' , 'comboNotUnique' => 'Username already taken!',  'targetClass' => 'app\models\GmiProducts'],
         ];
     }
 
@@ -60,6 +62,7 @@ class MegafoodProducts extends ActiveRecord
             'per' => 'Per',
             'price' => 'Price',
             'updated_at' => 'Updated At',
+            'instock' => 'In Stock'
         ];
     }
 }

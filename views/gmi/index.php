@@ -93,7 +93,7 @@ use yii\widgets\LinkPager;
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
-                                    <td>alexmeat</td>
+                                    <td>gmi</td>
                                 </tr>
                                 <?php $updates = \app\models\GmiUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
