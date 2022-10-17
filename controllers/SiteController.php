@@ -19,9 +19,11 @@ use app\models\SakhalinProducts;
 use app\models\StradivaProducts;
 use app\models\TamaniProducts;
 use app\models\ThreeProducts;
+use app\models\User;
 use app\models\ZakusonProducts;
 use app\models\ZenithProducts;
 use Yii;
+use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -109,15 +111,22 @@ class SiteController extends AppController
                                 $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
 
         $out_stock = 0;
+        $today = 0;
+        $date_today = Yii::$app->formatter->asDate('now', 'php:Y-m-d');
         foreach ($products as $product) {
             if($product->instock === null) {
                 $out_stock += 1;
             }
+            if( Yii::$app->formatter->asDate($product->updated_at, 'php:Y-m-d') === $date_today) {
+                $today += 1;
+            }
         }
+
+        $users = User::find()->all();
 
 
         $this->setMeta('Dashboard Panel');
-        return $this->render('index', compact('products', 'out_stock'));
+        return $this->render('index', compact('products', 'out_stock', 'date_today', 'today', 'users'));
     }
 
     /**
