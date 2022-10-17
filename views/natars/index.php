@@ -85,7 +85,7 @@ use yii\widgets\LinkPager;
                                     <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
-                                    <td><?= $product->article ?></td>
+                                    <td style="width: 50px;white-space: nowrap;"><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
                                     <td><?= $product->price ?></td>
