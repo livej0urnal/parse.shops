@@ -100,7 +100,6 @@ class GmiController extends AppController
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
-                        $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
                     else{

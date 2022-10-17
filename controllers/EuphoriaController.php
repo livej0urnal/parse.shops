@@ -49,8 +49,6 @@ class EuphoriaController extends AppController
                         $product_update = EuphoriaProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
-                        $product_update->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext;
-                        $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     } else {
                         $new_updates = new EuphoriaUpdates();
@@ -60,7 +58,6 @@ class EuphoriaController extends AppController
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->instock = '1';
-                        $product_update->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext;
                         $product_update->save(false);
                         $new_updates->save(false);
 
