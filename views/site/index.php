@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--green">
-                    <h2 class="number"> <?php echo $products; ?></h2>
+                    <h2 class="number"> <?php echo count($products); ?></h2>
                     <span class="desc">Products </span>
                     <div class="icon">
                         <i class="zmdi zmdi-account-o"></i>
@@ -83,5 +83,5 @@
     </div>
 </section>
 <div class="h-100" style="min-height: 100px;">
-
+    <?php print_r($products); ?>
 </div>

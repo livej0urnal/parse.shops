@@ -104,10 +104,9 @@ class SiteController extends AppController
         $products_zakuson = ZakusonProducts::find()->select(['id'])->all();
         $products_zenith = ZenithProducts::find()->select(['id'])->all();
 
-        $products = count($products_baltic) + count($products_alex) + count($products_eic) + count($products_euphoria) + count($products_gmi) + count($products_grantefoods)
-            + count($products_lea) + count($products_leader) + count($products_mamta) + count($products_megafood) + count($products_natars) + count($products_psv)
-            + count($products_redoctober) + count($products_royal) + count($products_sakhalin) + count($products_stradiva) + count($products_tamani) + count($products_three)
-            + count($products_zakuson) + count($products_zenith);
+
+        $products = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
+                                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
 
         $this->setMeta('Dashboard Panel');
         return $this->render('index', compact('products'));
