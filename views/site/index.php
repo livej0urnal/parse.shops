@@ -72,7 +72,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--red">
-                    <h2 class="number">$1,060,386</h2>
+                    <h2 class="number"><?php echo $out_stock; ?></h2>
                     <span class="desc">total earnings</span>
                     <div class="icon">
                         <i class="zmdi zmdi-money"></i>
@@ -82,6 +82,5 @@
         </div>
     </div>
 </section>
-<div class="h-100" style="min-height: 100px;">
-    <?php print_r($products); ?>
-</div>
+
+<?php debug($products[0]); ?>
