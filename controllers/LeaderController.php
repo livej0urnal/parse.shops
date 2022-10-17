@@ -3,17 +3,29 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Leader;
 use app\models\LeaderProducts;
 use app\models\LeaderUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
+use app\controllers\AppController;
 
-class LeaderController extends Controller
+class LeaderController extends AppController
 {
     public function actionLinks()
     {
+        $links = Leader::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
+        $products = LeaderProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
+        }
         return $this->render('links');
     }
 
@@ -38,7 +50,7 @@ class LeaderController extends Controller
                     if($need_update->price === $product->price) {
                         $product_update = LeaderProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
                         $product_update->save(false);
                     }
                     else{
@@ -48,6 +60,7 @@ class LeaderController extends Controller
                         $product_update = LeaderProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -82,6 +95,7 @@ class LeaderController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
                     $new_product->save(false);
 
                     $new_updates = new LeaderUpdates();
@@ -102,28 +116,53 @@ class LeaderController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = LeaderProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = LeaderProducts::find()->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = LeaderProducts::find()->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaderProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+        $this->setMeta('Natars NY Food Corp');
+        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
         $products = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaderProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
         $products = LeaderProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
         $query = LeaderProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
