@@ -31,7 +31,7 @@ class NatarsController extends AppController
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
-        $links = Natars::find()->orderBy(['id' => SORT_DESC])->all();
+        $links = Natars::find()->all();
         $parse_products = 1;
         $new_products = 0;
         $update_products = 0;
@@ -72,7 +72,7 @@ class NatarsController extends AppController
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    if(empty($product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext)) {
+                    if(empty($product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext)) {
                         $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                     }
                     else{
