@@ -99,7 +99,6 @@ class GrantefoodsController extends AppController
                     if($need_update->price === $product->price) {
                         $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->title = $product->find('div.product-title' , 0)->innertext;
                         $product_update->instock = '1';
                         $product_update->save(false);
                     }
@@ -109,7 +108,6 @@ class GrantefoodsController extends AppController
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->title = $product->find('div.product-title' , 0)->innertext;
                         $product_update->instock = '1';
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
