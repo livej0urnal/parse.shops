@@ -60,7 +60,7 @@ class AlexController extends AppController
                         $product_update = AlexmeatProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
-                        $new_product->instock = '1';
+                        $product_update->instock = '1';
                         $product_update->save(false);
                         $new_updates->save(false);
 
