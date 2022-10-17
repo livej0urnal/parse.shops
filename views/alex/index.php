@@ -71,9 +71,9 @@ use yii\widgets\LinkPager;
                             <th>Manufacture</th>
                             <th>Units</th>
                             <th>Per</th>
-                            <th>Price</th>
-                            <th>Last Update</th>
-                            <th>In Stock</th>
+                            <th><?php echo $sort->link('price'); ?></th>
+                            <th><?php echo $sort->link('updated_at'); ?></th>
+                            <th><?php echo $sort->link('instock'); ?></th>
                             <th>Seller</th>
                         </tr>
                         </thead>
@@ -92,12 +92,13 @@ use yii\widgets\LinkPager;
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
-                                    <td><?php if($product->instock === null) : ?> Out <?php else : ?> In <?php endif; ?></td>
+                                    <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td>alexmeat</td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
+                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
