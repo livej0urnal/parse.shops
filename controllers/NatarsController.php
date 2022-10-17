@@ -75,11 +75,11 @@ class NatarsController extends AppController
                     $product->article = 'No value';
                     if(empty($product->article = $product->find('div.product-title', 0)->next_sibling('div')->innertext)) {
 
-                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->innertext;
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext;
                     }
                     else{
                         if(!empty($product->find('div.description', 0))) {
-                            $product->article = $product->find('div.description', 0)->prev_sibling('div')->innertext;
+                            $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                         }
 
                     }
