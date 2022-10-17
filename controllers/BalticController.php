@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Baltic;
 use app\models\BalticProducts;
@@ -10,10 +11,20 @@ use app\models\BalticUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class BalticController extends Controller
+class BalticController extends AppController
 {
     public function actionLinks()
     {
+        $links = Baltic::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
+        $products = BalticProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
+        }
         return $this->render('links');
     }
 
@@ -38,6 +49,7 @@ class BalticController extends Controller
                     if($need_update->price === $product->price) {
                         $product_update = BalticProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->instock = '1';
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                     }
@@ -48,6 +60,7 @@ class BalticController extends Controller
                         $product_update = BalticProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -76,6 +89,7 @@ class BalticController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
                     $new_product->save(false);
 
                     $new_updates = new BalticUpdates();
@@ -96,32 +110,59 @@ class BalticController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = BalticProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = BalticProducts::find()->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = BalticProducts::find()->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = BalticProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+        $this->setMeta('Baltic Food Distributing Inc');
+        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
         $products = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = BalticProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('Baltic Food Distributing Inc');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
         $products = BalticProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = BalticProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = BalticProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = BalticProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('Baltic Food Distributing Inc');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 }

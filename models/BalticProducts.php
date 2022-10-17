@@ -38,8 +38,9 @@ class BalticProducts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at', 'instock'], 'required'],
             [['price'], 'string'],
+            [['instock'], 'integer'],
             [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
         ];
     }
@@ -59,6 +60,7 @@ class BalticProducts extends \yii\db\ActiveRecord
             'per' => 'Per',
             'price' => 'Price',
             'updated_at' => 'Updated At',
+            'instock' => 'In stock',
         ];
     }
 }
