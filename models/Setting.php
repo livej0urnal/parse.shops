@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "setting".
@@ -11,7 +12,7 @@ use Yii;
  * @property string $name
  * @property float $value
  */
-class Setting extends \yii\db\ActiveRecord
+class Setting extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -30,6 +31,7 @@ class Setting extends \yii\db\ActiveRecord
             [['name', 'value'], 'required'],
             [['value'], 'number'],
             [['name'], 'string', 'max' => 255],
+            [['name'] , 'unique' , 'targetClass' => 'app\models\Setting'],
         ];
     }
 

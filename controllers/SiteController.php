@@ -125,7 +125,7 @@ class SiteController extends AppController
             $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
         $new_total = Setting::findOne(['name' => 'products']);
         $new_total->value = count($products);
-        $new_total->update();
+        $new_total->save();
 
         $out_stock = 0;
         $today = 0;
@@ -138,9 +138,10 @@ class SiteController extends AppController
                 $today += 1;
             }
         }
-        $outstock = Setting::findOne(['name' => 'out_stock']);
+        $outstock = new Setting();
         $outstock->value = $out_stock;
-        $outstock->update();
+        $outstock->name = 'out_stock';
+        $outstock->save();
     }
 
     /**
