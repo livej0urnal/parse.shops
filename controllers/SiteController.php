@@ -89,12 +89,8 @@ class SiteController extends AppController
         $today = Setting::findOne(['name' => 'today']);
         $users = User::find()->all();
         $out_stock = Setting::findOne(['name' => 'out_stock']);
-
-
-
-
         $this->setMeta('Dashboard Panel');
-        return $this->render('index', compact('products', 'out_stock', 'date_today', 'today', 'users'));
+        return $this->render('index', compact('products', 'out_stock', 'today', 'users'));
     }
 
     public function actionUpdate()
