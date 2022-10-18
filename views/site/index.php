@@ -107,6 +107,7 @@
                             <th>Price</th>
                             <th>Updated At</th>
                             <th>In stock</th>
+                            <th>Seller</th>
                         </tr>
                         </thead>
                         <?php if(!empty($products_all)) : ?>
