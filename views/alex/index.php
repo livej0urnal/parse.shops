@@ -88,7 +88,7 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td><?= $product->price ?></td>
+                                    <td>$<?= $product->price ?></td>
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
@@ -106,7 +106,7 @@ use yii\widgets\LinkPager;
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td><?= $item->price ?></td>
+                                        <td>$<?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
                                     </tr>
