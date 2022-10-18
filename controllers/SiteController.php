@@ -142,6 +142,7 @@ class SiteController extends AppController
         $outstock->value = $out_stock;
         $outstock->name = 'out_stock';
         $outstock->save();
+        return $this->redirect(['site/index']);
     }
 
     /**
