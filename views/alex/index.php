@@ -95,7 +95,7 @@ use yii\widgets\LinkPager;
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
-                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->groupBy(['price'])->all(); ?>
+                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                         <td></td>

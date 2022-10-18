@@ -113,7 +113,7 @@
                         <?php if(!empty($products_all)) : ?>
                             <tbody>
                             <?php foreach ($products_all as $product) : ?>
-                                <tr class="tr-shadow">
+                                <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
                                     <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
                                     <td><?= $product->title ?></td>
@@ -127,6 +127,23 @@
                                     </td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                 </tr>
+                                <?php $updates = $product->updates; ?>
+                                <?php foreach ($updates as $item) : ?>
+                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td><?= $item->price ?></td>
+                                        <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+
+                                    </tr>
+
+                                <?php endforeach; ?>
                                 <tr class="spacer"></tr>
 
                             <?php endforeach; ?>

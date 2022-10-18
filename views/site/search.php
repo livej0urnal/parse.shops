@@ -84,7 +84,7 @@
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td>alexmeat</td>
                                 </tr>
-                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php $updates = $product->updates; ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                         <td></td>
@@ -99,6 +99,7 @@
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
                                     </tr>
+
                                 <?php endforeach; ?>
                                 <tr class="spacer"></tr>
 

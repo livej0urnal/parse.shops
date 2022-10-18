@@ -27,6 +27,12 @@ class RedoctoberProducts extends \yii\db\ActiveRecord
         return 'redoctober_products';
     }
 
+    public function getUpdates()
+    {
+        return $this->hasMany(RedoctoberUpdates::className(), ['sku_product' => 'sku']);
+    }
+
+
     /**
      * {@inheritdoc}
      */

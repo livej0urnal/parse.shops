@@ -21,7 +21,10 @@ class GrantefoodsUpdates extends \yii\db\ActiveRecord
     {
         return 'grantefoods_updates';
     }
-
+    public function getProduct()
+    {
+        return $this->hasOne(GrantefoodsProducts::className() , ['sku' => 'sku_product']);
+    }
     /**
      * {@inheritdoc}
      */
