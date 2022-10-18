@@ -88,12 +88,12 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td><?= $product->price ?></td>
+                                    <td>$<?= $product->price ?></td>
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
-                                    <td>lea</td>
+                                    <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = \app\models\LeaUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
@@ -106,7 +106,7 @@ use yii\widgets\LinkPager;
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td><?= $item->price ?></td>
+                                        <td>$<?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
                                     </tr>
