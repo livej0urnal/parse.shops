@@ -44,6 +44,7 @@ class LeaderController extends AppController
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
+                $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = LeaderProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = LeaderUpdates::findOne(['sku_product' => $product->sku]);
@@ -51,6 +52,7 @@ class LeaderController extends AppController
                         $product_update = LeaderProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
+                        $product_update->seller = 'Leader';
                         $product_update->save(false);
                     }
                     else{
@@ -61,6 +63,7 @@ class LeaderController extends AppController
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->instock = '1';
+                        $product_update->seller = 'Leader';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -96,6 +99,7 @@ class LeaderController extends AppController
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
                     $new_product->instock = '1';
+                    $new_product->seller = 'Leader';
                     $new_product->save(false);
 
                     $new_updates = new LeaderUpdates();
