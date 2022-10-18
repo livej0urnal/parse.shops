@@ -72,7 +72,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--red">
-                    <h2 class="number"><?php echo $out_stock; ?></h2>
+                    <h2 class="number"><?php echo $out_stock->value; ?></h2>
                     <span class="desc">out of stock</span>
                     <div class="icon">
                         <i class="zmdi zmdi-money"></i>
