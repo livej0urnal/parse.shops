@@ -40,9 +40,6 @@
     </div>
 </section>
 <!-- END WELCOME-->
-<?php
-
-if ($this->beginCache('statics', ['duration' => 3600]))  : ?>
 <section class="statistic statistic2">
     <div class="container">
         <div class="row">
@@ -85,4 +82,3 @@ if ($this->beginCache('statics', ['duration' => 3600]))  : ?>
         </div>
     </div>
 </section>
-<?php  $this->endCache(); endif; ?>
