@@ -15,8 +15,8 @@
                             <li class="list-inline-item">Dashboard</li>
                         </ul>
                     </div>
-                    <form class="au-form-icon--sm" action="" method="post">
-                        <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything...">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['site/search']) ?>" method="get">
+                        <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
