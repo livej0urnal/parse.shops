@@ -42,10 +42,10 @@
 <!-- END WELCOME-->
 
 <section class="statistic statistic2">
-
+    <button type="button" class="btn btn-outline-secondary btn-sm" style="float: right;" onclick="location.href='/site/update/'">
+        <i class="fa fa-lightbulb-o"></i>&nbsp; Update</button>
     <div class="container">
-        <button type="button" class="btn btn-outline-secondary btn-sm" style="float: right;" onclick="location.href='/site/update/'">
-            <i class="fa fa-lightbulb-o"></i>&nbsp; Update</button>
+
         <div class="row">
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--green">

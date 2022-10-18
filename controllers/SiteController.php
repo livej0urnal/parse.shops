@@ -138,10 +138,9 @@ class SiteController extends AppController
                 $today += 1;
             }
         }
-        $outstock = new Setting();
+        $outstock = Setting::findOne(['name' => 'out_stock']);
         $outstock->value = $out_stock;
-        $outstock->name = 'out_stock';
-        $outstock->save();
+        $outstock->update();
         return $this->redirect(['site/index']);
     }
 
