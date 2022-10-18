@@ -89,11 +89,13 @@ class AlexController extends AppController
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
                     $new_product->instock = '1';
+                    $new_product->seller = 'Alexmeat';
                     $new_product->save(false);
 
                     $new_updates = new AlexmeatUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
+
                     $new_updates->save(false);
 
                     $new_products ++ ;
