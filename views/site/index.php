@@ -121,12 +121,12 @@
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td><?= $product->price ?></td>
+                                    <td>$<?= $product->price ?></td>
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
-                                    <td>seller</td>
+                                    <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = $product->updates; ?>
                                 <?php foreach ($updates as $item) : ?>
@@ -139,7 +139,7 @@
                                         <td></td>
                                         <td></td>
                                         <td></td>
-                                        <td><?= $item->price ?></td>
+                                        <td>$<?= $item->price ?></td>
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
                                     </tr>
