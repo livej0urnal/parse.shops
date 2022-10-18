@@ -85,6 +85,20 @@ class SiteController extends AppController
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
+        $products = Setting::findOne(['name' => 'products']);
+        $today = Setting::findOne(['name' => 'today']);
+        $users = User::find()->all();
+        $out_stock = Setting::findOne(['name' => 'out_stock']);
+
+
+
+
+        $this->setMeta('Dashboard Panel');
+        return $this->render('index', compact('products', 'out_stock', 'date_today', 'today', 'users'));
+    }
+
+    public function actionUpdate()
+    {
         $total = Setting::find()->where(['name' => 'products'])->one();
         $products = array();
         $products_alex = AlexmeatProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
@@ -109,10 +123,9 @@ class SiteController extends AppController
         $products_zenith = ZenithProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
         $products = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
             $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
-        $new_total = new Setting();
-        $new_total->name = 'products';
+        $new_total = Setting::findOne(['name' => 'products']);
         $new_total->value = count($products);
-        $new_total->save();
+        $new_total->update();
 
         $out_stock = 0;
         $today = 0;
@@ -125,18 +138,9 @@ class SiteController extends AppController
                 $today += 1;
             }
         }
-
-
-
-
-
-        $users = User::find()->all();
-
-
-
-
-        $this->setMeta('Dashboard Panel');
-        return $this->render('index', compact('products', 'out_stock', 'date_today', 'today', 'users'));
+        $outstock = Setting::findOne(['name' => 'out_stock']);
+        $outstock->value = $out_stock;
+        $outstock->update();
     }
 
     /**
