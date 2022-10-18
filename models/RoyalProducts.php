@@ -37,11 +37,10 @@ class RoyalProducts extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at', 'instock'], 'required'],
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
-            [['price'], 'trim'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at', 'instock', 'seller'], 'required'],
+            [['price', 'seller'], 'string'],
             [['instock'], 'integer'],
-            [['sku'] , 'unique' , 'comboNotUnique' => 'Username already taken!',  'targetClass' => 'app\models\GmiProducts'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at', 'seller'], 'string', 'max' => 255],
         ];
     }
 
@@ -60,7 +59,8 @@ class RoyalProducts extends \yii\db\ActiveRecord
             'per' => 'Per',
             'price' => 'Price',
             'updated_at' => 'Updated At',
-            'instock' => 'In Stock'
+            'instock' => 'In stock',
+            'seller' => 'Seller',
         ];
     }
 }
