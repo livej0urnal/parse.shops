@@ -28,8 +28,8 @@
                             <div class="col-sm-6">
                                 <select id="select-out_stock" name="select"  class="form-control au-input--w300 au-input--style2" name="stock" style="min-height: 45px;">
                                     <option value=""> Stock </option>
-                                    <option value="null" <?php if($select === 'null'): ?> selected <?php endif; ?>> Out stock </option>
-                                    <option value="1" <?php if($select === '1'): ?> selected <?php endif; ?>> In stock </option>
+                                    <option value="null" > Out stock </option>
+                                    <option value="1" > In stock </option>
 
                                 </select>
                             </div>
