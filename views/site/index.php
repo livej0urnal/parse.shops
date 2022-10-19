@@ -23,7 +23,7 @@
                     <div class="col-md-6">
                         <form id="search-everything" class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['site/search']) ?>" method="get" style="display: flex;">
                             <div class="col-sm-6">
-                                <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q" value="<?= $q ?>">
+                                <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q">
                             </div>
                             <div class="col-sm-6">
                                 <select id="select-out_stock" name="select"  class="form-control au-input--w300 au-input--style2" name="stock" style="min-height: 45px;">
