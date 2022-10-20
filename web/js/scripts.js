@@ -10,3 +10,7 @@ $('.find-gmi-updates').on('click', function (){
    $('.tr-shadow-hidden').addClass('disabled');
    $('.disabled-' + product).removeClass('disabled');
 });
+
+$('#select-out_stock').on('change', function () {
+   $('#search-everything').submit();
+});

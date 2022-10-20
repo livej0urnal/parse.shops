@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Lea;
 use app\models\LeaProducts;
@@ -10,10 +11,20 @@ use app\models\LeaUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class LeaController extends Controller
+class LeaController extends AppController
 {
     public function actionLinks()
     {
+        $links = Lea::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
+        $products = LeaProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
+        }
         return $this->render('links');
     }
 
@@ -32,13 +43,15 @@ class LeaController extends Controller
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
+                $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = LeaProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = LeaUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
                         $product_update = LeaProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Lea';
                         $product_update->save(false);
                     }
                     else{
@@ -48,6 +61,8 @@ class LeaController extends Controller
                         $product_update = LeaProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Lea';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -76,6 +91,8 @@ class LeaController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
+                    $new_product->seller = 'Lea';
                     $new_product->save(false);
 
                     $new_updates = new LeaUpdates();
@@ -96,32 +113,59 @@ class LeaController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = LeaProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = LeaProducts::find()->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = LeaProducts::find()->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+        $this->setMeta('LEA FOODS INC');
+        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
         $products = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('LEA FOODS INC');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
         $products = LeaProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = LeaProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = LeaProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = LeaProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('LEA FOODS INC');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 }

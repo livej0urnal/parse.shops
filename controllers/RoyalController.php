@@ -3,6 +3,7 @@
 namespace app\controllers;
 
 use Yii;
+use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Royal;
 use app\models\RoyalProducts;
@@ -10,10 +11,20 @@ use app\models\RoyalUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class RoyalController extends Controller
+class RoyalController extends AppController
 {
     public function actionLinks()
     {
+        $links = Royal::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
+        $products = RoyalProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
+        }
         return $this->render('links');
     }
 
@@ -32,13 +43,15 @@ class RoyalController extends Controller
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
+                $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = RoyalProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = RoyalUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
                         $product_update = RoyalProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Royal';
                         $product_update->save(false);
                     }
                     else{
@@ -48,6 +61,8 @@ class RoyalController extends Controller
                         $product_update = RoyalProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Royal';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -64,7 +79,7 @@ class RoyalController extends Controller
                         $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                     }
                     else{
-                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->plaintext;
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->next_sibling('div')->plaintext;
                     }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
@@ -76,6 +91,8 @@ class RoyalController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
+                    $new_product->seller = 'Royal';
                     $new_product->save(false);
 
                     $new_updates = new RoyalUpdates();
@@ -96,32 +113,59 @@ class RoyalController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = RoyalProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = RoyalProducts::find()->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RoyalProducts::find()->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RoyalProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+        $this->setMeta('ROYAL SWEET BAKERY');
+        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
         $products = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RoyalProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('ROYAL SWEET BAKERY');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
         $products = RoyalProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RoyalProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RoyalProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RoyalProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('ROYAL SWEET BAKERY');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 }

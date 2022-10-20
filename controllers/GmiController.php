@@ -11,8 +11,9 @@ use Yii;
 use app\models\GmiUpdates;
 use app\models\GmiProducts;
 use yii\data\Pagination;
+use app\controllers\AppController;
 
-class GmiController extends Controller
+class GmiController extends AppController
 {
     public function actionIndex()
     {
@@ -23,6 +24,7 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
@@ -30,6 +32,7 @@ class GmiController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
@@ -41,13 +44,15 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy($sort->orders);
+        $query = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
@@ -59,6 +64,7 @@ class GmiController extends Controller
             'attributes' => [
                 'updated_at',
                 'price',
+                'instock',
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
@@ -66,6 +72,7 @@ class GmiController extends Controller
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures' , 'sort'));
     }
 
@@ -86,13 +93,15 @@ class GmiController extends Controller
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
+                $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = GmiProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = GmiUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Gmi';
                         $product_update->save(false);
                     }
                     else{
@@ -101,6 +110,8 @@ class GmiController extends Controller
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = GmiProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        $product_update->instock = '1';
+                        $product_update->seller = 'Gmi';
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->save(false);
                         $new_updates->save(false);
@@ -129,6 +140,8 @@ class GmiController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
+                    $new_product->seller = 'Gmi';
                     $new_product->save(false);
 
                     $new_updates = new GmiUpdates();
@@ -153,6 +166,13 @@ class GmiController extends Controller
         foreach ($links as $link)
         {
             $link->delete();
+        }
+
+        $products = GmiProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
         }
         return $this->render('links');
     }

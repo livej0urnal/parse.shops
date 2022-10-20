@@ -1,30 +1,41 @@
 <?php
-    use yii\helpers\Url;
-    use yii\helpers\Html;
+use yii\helpers\Url;
+use yii\helpers\Html;
 use yii\widgets\LinkPager;
 
 ?>
-
+<section class="welcome p-t-10">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="title-4">Seller:
+                    <span><?= Html::encode($this->title) ?></span>
+                </h1>
+                <hr class="line-seprate">
+            </div>
+        </div>
+    </div>
+</section>
 <section class="p-t-20">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
                     <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['gmi/search']) ?>" method="get" >
-                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku" value="<?= $q ?>">
+                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
                     <?php if(!empty($manufactures)) : ?>
-                    <div class="col-md-4">
-                        <select name="select" id="select-manufacture" class="form-control" data-value="gmi">
-                            <option value="0"><?php if($q): ?> <?= $q ?> <?php else : ?> Select Manufacture <?php endif; ?></option>
-                            <?php foreach ($manufactures as $item) : ?>
-                                <option <?php if($q == $item->article): ?> selected <?php endif; ?> value="<?= $item->article ?>"><?= $item->article ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                        <div class="col-md-4">
+                            <select name="select" id="select-manufacture" class="form-control" data-value="gmi">
+                                <option value="0"><?php if($q): ?> <?= $q ?> <?php else : ?> Select Manufacture <?php endif; ?></option>
+                                <?php foreach ($manufactures as $item) : ?>
+                                    <option <?php if($q == $item->article): ?> selected <?php endif; ?> value="<?= $item->article ?>"><?= $item->article ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     <?php endif; ?>
 
                     <div class="col-md-4">
@@ -62,10 +73,12 @@ use yii\widgets\LinkPager;
                             <th>Per</th>
                             <th><?php echo $sort->link('price'); ?></th>
                             <th><?php echo $sort->link('updated_at'); ?></th>
+                            <th><?php echo $sort->link('instock'); ?></th>
+                            <th>Seller</th>
                         </tr>
                         </thead>
                         <?php if(!empty($products)) : ?>
-                        <tbody>
+                            <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
@@ -75,29 +88,35 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td><?= $product->price ?></td>
+                                    <td>$<?= $product->price ?></td>
                                     <td>
                                         <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
                                     </td>
+                                    <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
+                                    <td><?= $product->seller ?></td>
                                 </tr>
-                            <?php $updates = \app\models\GmiUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php $updates = \app\models\GmiUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
-                                <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><?= $item->price ?></td>
-                                    <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
-                                </tr>
+                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>$<?= $item->price ?></td>
+                                        <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+
+                                    </tr>
                                 <?php endforeach; ?>
-                            <tr class="spacer"></tr>
+                                <tr class="spacer"></tr>
+
                             <?php endforeach; ?>
-                        </tbody>
+                            </tbody>
                         <?php else: ?>
-                        <h4>Empty</h4>
+                            <h4>Empty</h4>
                         <?php endif; ?>
                     </table>
                 </div>

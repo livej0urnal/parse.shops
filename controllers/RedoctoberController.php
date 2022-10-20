@@ -2,18 +2,29 @@
 
 namespace app\controllers;
 
+use Yii;
+use yii\data\Sort;
+use yii\web\Controller;
+use app\models\Redoctober;
 use app\models\RedoctoberProducts;
 use app\models\RedoctoberUpdates;
-use yii\web\Controller;
-use Yii;
-use app\models\Redoctober;
 use yii\db\Expression;
 use yii\data\Pagination;
 
-class RedoctoberController extends Controller
+class RedoctoberController extends AppController
 {
     public function actionLinks()
     {
+        $links = Redoctober::find()->all();
+        foreach ($links as $link) {
+            $link->delete();
+        }
+        $products = RedoctoberProducts::find()->all();
+        foreach ($products as $product)
+        {
+            $product->instock = null;
+            $product->save(false);
+        }
         return $this->render('links');
     }
 
@@ -32,13 +43,15 @@ class RedoctoberController extends Controller
                 $product->sku = $product->find('div.item-tag ', 0)->getAttribute('onclick');
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
+                $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = RedoctoberProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = RedoctoberUpdates::findOne(['sku_product' => $product->sku]);
                     if($need_update->price === $product->price) {
                         $product_update = RedoctoberProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'RedOctober';
                         $product_update->save(false);
                     }
                     else{
@@ -48,6 +61,8 @@ class RedoctoberController extends Controller
                         $product_update = RedoctoberProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->updated_at = new Expression('NOW()');
+                        $product_update->instock = '1';
+                        $product_update->seller = 'RedOctober';
                         $product_update->save(false);
                         $new_updates->save(false);
 
@@ -60,16 +75,11 @@ class RedoctoberController extends Controller
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
-                    $product->article = 'No value';
-                    if(empty($product->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext)) {
-
-                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->plaintext;
+                    if(empty($product->article = $product->find('div.product-description', 0)->next_sibling('div')->plaintext)) {
+                        $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
                     }
                     else{
-                        if(!empty($product->find('div.description', 0))) {
-                            $product->article = $product->find('div.description', 0)->prev_sibling('div')->plaintext;
-                        }
-
+                        $product->article = $product->find('div.product-title', 0)->next_sibling('div')->next_sibling('div')->next_sibling('div')->plaintext;
                     }
                     $product->units = $product->find('div.description', 0)->plaintext;
                     $product->per = $product->find('div.description', 1)->plaintext;
@@ -81,6 +91,8 @@ class RedoctoberController extends Controller
                     $new_product->units = htmlspecialchars($product->units);
                     $new_product->per = htmlspecialchars($product->per);
                     $new_product->updated_at = new Expression('NOW()');
+                    $new_product->instock = '1';
+                    $new_product->seller = 'RedOctober';
                     $new_product->save(false);
 
                     $new_updates = new RedoctoberUpdates();
@@ -101,32 +113,59 @@ class RedoctoberController extends Controller
     {
         $id = Yii::$app->request->get('id');
         $products = RedoctoberProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $query = RedoctoberProducts::find()->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RedoctoberProducts::find()->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'manufactures'));
+        $this->setMeta('Krasnyi Oktyabr, Inc');
+        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }
 
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
         $products = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('Krasnyi Oktyabr, Inc');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 
     public function actionManufacture($q)
     {
         $q = Yii::$app->request->get('q');
         $products = RedoctoberProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $query = RedoctoberProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC]);
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = RedoctoberProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = RedoctoberProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures'));
+        $this->setMeta('Krasnyi Oktyabr, Inc');
+        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
     }
 }

@@ -27,15 +27,22 @@ class RedoctoberProducts extends \yii\db\ActiveRecord
         return 'redoctober_products';
     }
 
+    public function getUpdates()
+    {
+        return $this->hasMany(RedoctoberUpdates::className(), ['sku_product' => 'sku']);
+    }
+
+
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
-            [['price'], 'string'],
-            [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at'], 'string', 'max' => 255],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at', 'instock', 'seller'], 'required'],
+            [['price', 'seller'], 'string'],
+            [['instock'], 'integer'],
+            [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at', 'seller'], 'string', 'max' => 255],
         ];
     }
 
@@ -54,6 +61,8 @@ class RedoctoberProducts extends \yii\db\ActiveRecord
             'per' => 'Per',
             'price' => 'Price',
             'updated_at' => 'Updated At',
+            'instock' => 'In stock',
+            'seller' => 'Seller',
         ];
     }
 }

@@ -1,14 +1,52 @@
 <?php
-use yii\helpers\Url;
-use yii\helpers\Html;
-use yii\widgets\LinkPager;
-
+    use yii\helpers\Html;
+    use yii\helpers\Url;
 ?>
+<section class="au-breadcrumb2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="au-breadcrumb-content">
+                    <div class="col-md-6">
+                        <div class="au-breadcrumb-left">
+                            <span class="au-breadcrumb-span">You are here:</span>
+                            <ul class="list-unstyled list-inline au-breadcrumb__list">
+                                <li class="list-inline-item active">
+                                    <a href="<?= Url::home() ?>">Home</a>
+                                </li>
+                                <li class="list-inline-item seprate">
+                                    <span>/</span>
+                                </li>
+                                <li class="list-inline-item">Search</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <form id="search-everything" class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['site/search']) ?>" method="get" style="display: flex;">
+                            <div class="col-sm-6">
+                                <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q" value="<?= $q ?>">
+                            </div>
+                            <div class="col-sm-6">
+                                <select id="select-out_stock" name="select"  class="form-control au-input--w300 au-input--style2" name="stock" style="min-height: 45px;">
+                                    <option value=""> Stock </option>
+                                    <option value="null" <?php if($select === 'null'): ?> selected <?php endif; ?>> Out stock </option>
+                                    <option value="1" <?php if($select === '1'): ?> selected <?php endif; ?>> In stock </option>
+
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="welcome p-t-10">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1 class="title-4">Seller:
+                <h1 class="title-4">
                     <span><?= Html::encode($this->title) ?></span>
                 </h1>
                 <hr class="line-seprate">
@@ -16,47 +54,10 @@ use yii\widgets\LinkPager;
         </div>
     </div>
 </section>
+
 <section class="p-t-20">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['zenith/search']) ?>" method="get" >
-                        <input class="au-input--w300 au-input--style2" name="q" type="text" placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
-                        <button class="au-btn--submit2" type="submit">
-                            <i class="zmdi zmdi-search"></i>
-                        </button>
-                    </form>
-                    <?php if(!empty($manufactures)) : ?>
-                        <div class="col-md-4">
-                            <select name="select" id="select-manufacture" class="form-control" data-value="zenith">
-                                <option value="0"><?php if($q): ?> <?= $q ?> <?php else : ?> Select Manufacture <?php endif; ?></option>
-                                <?php foreach ($manufactures as $item) : ?>
-                                    <option <?php if($q == $item->article): ?> selected <?php endif; ?> value="<?= $item->article ?>"><?= $item->article ?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    <?php endif; ?>
-
-                    <div class="col-md-4">
-                        <?php if (!empty($pages)) : ?>
-                            <div class="demo-inline-spacing">
-                                <!-- Basic Pagination -->
-                                <nav aria-label="Page navigation" class="item-pagination">
-                                    <?php echo LinkPager::widget([
-                                        'pagination' => $pages,
-                                        'options' => ['class' => 'pagination tab-paginations'],
-                                        'linkOptions' => ['class' => 'page-link'],
-                                    ]); ?>
-                                </nav>
-                                <!--/ Basic Pagination -->
-                            </div>
-                        <?php endif; ?>
-                    </div>
-
-                </div>
-
-            </div>
             <div class="col-md-12">
 
                 <div class="table-responsive table-responsive-data2">
@@ -71,15 +72,15 @@ use yii\widgets\LinkPager;
                             <th>Manufacture</th>
                             <th>Units</th>
                             <th>Per</th>
-                            <th><?php echo $sort->link('price'); ?></th>
-                            <th><?php echo $sort->link('updated_at'); ?></th>
-                            <th><?php echo $sort->link('instock'); ?></th>
+                            <th>Price</th>
+                            <th>Updated At</th>
+                            <th>In stock</th>
                             <th>Seller</th>
                         </tr>
                         </thead>
-                        <?php if(!empty($products)) : ?>
+                        <?php if(!empty($products_all)) : ?>
                             <tbody>
-                            <?php foreach ($products as $product) : ?>
+                            <?php foreach ($products_all as $product) : ?>
                                 <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
                                     <td><?= $product->id ?></td>
                                     <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
@@ -95,7 +96,7 @@ use yii\widgets\LinkPager;
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
-                                <?php $updates = \app\models\ZenithUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
+                                <?php $updates = $product->updates; ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                         <td></td>
@@ -110,6 +111,7 @@ use yii\widgets\LinkPager;
                                         <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
 
                                     </tr>
+
                                 <?php endforeach; ?>
                                 <tr class="spacer"></tr>
 
