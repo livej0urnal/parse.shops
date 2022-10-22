@@ -31,6 +31,15 @@ $config = [
         'allowActions' => [
             'site/login',
             'site/error',
+            'gmi/parse',
+            'gmi/links',
+            'megafood/parse',
+            'megafood/links',
+            'euphoria/parse',
+            'euphoria/links',
+            'baltic/parse',
+            'baltic/links',
+            
         ],
     ],
     'components' => [
