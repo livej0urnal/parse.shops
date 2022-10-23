@@ -46,7 +46,7 @@ class EicController extends AppController
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = EicProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = EicUpdates::findOne(['sku_product' => $product->sku]);
+                    $need_update = EicUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
                     if($need_update->price === $product->price) {
                         $product_update = EicProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;

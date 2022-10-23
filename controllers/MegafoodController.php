@@ -45,7 +45,7 @@ class MegafoodController extends AppController
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = MegafoodProducts::findOne(['sku' => $product->sku]);
                 if (!empty($find_product)) {
-                    $need_update = MegafoodUpdates::findOne(['sku_product' => $product->sku]);
+                    $need_update = MegafoodUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
                     if ($need_update->price === $product->price) {
                         $product_update = MegafoodProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
