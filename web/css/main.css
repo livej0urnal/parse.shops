@@ -54,3 +54,8 @@ li.active> .page-link{
        display: block!important;
    }
 }
+
+.open-hub:hover{
+    cursor: pointer;
+
+}

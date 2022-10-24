@@ -6,16 +6,13 @@ $('#select-manufacture').on('change', function () {
 });
 
 $('.open-hub').on('click', function () {
-   var product = $(this).attr('data-value');
-   console.log(product);
-   $('.disabled-' + product).addClass('disabled');
-   $(this).removeClass('open-hub');
-   $(this).addClass('find-gmi-updates');
+   console.log('click');
 });
 
 $('.find-gmi-updates').on('click', function (){
    var product = $(this).attr('data-value');
    $('.tr-shadow-hidden').addClass('disabled');
+   $('.open-hub').removeClass('open-hub');
    $('.disabled-' + product).removeClass('disabled');
    $(this).addClass('open-hub');
    $(this).removeClass('find-gmi-updates');
