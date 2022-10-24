@@ -9,14 +9,15 @@ $('#select-manufacture').on('change', function () {
 $('.find-gmi-updates').on('click', function (){
    var product = $(this).attr('data-value');
    $('.tr-shadow-hidden').addClass('disabled');
-   $('.open-hub').removeClass('open-hub');
-   if($('.disabled-' + product).hasClass('disabled')) {
+
+   if(!$(this).hasClass('open-hub')) {
       $('.disabled-' + product).removeClass('disabled');
    }
    else{
       console.log('click');
       $('.disabled-' + product).addClass('disabled');
    }
+   $(this).addClass('open-hub');
 
 });
 
