@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+use dosamigos\chartjs\ChartJs;
 
 ?>
 <section class="welcome p-t-10">
@@ -64,7 +65,6 @@ use yii\widgets\LinkPager;
                     <table class="table table-data2">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Image</th>
                             <th>Title</th>
                             <th>SKU</th>
@@ -72,7 +72,6 @@ use yii\widgets\LinkPager;
                             <th>Units</th>
                             <th>Per</th>
                             <th><?php echo $sort->link('price'); ?></th>
-                            <th><?php echo $sort->link('updated_at'); ?></th>
                             <th><?php echo $sort->link('instock'); ?></th>
                             <th>Seller</th>
                         </tr>
@@ -80,42 +79,57 @@ use yii\widgets\LinkPager;
                         <?php if(!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
-                                    <td><?= $product->id ?></td>
-                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
+                                <?php $last_update = \app\models\NatarsUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->orderBy(['update_at' => SORT_DESC])->one(); ?>
+                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>mark<?php endif; ?>" data-value="<?= $product->sku ?>">
+                                    <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt="" width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
-                                    <?php
-                                        $str = mb_strimwidth($product->article, 0, 50, "...");
-                                    ?>
-                                    <td style="max-width: 100px;white-space: nowrap;"><?= $str ?></td>
+                                    <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?></td>
-                                    <td>
-                                        <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
-                                    </td>
+                                    <td>$<?= $product->price ?> <?php if(!empty($last_update)) :  ?><br><span class="mark title--sbold" style="color: red"><?php echo round($product->price - $last_update->price, 2);  ?></span><?php endif; ?></td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = \app\models\NatarsUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
-                                <?php foreach ($updates as $item) : ?>
-                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>$<?= $item->price ?></td>
-                                        <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+
+                                <?php if(count($updates) > 1) : ?>
+                                    <?php
+                                    foreach ($updates as $item) {
+                                        $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
+                                        $prices[] = $item->price;
+                                    }
+
+                                    ?>
+                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                        <td colspan="9">
+                                            <?= ChartJs::widget([
+                                                'type' => 'line',
+                                                'data' => [
+                                                    'labels' => $dates,
+                                                    'datasets' => [
+                                                        [
+                                                            'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                            'borderColor' => "rgba(179,181,198,1)",
+                                                            'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                            'pointBorderColor' => "#fff",
+                                                            'pointHoverBackgroundColor' => "#fff",
+                                                            'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                            'data' => $prices,
+                                                            'fill' => false,
+                                                            'stepped' => true
+                                                        ],
+
+                                                    ]
+                                                ]
+                                            ]);
+                                            ?>
+                                        </td>
 
                                     </tr>
-                                <?php endforeach; ?>
-                                <tr class="spacer"></tr>
-
+                                    <tr class="spacer"></tr>
+                                    <?php  $dates = []; $prices = []; ?>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
