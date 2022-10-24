@@ -108,7 +108,7 @@ use dosamigos\chartjs\ChartJs;
                                                 'width' => 400
                                             ],
                                             'data' => [
-                                                'labels' => $prices,
+                                                'labels' => $dates,
                                                 'datasets' => [
                                                     [
                                                         'backgroundColor' => "rgba(179,181,198,0.2)",
@@ -117,13 +117,12 @@ use dosamigos\chartjs\ChartJs;
                                                         'pointBorderColor' => "#fff",
                                                         'pointHoverBackgroundColor' => "#fff",
                                                         'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                        'data' => $dates
+                                                        'data' => $prices
                                                     ]
                                                 ]
                                             ]
                                         ]);
                                         ?>
-                                       <?php debug($dates); ?>
                                     </td>
 
                                 </tr>
