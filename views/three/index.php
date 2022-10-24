@@ -79,7 +79,7 @@ use dosamigos\chartjs\ChartJs;
                         <?php if(!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = \app\models\ThreeUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->orderBy(['update_at' => SORT_DESC])->one(); ?>
+                                <?php $last_update = \app\models\ThreeUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one(); ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>mark<?php endif; ?>" data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt="" width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
