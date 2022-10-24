@@ -5,17 +5,12 @@ $('#select-manufacture').on('change', function () {
    location.href = '/' + value + '/manufacture?q=' + item;
 });
 
-$('.open-hub').on('click', function () {
-   console.log('click');
-});
 
 $('.find-gmi-updates').on('click', function (){
    var product = $(this).attr('data-value');
    $('.tr-shadow-hidden').addClass('disabled');
    $('.open-hub').removeClass('open-hub');
    $('.disabled-' + product).removeClass('disabled');
-   $(this).addClass('open-hub');
-   $(this).removeClass('find-gmi-updates');
 });
 
 
