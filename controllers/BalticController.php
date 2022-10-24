@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\AlexmeatProducts;
 use Yii;
 use yii\data\Sort;
 use yii\web\Controller;
