@@ -12,12 +12,13 @@ $('.find-gmi-updates').on('click', function (){
 
    if(!$(this).hasClass('open-hub')) {
       $('.disabled-' + product).removeClass('disabled');
+      $(this).addClass('open-hub');
    }
    else{
-      console.log('click');
       $('.disabled-' + product).addClass('disabled');
+      $(this).removeClass('open-hub');
    }
-   $(this).addClass('open-hub');
+
 
 });
 
