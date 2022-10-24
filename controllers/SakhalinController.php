@@ -64,7 +64,7 @@ class SakhalinController extends AppController
                 $find_product = SakhalinProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = SakhalinUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if($need_update->price === $product->price) {
+                    if(!$need_update->price) {
                         $product_update = SakhalinProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';

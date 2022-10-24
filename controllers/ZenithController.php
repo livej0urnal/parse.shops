@@ -47,7 +47,7 @@ class ZenithController extends AppController
                 $find_product = ZenithProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
                     $need_update = ZenithUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if($need_update->price === $product->price) {
+                    if(!$need_update->price) {
                         $product_update = ZenithProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
