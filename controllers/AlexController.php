@@ -19,7 +19,7 @@ class AlexController extends AppController
         return [
             [
                 'class' => 'yii\filters\PageCache',
-                'only' => ['index'],
+                'only' => [''],
                 'duration' => 3600,
                 'variations' => [
                     Yii::$app->language,

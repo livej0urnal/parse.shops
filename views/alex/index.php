@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
+use dosamigos\chartjs\ChartJs;
 
 ?>
 <section class="welcome p-t-10">
@@ -91,19 +92,44 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
-                                <?php foreach ($updates as $item) : ?>
-                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td>$<?= $item->price ?></td>
-                                        <td colspan="2"> <?php echo Yii::$app->formatter->asDatetime($item->update_at, 'short'); ?></td>
+                                <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                    <td colspan="9">
+                                        <?= ChartJs::widget([
+                                            'type' => 'line',
+                                            'options' => [
+                                                'height' => 400,
+                                                'width' => 400
+                                            ],
+                                            'data' => [
+                                                'labels' => ["January", "February", "March", "April", "May", "June", "July"],
+                                                'datasets' => [
+                                                    [
+                                                        'label' => "My First dataset",
+                                                        'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                        'borderColor' => "rgba(179,181,198,1)",
+                                                        'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                        'pointBorderColor' => "#fff",
+                                                        'pointHoverBackgroundColor' => "#fff",
+                                                        'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                        'data' => [65, 59, 90, 81, 56, 55, 40]
+                                                    ],
+                                                    [
+                                                        'label' => "My Second dataset",
+                                                        'backgroundColor' => "rgba(255,99,132,0.2)",
+                                                        'borderColor' => "rgba(255,99,132,1)",
+                                                        'pointBackgroundColor' => "rgba(255,99,132,1)",
+                                                        'pointBorderColor' => "#fff",
+                                                        'pointHoverBackgroundColor' => "#fff",
+                                                        'pointHoverBorderColor' => "rgba(255,99,132,1)",
+                                                        'data' => [28, 48, 40, 19, 96, 27, 100]
+                                                    ]
+                                                ]
+                                            ]
+                                        ]);
+                                        ?>
+                                    </td>
 
-                                    </tr>
-                                <?php endforeach; ?>
+                                </tr>
                                 <tr class="spacer"></tr>
 
                             <?php endforeach; ?>
