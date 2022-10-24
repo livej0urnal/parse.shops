@@ -92,13 +92,15 @@ use dosamigos\chartjs\ChartJs;
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
-                                <?php
+
+                                <?php if(count($updates) > 1) : ?>
+                                    <?php
                                     foreach ($updates as $item) {
-                                        $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');;
+                                        $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
                                         $prices[] = $item->price;
                                     }
 
-                                ?>
+                                    ?>
                                 <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
                                     <td colspan="9">
                                         <?= ChartJs::widget([
@@ -127,6 +129,7 @@ use dosamigos\chartjs\ChartJs;
                                 </tr>
                                 <tr class="spacer"></tr>
                                 <?php  $dates = []; $prices = []; ?>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
