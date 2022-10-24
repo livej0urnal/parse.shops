@@ -57,5 +57,7 @@ li.active> .page-link{
 
 .open-hub:hover{
     cursor: pointer;
+}
+.has-changes{
 
 }

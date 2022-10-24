@@ -78,8 +78,8 @@ use yii\widgets\LinkPager;
                         <?php if(!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
-                                <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
+                                <?php $last_update = \app\models\AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->orderBy(['update_at' => SORT_DESC])->one(); ?>
+                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>has-changes<?php endif; ?>" data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="300" height="150"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
@@ -90,7 +90,7 @@ use yii\widgets\LinkPager;
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
-
+                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
                                         <td></td>
