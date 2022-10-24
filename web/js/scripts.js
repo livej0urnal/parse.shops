@@ -10,7 +10,13 @@ $('.find-gmi-updates').on('click', function (){
    var product = $(this).attr('data-value');
    $('.tr-shadow-hidden').addClass('disabled');
    $('.open-hub').removeClass('open-hub');
-   $('.disabled-' + product).removeClass('disabled');
+   if($('.disabled-' + product).hasClass('disabled')) {
+      $('.disabled-' + product).removeClass('disabled');
+   }
+   else{
+      $('.disabled-' + product).addClass('disabled');
+   }
+
 });
 
 
