@@ -80,7 +80,7 @@ use yii\widgets\LinkPager;
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = \app\models\AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->orderBy(['update_at' => SORT_DESC])->one(); ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>mark<?php endif; ?>" data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="200" height="100"></td>
+                                    <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt="" width="250" height="100"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
