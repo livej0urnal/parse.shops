@@ -79,14 +79,14 @@ use yii\widgets\LinkPager;
                             <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = \app\models\AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->orderBy(['update_at' => SORT_DESC])->one(); ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>has-changes<?php endif; ?>" data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="300" height="150"></td>
+                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>mark<?php endif; ?>" data-value="<?= $product->sku ?>">
+                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="200" height="100"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?></td>
+                                    <td>$<?= $product->price ?> <?php if(!empty($last_update)) :  ?><span class="mark title--sbold">$<?php echo $product->price - $last_update->price; ?></span><?php endif; ?></td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
