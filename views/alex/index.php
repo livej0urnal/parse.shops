@@ -86,7 +86,7 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?> <?php if(!empty($last_update)) :  ?><span class="mark title--sbold" style="color: red">$ <?php echo gmp_sign($product->price - $last_update->price) . ' '.  $product->price - $last_update->price; ?></span><?php endif; ?></td>
+                                    <td>$<?= $product->price ?> <?php if(!empty($last_update)) :  ?><br><span class="mark title--sbold" style="color: red"><?php $result = $product->price - $last_update->price; if($result > 0) {echo '+';} else {echo '-';} echo $result;  ?></span><?php endif; ?></td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
