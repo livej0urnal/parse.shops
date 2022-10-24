@@ -14,6 +14,7 @@ $('.find-gmi-updates').on('click', function (){
       $('.disabled-' + product).removeClass('disabled');
    }
    else{
+      console.log('click');
       $('.disabled-' + product).addClass('disabled');
    }
 
