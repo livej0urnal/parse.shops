@@ -92,16 +92,23 @@ use dosamigos\chartjs\ChartJs;
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
+                                <?php
+                                    foreach ($updates as $item) {
+                                        $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');;
+                                        $prices[] = $item->price;
+                                    }
+
+                                ?>
                                 <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
                                     <td colspan="9">
                                         <?= ChartJs::widget([
                                             'type' => 'line',
                                             'options' => [
-                                                'height' => 400,
+                                                'height' => 200,
                                                 'width' => 400
                                             ],
                                             'data' => [
-                                                'labels' => ["January", "February", "March", "April", "May", "June", "July"],
+                                                'labels' => $prices,
                                                 'datasets' => [
                                                     [
                                                         'backgroundColor' => "rgba(179,181,198,0.2)",
@@ -110,12 +117,13 @@ use dosamigos\chartjs\ChartJs;
                                                         'pointBorderColor' => "#fff",
                                                         'pointHoverBackgroundColor' => "#fff",
                                                         'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                        'data' => [65, 59, 90, 81, 56, 55, 40],
-                                                    ],
+                                                        'data' => $dates
+                                                    ]
                                                 ]
                                             ]
                                         ]);
                                         ?>
+                                       <?php debug($dates); ?>
                                     </td>
 
                                 </tr>
