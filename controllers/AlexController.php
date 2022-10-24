@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\SakhalinProducts;
 use Yii;
 use yii\data\Sort;
 use yii\web\Controller;
@@ -13,6 +14,24 @@ use yii\data\Pagination;
 
 class AlexController extends AppController
 {
+    public function behaviors()
+    {
+        return [
+            [
+                'class' => 'yii\filters\PageCache',
+                'only' => [''],
+                'duration' => 3600,
+                'variations' => [
+                    Yii::$app->language,
+                ],
+                'dependency' => [
+                    'class' => 'yii\caching\DbDependency',
+                    'sql' => 'SELECT MAX(id) FROM ' . AlexmeatProducts::tableName(),
+                ]
+            ]
+        ];
+    }
+
     public function actionLinks()
     {
         $links = Alexmeat::find()->all();

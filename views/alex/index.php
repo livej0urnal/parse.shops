@@ -64,7 +64,6 @@ use yii\widgets\LinkPager;
                     <table class="table table-data2">
                         <thead>
                         <tr>
-                            <th>#</th>
                             <th>Image</th>
                             <th>Title</th>
                             <th>SKU</th>
@@ -72,7 +71,6 @@ use yii\widgets\LinkPager;
                             <th>Units</th>
                             <th>Per</th>
                             <th><?php echo $sort->link('price'); ?></th>
-                            <th><?php echo $sort->link('updated_at'); ?></th>
                             <th><?php echo $sort->link('instock'); ?></th>
                             <th>Seller</th>
                         </tr>
@@ -80,26 +78,21 @@ use yii\widgets\LinkPager;
                         <?php if(!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
+                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
                                 <tr class="tr-shadow find-gmi-updates" data-value="<?= $product->sku ?>">
-                                    <td><?= $product->id ?></td>
-                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="50" height="70"></td>
+                                    <td><img loading="lazy" src="<?= $product->image ?>" alt="" width="300" height="150"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
                                     <td>$<?= $product->price ?></td>
-                                    <td>
-                                        <?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?>
-                                    </td>
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
-                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
+
                                 <?php foreach ($updates as $item) : ?>
                                     <tr class="spacer tr-shadow-hidden disabled disabled-<?= $item->sku_product ?>">
-                                        <td></td>
-                                        <td></td>
                                         <td></td>
                                         <td></td>
                                         <td></td>
