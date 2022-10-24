@@ -91,7 +91,7 @@ use dosamigos\chartjs\ChartJs;
                                     <td><?php if($product->instock === null) : ?> <span style="color:red;">out</span> <?php else : ?> <span style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
-                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_DESC])->all(); ?>
+                                <?php $updates = \app\models\AlexmeatUpdates::find()->select(['price' , 'update_at', 'sku_product'])->where(['sku_product' => $product->sku])->orderBy(['update_at' => SORT_ASC])->all(); ?>
                                 <?php
                                     foreach ($updates as $item) {
                                         $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');;
@@ -103,10 +103,6 @@ use dosamigos\chartjs\ChartJs;
                                     <td colspan="9">
                                         <?= ChartJs::widget([
                                             'type' => 'line',
-                                            'options' => [
-                                                'height' => 200,
-                                                'width' => 400
-                                            ],
                                             'data' => [
                                                 'labels' => $dates,
                                                 'datasets' => [
@@ -117,8 +113,11 @@ use dosamigos\chartjs\ChartJs;
                                                         'pointBorderColor' => "#fff",
                                                         'pointHoverBackgroundColor' => "#fff",
                                                         'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                        'data' => $prices
-                                                    ]
+                                                        'data' => $prices,
+                                                        'fill' => false,
+                                                        'stepped' => true
+                                                    ],
+
                                                 ]
                                             ]
                                         ]);
@@ -127,7 +126,7 @@ use dosamigos\chartjs\ChartJs;
 
                                 </tr>
                                 <tr class="spacer"></tr>
-
+                                <?php  $dates = []; $prices = []; ?>
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
