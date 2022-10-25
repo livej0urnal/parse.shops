@@ -38,11 +38,16 @@ AppAsset::register($this);
                 </div>
                 <div class="header__navbar">
                     <ul class="list-unstyled">
-                        <li>
+                        <li class="has-sub">
                             <a href="<?= \yii\helpers\Url::home() ?>">
                                 <i class="fas fa-tachometer-alt"></i>Dashboard
                                 <span class="bot-line"></span>
                             </a>
+                            <ul class="header3-sub-list list-unstyled">
+                                <li>
+                                    <a href="">Last Updates</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="has-sub">
                             <a href="#">
