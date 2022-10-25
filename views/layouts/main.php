@@ -45,7 +45,7 @@ AppAsset::register($this);
                             </a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="">Last Updates</a>
+                                    <a href="<?= \yii\helpers\Url::to(['site/last']) ?>">Last Updates</a>
                                 </li>
                             </ul>
                         </li>

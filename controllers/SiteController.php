@@ -243,6 +243,12 @@ class SiteController extends AppController
         return $this->redirect(['site/index']);
     }
 
+    public function actionLast()
+    {
+        $this->setMeta('Last Updates from 7 days');
+        return $this->render('last');
+    }
+
     /**
      * Login action.
      *
