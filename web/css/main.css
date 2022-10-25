@@ -65,3 +65,10 @@ li.active> .page-link{
     max-height: 200px;
     width: auto;
 }
+
+@media (min-width: 1200px)
+{
+    .container {
+        max-width: 100%;
+    }
+}
