@@ -80,7 +80,7 @@ use dosamigos\chartjs\ChartJs;
                             <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = \app\models\ZenithUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price' , $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one(); ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?>mark<?php endif; ?>" data-value="<?= $product->sku ?>">
+                                <tr class="tr-shadow find-gmi-updates <?php if(!empty($last_update)) :  ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php endif; ?>" data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt="" width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
