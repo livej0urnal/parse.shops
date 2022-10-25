@@ -78,3 +78,8 @@ li.active> .page-link{
 .bg-danger td:first-child, .bg-success td:first-child{
     background: white;
 }
+
+.bg-danger td span, .bg-success td span{
+    background: white;
+    padding: 5px 15px;
+}
