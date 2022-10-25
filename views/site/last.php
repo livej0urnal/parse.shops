@@ -51,3 +51,5 @@
         </div>
     </div>
 </section>
+
+<?php echo count($products_all); ?>
