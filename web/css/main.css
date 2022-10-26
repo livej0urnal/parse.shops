@@ -72,9 +72,6 @@ li.active> .page-link{
         max-width: 100%;
     }
 }
-.bg-success td , .bg-danger td{
-    color: white!important;
-}
 .bg-danger td:first-child, .bg-success td:first-child{
     background: white;
 }
@@ -82,4 +79,10 @@ li.active> .page-link{
 .bg-danger td span, .bg-success td span{
     background: white;
     padding: 5px 10px;
+}
+.bg-success{
+    background-color: #ddedea!important;
+}
+.bg-danger{
+    background-color: #fce1e4!important;
 }
