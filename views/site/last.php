@@ -86,7 +86,7 @@
                                     }
                                 }
                                 ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?>mark<?php endif; ?>"
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
@@ -140,11 +140,12 @@
                                         </td>
 
                                     </tr>
-                                    <tr class="spacer"></tr>
                                     <?php $dates = [];
                                     $prices = []; ?>
                                 <?php endif; ?>
-                                <tr class="spacer"></tr>
+                                <?php if(!empty($last_update)) : ?>
+                                    <tr class="spacer"></tr>
+                                <?php endif; ?>
 
                             <?php endforeach; ?>
                             </tbody>
