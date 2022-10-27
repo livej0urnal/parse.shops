@@ -29,6 +29,18 @@ class BalticController extends AppController
         return $this->render('links');
     }
 
+    public function actionImages()
+    {
+        $products = BalticProducts::find()->all();
+        foreach ($products as $product)
+        {
+            if($product->image != '/Content/Images/NoImage.png') {
+                $product->image = '/uploads/baltic/' . $product->sku . '.png';
+                $product->save(false);
+            }
+        }
+    }
+
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
