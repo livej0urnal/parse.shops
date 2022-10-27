@@ -52,4 +52,4 @@
     </div>
 </section>
 
-<?php echo count($products_all); ?>
+<?php debug($products_all); ?>
