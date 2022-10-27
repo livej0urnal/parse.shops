@@ -31,6 +31,18 @@ class AlexController extends AppController
         return $this->render('links');
     }
 
+    public function actionImages()
+    {
+        $products = AlexmeatProducts::find()->all();
+        foreach ($products as $product)
+        {
+            if($product->image != '/Content/Images/NoImage.png') {
+                $product->image = '/uploads/alex/' . $product->sku . '.png';
+                $product->save(false);
+            }
+        }
+    }
+
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
