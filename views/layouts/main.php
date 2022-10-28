@@ -216,40 +216,72 @@ AppAsset::register($this);
                         <a href="<?= \yii\helpers\Url::home() ?>">Dashboard</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI</a>
+                        <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">megafood</a>
-                    </li>
-
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['redoctober/index']) ?>">redoctober</a>
+                        <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">grantefoods</a>
+                        <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
                     </li>
-
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">three</a>
+                        <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
                     </li>
-
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">tamani</a>
+                        <a href="<?= \yii\helpers\Url::to(['redoctober/index']) ?>">Redoctober</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Grantefoods</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">mamta</a>
+                        <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">alex</a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">baltic</a>
+                        <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">Three</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">zakuson</a>
+                        <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">Tamani</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['sakhalin/index']) ?>">Sakhalin</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['stradiva/index']) ?>">Stradiva</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['eic/index']) ?>">Eic</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['leader/index']) ?>">Leader</a>
                     </li>
 
                 </ul>
