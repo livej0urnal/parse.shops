@@ -61,7 +61,7 @@ class SiteController extends AppController
             'cache' => [
                 'class' => 'yii\filters\PageCache',
                 'only' => ['last'],
-                'duration' => 3600,
+                'duration' => 36000,
             ],
         ];
     }
