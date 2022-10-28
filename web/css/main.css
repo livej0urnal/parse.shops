@@ -28,6 +28,7 @@ li.active> .page-link{
 }
 .page-content--bgf7{
     min-height:500px!important;
+    max-width: 100%;
 }
 
 #myBtn {
