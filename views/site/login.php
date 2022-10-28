@@ -67,6 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 'errorOptions' => ['class' => 'col-lg-7 invalid-feedback'],
                             ],
                         ]); ?>
+                        <input type="hidden" name="_csrf" value="<?=Yii::$app->request->getCsrfToken()?>" />
 
                         <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
 
