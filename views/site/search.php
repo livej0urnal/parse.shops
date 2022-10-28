@@ -99,7 +99,7 @@ use dosamigos\chartjs\ChartJs;
                                     }
                                 }
                                 ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?>mark<?php endif; ?>"
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?><?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
