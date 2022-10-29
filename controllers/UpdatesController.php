@@ -205,4 +205,11 @@ class UpdatesController extends AppController
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
+
+    public function actionAll($sku, $seller)
+    {
+        $sku = Yii::$app->request->get('sku');
+        $seller = Yii::$app->request->get('seller');
+
+    }
 }

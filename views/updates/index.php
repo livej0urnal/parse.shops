@@ -173,7 +173,6 @@
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php if(!empty($last_update)) : ?>
-                                    <?php $updates = $product->updates; ?>
                                     <?php if (count($updates) > 1) : ?>
                                         <?php
                                         foreach ($updates as $item) {
