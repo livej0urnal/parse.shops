@@ -65,7 +65,6 @@ class EicController extends AppController
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
                         $product_update->seller = 'EIC';
-                        $product_update->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                         $product_update->save(false);
                     }
                     else{
@@ -77,7 +76,6 @@ class EicController extends AppController
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->instock = '1';
                         $product_update->seller = 'EIC';
-                        $product_update->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                         $product_update->save(false);
                         $new_updates->save(false);
 

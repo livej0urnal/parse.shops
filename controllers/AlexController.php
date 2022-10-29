@@ -8,7 +8,7 @@ use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Alexmeat;
 use app\models\AlexmeatProducts;
-use app\models\ProductsUpdates;
+use app\models\AlexmeatUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
@@ -62,7 +62,7 @@ class AlexController extends AppController
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
                 $find_product = AlexmeatProducts::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = ProductsUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
+                    $need_update = AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
                     if(!$need_update->price) {
                         $product_update = AlexmeatProducts::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
@@ -70,7 +70,7 @@ class AlexController extends AppController
                         $product_update->save(false);
                     }
                     else{
-                        $new_updates = new ProductsUpdates();
+                        $new_updates = new AlexmeatUpdates();
                         $new_updates->sku_product = htmlspecialchars($product->sku);
                         $new_updates->price = htmlspecialchars($product->price);
                         $product_update = AlexmeatProducts::findOne(['sku' => $product->sku]);
@@ -109,7 +109,7 @@ class AlexController extends AppController
                     $new_product->seller = 'Alexmeat';
                     $new_product->save(false);
 
-                    $new_updates = new ProductsUpdates();
+                    $new_updates = new AlexmeatUpdates();
                     $new_updates->sku_product = htmlspecialchars($product->sku);
                     $new_updates->price = htmlspecialchars($product->price);
 
