@@ -29,7 +29,7 @@ class BalticProducts extends \yii\db\ActiveRecord
 
     public function getUpdates()
     {
-        return $this->hasMany(BalticUpdates::className(), ['sku_product' => 'sku']);
+        return $this->hasMany(ProductsUpdates::className(), ['sku_product' => 'sku']);
     }
 
     /**

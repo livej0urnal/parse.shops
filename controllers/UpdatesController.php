@@ -6,6 +6,7 @@ use app\controllers\AppController;
 use app\models\AlexmeatProducts;
 use app\models\AlexmeatUpdates;
 use app\models\BalticProducts;
+use app\models\BalticUpdates;
 use app\models\EicProducts;
 use app\models\EuphoriaProducts;
 use app\models\GmiProducts;
@@ -211,7 +212,7 @@ class UpdatesController extends AppController
     public function actionSingle()
     {
         $id = Yii::$app->request->get('id');
-        $updates = AlexmeatUpdates::find()->all();
+        $updates = BalticUpdates::find()->all();
         foreach ($updates as $update)
         {
             $new_update = new ProductsUpdates();
