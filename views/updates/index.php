@@ -2,6 +2,8 @@
     use yii\helpers\Url;
     use yii\helpers\Html;
     use dosamigos\chartjs\ChartJs;
+    use yii\bootstrap5\Modal;
+    use yii\widgets\LinkPager;
 ?>
 
 <section class="au-breadcrumb2">
@@ -140,6 +142,7 @@
                             <th>Price</th>
                             <th>In stock</th>
                             <th>Seller</th>
+                            <th></th>
                         </tr>
                         </thead>
                         <?php if (!empty($products)) : ?>
@@ -171,6 +174,11 @@
                                                 style="color:red;">out</span> <?php else : ?> <span
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
+                                    <td>
+                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#modal">
+                                            Medium
+                                        </button>
+                                    </td>
                                 </tr>
                                 <?php if(!empty($last_update)) : ?>
                                 <tr class="spacer"></tr>
@@ -199,3 +207,27 @@
         </div>
     </div>
 </section>
+<div class="modal fade show" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="mediumModalLabel">Medium Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>
+                    There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain
+                    zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter
+                    resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the
+                    genus Equus, along with other living equids.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>

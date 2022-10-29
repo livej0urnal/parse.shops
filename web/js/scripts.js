@@ -31,5 +31,6 @@ $('#select-out_stock').on('change', function () {
 $('.find-product-updates').on('click', function(){
    var sku = $(this).attr('data-value');
    var seller = $(this).attr('data-seller');
-   console.log(sku + ' ' + seller)
+   console.log(sku + ' ' + seller);
+   $('#mediumModal').show();
 });
