@@ -70,6 +70,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['updates/redoctober', 'seller' => 'Redoctober']) ?>">Redoctober</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/grantefoods', 'seller' => 'GranteFoods']) ?>">GranteFoods</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/lea', 'seller' => 'Lea']) ?>">Lea</a>
+                    </li>
                 </ul>
             </div>
         </div>

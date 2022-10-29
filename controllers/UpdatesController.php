@@ -7,6 +7,8 @@ use app\models\AlexmeatProducts;
 use app\models\BalticProducts;
 use app\models\EuphoriaProducts;
 use app\models\GmiProducts;
+use app\models\GrantefoodsProducts;
+use app\models\LeaProducts;
 use app\models\MegafoodProducts;
 use app\models\RedoctoberProducts;
 use Yii;
@@ -62,6 +64,24 @@ class UpdatesController extends AppController
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
         $products = RedoctoberProducts::find()->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
+        $this->setMeta($seller . ' - Last Updates from 7 Days');
+        return $this->render('index', compact('products'));
+    }
+
+    public function actionGrantefoods($seller = null)
+    {
+        $id = Yii::$app->request->get('id');
+        $seller = Yii::$app->request->get('seller');
+        $products = GrantefoodsProducts::find()->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
+        $this->setMeta($seller . ' - Last Updates from 7 Days');
+        return $this->render('index', compact('products'));
+    }
+
+    public function actionLea($seller = null)
+    {
+        $id = Yii::$app->request->get('id');
+        $seller = Yii::$app->request->get('seller');
+        $products = LeaProducts::find()->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
