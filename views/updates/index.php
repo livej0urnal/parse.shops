@@ -48,6 +48,12 @@
                     </div>
 
                 </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="<?= Url::to(['updates/index']) ?>">Alexmeat</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
