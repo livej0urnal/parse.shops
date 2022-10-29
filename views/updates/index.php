@@ -49,7 +49,7 @@
 
                 </div>
 
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-tabs updates-tabs">
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['updates/index']) ?>">Alexmeat</a>
                     </li>
@@ -75,6 +75,46 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['updates/lea', 'seller' => 'Lea']) ?>">Lea</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/mamta', 'seller' => 'Mamta']) ?>">Mamta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/three', 'seller' => 'Three']) ?>">Three</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/tamani', 'seller' => 'Tamani']) ?>">Tamani</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/psv', 'seller' => 'Psv']) ?>">Psv</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/zenith', 'seller' => 'Zenith']) ?>">Zenith</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/royal', 'seller' => 'Royal']) ?>">Royal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/sakhalin', 'seller' => 'Sakhalin']) ?>">Sakhalin</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/stradiva', 'seller' => 'Stradiva']) ?>">Stradiva</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/zakuson', 'seller' => 'Zakuson']) ?>">Zakuson</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/natars', 'seller' => 'Natars']) ?>">Natars</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/eic', 'seller' => 'Eic']) ?>">Eic</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/leader', 'seller' => 'Leader']) ?>">Leader</a>
                     </li>
                 </ul>
             </div>

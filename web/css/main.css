@@ -110,3 +110,10 @@ li.active > .page-link {
 .bg-danger {
     background-color: #fce1e4 !important;
 }
+.updates-tabs{
+    margin: 15px;
+    text-align: center;
+}
+.updates-tabs .nav-link{
+    font-size: 14px;
+}
