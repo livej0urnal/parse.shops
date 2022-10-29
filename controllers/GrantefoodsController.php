@@ -84,6 +84,7 @@ class GrantefoodsController extends AppController
         $new_products = 0;
         $update_products = 0;
         ini_set('max_execution_time', 900);
+        ini_set('max_execution_time', 900);
 
         foreach ($links as $link)
         {

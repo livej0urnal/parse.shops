@@ -48,6 +48,7 @@ class BalticController extends AppController
         $parse_products = 1;
         $new_products = 0;
         $update_products = 0;
+        ini_set('max_execution_time', 900);
         foreach ($links as $link)
         {
             $htmlgmi = file_get_html($link->links);

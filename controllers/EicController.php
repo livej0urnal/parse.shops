@@ -47,6 +47,7 @@ class EicController extends AppController
         $parse_products = 1;
         $new_products = 0;
         $update_products = 0;
+        ini_set('max_execution_time', 900);
         foreach ($links as $link)
         {
             $htmlgmi = file_get_html($link->links);
@@ -64,6 +65,7 @@ class EicController extends AppController
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
                         $product_update->seller = 'EIC';
+                        $product_update->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                         $product_update->save(false);
                     }
                     else{
@@ -75,6 +77,7 @@ class EicController extends AppController
                         $product_update->updated_at = new Expression('NOW()');
                         $product_update->instock = '1';
                         $product_update->seller = 'EIC';
+                        $product_update->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                         $product_update->save(false);
                         $new_updates->save(false);
 
