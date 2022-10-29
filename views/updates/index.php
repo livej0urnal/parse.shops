@@ -186,6 +186,10 @@
                                             <td colspan="9">
                                                 <?= ChartJs::widget([
                                                     'type' => 'line',
+                                                    'options' => [
+                                                        'height' => 200,
+                                                        'width' => 400,
+                                                    ],
                                                     'data' => [
                                                         'labels' => $dates,
                                                         'datasets' => [
