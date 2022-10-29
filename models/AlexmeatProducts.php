@@ -29,7 +29,7 @@ class AlexmeatProducts extends \yii\db\ActiveRecord
 
     public function getUpdates()
     {
-        return $this->hasMany(AlexmeatUpdates::className(), ['sku_product' => 'sku']);
+        return $this->hasMany(ProductsUpdates::className(), ['sku_product' => 'sku']);
     }
 
     /**

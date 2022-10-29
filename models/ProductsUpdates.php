@@ -5,26 +5,21 @@ namespace app\models;
 use Yii;
 
 /**
- * This is the model class for table "alexmeat_updates".
+ * This is the model class for table "products_updates".
  *
  * @property int $id
  * @property string $sku_product
  * @property string $price
- * @property string $update_at
+ * @property int $update_at
  */
-class AlexmeatUpdates extends \yii\db\ActiveRecord
+class ProductsUpdates extends \yii\db\ActiveRecord
 {
     /**
      * {@inheritdoc}
      */
     public static function tableName()
     {
-        return 'alexmeat_updates';
-    }
-
-    public function getProduct()
-    {
-        return $this->hasOne(AlexmeatProducts::className() , ['sku' => 'sku_product']);
+        return 'products_updates';
     }
 
     /**
@@ -33,9 +28,9 @@ class AlexmeatUpdates extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['sku_product', 'price'], 'required'],
+            [['id', 'sku_product', 'price', 'update_at'], 'required'],
+            [['id', 'update_at'], 'integer'],
             [['price'], 'string'],
-            [['update_at'], 'safe'],
             [['sku_product'], 'string', 'max' => 255],
         ];
     }

@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\controllers\AppController;
 use app\models\AlexmeatProducts;
+use app\models\AlexmeatUpdates;
 use app\models\BalticProducts;
 use app\models\EicProducts;
 use app\models\EuphoriaProducts;
@@ -14,6 +15,7 @@ use app\models\LeaProducts;
 use app\models\MamtaProducts;
 use app\models\MegafoodProducts;
 use app\models\NatarsProducts;
+use app\models\ProductsUpdates;
 use app\models\PsvProducts;
 use app\models\RedoctoberProducts;
 use app\models\RoyalProducts;
@@ -204,5 +206,20 @@ class UpdatesController extends AppController
         $products = LeaderProducts::find()->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
+    }
+
+    public function actionSingle()
+    {
+        $id = Yii::$app->request->get('id');
+        $updates = AlexmeatUpdates::find()->all();
+        foreach ($updates as $update)
+        {
+            $new_update = new ProductsUpdates();
+            $new_update->sku_product = $update->sku_product;
+            $new_update->price = $update->price;
+            $new_update->update_at = $update->update_at;
+            $new_update->save(false);
+            print_r($new_update->sku_product);
+        }
     }
 }
