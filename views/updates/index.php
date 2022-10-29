@@ -142,7 +142,6 @@
                             <th>Price</th>
                             <th>In stock</th>
                             <th>Seller</th>
-                            <th></th>
                         </tr>
                         </thead>
                         <?php if (!empty($products)) : ?>
@@ -157,7 +156,7 @@
                                     }
                                 }
                                 ?>
-                                <tr class="tr-shadow find-product-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
@@ -174,12 +173,49 @@
                                                 style="color:red;">out</span> <?php else : ?> <span
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
-                                    <td>
-                                        <button type="button" class="btn btn-secondary mb-1" data-toggle="modal" data-target="#modal">
-                                            Medium
-                                        </button>
-                                    </td>
                                 </tr>
+                                <?php if(!empty($last_update)) : ?>
+                                    <?php $updates = $product->updates; ?>
+                                    <?php if (count($updates) > 1) : ?>
+                                        <?php
+                                        foreach ($updates as $item) {
+                                            $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
+                                            $prices[] = $item['price'];
+                                        }
+
+                                        ?>
+                                        <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                            <td colspan="3">
+                                                <?= ChartJs::widget([
+                                                    'type' => 'line',
+                                                    'data' => [
+                                                        'labels' => $dates,
+                                                        'datasets' => [
+                                                            [
+                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                                'borderColor' => "rgba(179,181,198,1)",
+                                                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                                'pointBorderColor' => "#fff",
+                                                                'pointHoverBackgroundColor' => "#fff",
+                                                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                                'data' => $prices,
+                                                                'fill' => false,
+                                                                'stepped' => true
+                                                            ],
+
+                                                        ]
+                                                    ]
+                                                ]);
+                                                ?>
+                                            </td>
+                                            <td colspan="6"></td>
+
+                                        </tr>
+                                        <?php $dates = [];
+                                        $prices = []; ?>
+                                    <?php endif; ?>
+                                    <tr class="spacer"></tr>
+                                <?php endif; ?>
                                 <?php if(!empty($last_update)) : ?>
                                 <tr class="spacer"></tr>
                                 <?php endif; ?>
@@ -207,23 +243,3 @@
         </div>
     </div>
 </section>
-<div class="modal fade show" id="mediumModal" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="mediumModalLabel">Medium Modal</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    There are three species of zebras: the plains zebra, the mountain zebra and the Grévy's zebra. The plains zebra and the mountain
-                    zebra belong to the subgenus Hippotigris, but Grévy's zebra is the sole species of subgenus Dolichohippus. The latter
-                    resembles an ass, to which it is closely related, while the former two are more horse-like. All three belong to the
-                    genus Equus, along with other living equids.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
