@@ -27,3 +27,9 @@ $('.find-gmi-updates').on('click', function (){
 $('#select-out_stock').on('change', function () {
    $('#search-everything').submit();
 });
+
+$('.find-product-updates').on('click', function(){
+   var sku = $(this).attr('data-value');
+   var seller = $(this).attr('data-seller');
+   console.log(sku + ' ' + seller)
+});

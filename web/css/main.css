@@ -117,3 +117,7 @@ li.active > .page-link {
 .updates-tabs .nav-link{
     font-size: 14px;
 }
+.find-product-updates:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}

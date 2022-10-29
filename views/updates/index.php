@@ -154,8 +154,8 @@
                                     }
                                 }
                                 ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
-                                    data-value="<?= $product->sku ?>">
+                                <tr class="tr-shadow find-product-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
+                                    data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
@@ -173,48 +173,7 @@
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php if(!empty($last_update)) : ?>
-                                    <?php if (count($updates) > 1) : ?>
-                                        <?php
-                                        foreach ($updates as $item) {
-                                            $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
-                                            $prices[] = $item['price'];
-                                        }
-
-                                        ?>
-                                        <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                            <td colspan="3">
-                                                <?= ChartJs::widget([
-                                                    'type' => 'line',
-                                                    'options' => [
-                                                        'height' => 200,
-                                                        'width' => 400,
-                                                    ],
-                                                    'data' => [
-                                                        'labels' => $dates,
-                                                        'datasets' => [
-                                                            [
-                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
-                                                                'borderColor' => "rgba(179,181,198,1)",
-                                                                'pointBackgroundColor' => "rgba(179,181,198,1)",
-                                                                'pointBorderColor' => "#fff",
-                                                                'pointHoverBackgroundColor' => "#fff",
-                                                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                                'data' => $prices,
-                                                                'fill' => false,
-                                                                'stepped' => true
-                                                            ],
-
-                                                        ]
-                                                    ]
-                                                ]);
-                                                ?>
-                                            </td>
-
-                                        </tr>
-                                        <?php $dates = [];
-                                        $prices = []; ?>
-                                    <?php endif; ?>
-                                    <tr class="spacer"></tr>
+                                <tr class="spacer"></tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
