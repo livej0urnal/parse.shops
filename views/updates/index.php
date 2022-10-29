@@ -59,6 +59,17 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?= Url::to(['updates/megafood', 'seller' => 'Megafood']) ?>">Megafood</a>
                     </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/euphoria', 'seller' => 'Euphoria']) ?>">Euphoria</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/baltic', 'seller' => 'Baltic']) ?>">Baltic</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= Url::to(['updates/redoctober', 'seller' => 'Redoctober']) ?>">Redoctober</a>
+                    </li>
                 </ul>
             </div>
         </div>
