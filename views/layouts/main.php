@@ -216,6 +216,9 @@ AppAsset::register($this);
                         <a href="<?= \yii\helpers\Url::home() ?>">Dashboard</a>
                     </li>
                     <li>
+                        <a href="<?= \yii\helpers\Url::to(['updates/index']) ?>">Last Updates</a>
+                    </li>
+                    <li>
                         <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
                     </li>
                     <li>
