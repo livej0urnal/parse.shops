@@ -147,21 +147,15 @@
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
+                                <?php $updates = $product->updates; ?>
                                 <?php
-                                    if($product->seller === 'Alexmeat') {
-                                        $last_update = \app\models\AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
+                                $last_update = null;
+                                foreach ($updates as $single) {
+                                    if ($single->price != $product->price) {
+                                        $last_update = $single;
                                     }
-                                    elseif($product->seller === 'Baltic') {
-                                        $last_update = \app\models\BalticUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
-                                    }
-                                    elseif($product->seller === 'Gmi') {
-                                        $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
-                                    }
-                                    elseif($product->seller === 'EIC') {
-                                        $last_update = \app\models\EicUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
-                                    }
+                                }
                                 ?>
-
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
@@ -180,6 +174,48 @@
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
+                                <?php if(!empty($last_update)) : ?>
+                                    <?php $updates = $product->updates; ?>
+                                    <?php if (count($updates) > 1) : ?>
+                                        <?php
+                                        foreach ($updates as $item) {
+                                            $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
+                                            $prices[] = $item['price'];
+                                        }
+
+                                        ?>
+                                        <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                            <td colspan="3">
+                                                <?= ChartJs::widget([
+                                                    'type' => 'line',
+                                                    'data' => [
+                                                        'labels' => $dates,
+                                                        'datasets' => [
+                                                            [
+                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                                'borderColor' => "rgba(179,181,198,1)",
+                                                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                                'pointBorderColor' => "#fff",
+                                                                'pointHoverBackgroundColor' => "#fff",
+                                                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                                'data' => $prices,
+                                                                'fill' => false,
+                                                                'stepped' => true
+                                                            ],
+
+                                                        ]
+                                                    ]
+                                                ]);
+                                                ?>
+                                            </td>
+                                            <td colspan="6"></td>
+
+                                        </tr>
+                                        <?php $dates = [];
+                                        $prices = []; ?>
+                                    <?php endif; ?>
+                                    <tr class="spacer"></tr>
+                                <?php endif; ?>
                                 <?php if(!empty($last_update)) : ?>
                                 <tr class="spacer"></tr>
                                 <?php endif; ?>

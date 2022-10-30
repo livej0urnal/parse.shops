@@ -30,6 +30,7 @@ class UpdatesController extends AppController
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
+        ini_set('max_execution_time', 900);
         $products = AlexmeatProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta('Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -39,7 +40,8 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
-        $products = GmiProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
+        ini_set('max_execution_time', 900);
+        $products = GmiProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
@@ -48,6 +50,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = MegafoodProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -57,6 +60,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = EuphoriaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -66,6 +70,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = BalticProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -75,6 +80,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = RedoctoberProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -84,6 +90,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = GrantefoodsProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -93,6 +100,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = LeaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -102,6 +110,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = MamtaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -111,6 +120,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = ThreeProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -120,6 +130,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = TamaniProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -129,6 +140,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = PsvProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -138,6 +150,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = ZenithProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -147,6 +160,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = RoyalProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -156,6 +170,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = SakhalinProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -165,6 +180,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = StradivaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -174,6 +190,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = ZakusonProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -183,6 +200,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = NatarsProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -192,6 +210,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = EicProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -201,15 +220,9 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
+        ini_set('max_execution_time', 900);
         $products = LeaderProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
-    }
-
-    public function actionAll($sku, $seller)
-    {
-        $sku = Yii::$app->request->get('sku');
-        $seller = Yii::$app->request->get('seller');
-
     }
 }
