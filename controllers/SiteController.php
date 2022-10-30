@@ -202,7 +202,7 @@ class SiteController extends AppController
         }
 
 
-        $this->setMeta('Search - ' . $q);
+        $this->setMeta('Search - ' . $input);
         return $this->render('search', compact('products_all', 'q', 'select', 'input'));
     }
 
