@@ -157,6 +157,9 @@
                                     elseif($product->seller === 'Gmi') {
                                         $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
                                     }
+                                    elseif($product->seller === 'EIC') {
+                                        $last_update = \app\models\EicUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one();
+                                    }
                                 ?>
 
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
