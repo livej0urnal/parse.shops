@@ -145,18 +145,23 @@ class EicController extends AppController
     public function actionSearch($q)
     {
         $q = Yii::$app->request->get('q');
-        $products = EicProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = EicProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $words = explode(' ',  $q);
+        foreach ($words as $word) {
+            $products = EicProducts::find()->where(['like', 'title', $word])->orWhere(['like', 'sku' , $word])->orderBy(['id' => SORT_DESC])->all();
+            $sort = new Sort([
+                'attributes' => [
+                    'updated_at',
+                    'price',
+                    'instock',
+                ],
+                'defaultOrder' => ['updated_at' => SORT_DESC]
+            ]);
+            $query = EicProducts::find()->where(['like', 'title', $word])->orWhere(['like', 'sku' , $word])->orWhere(['like', 'article' , $word])->orderBy($sort->orders);
+            $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+            $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        }
+
+
         $manufactures = EicProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $this->setMeta('European Importing Company');
         return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
