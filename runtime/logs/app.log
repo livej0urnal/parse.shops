@@ -1,0 +1,79 @@
+2022-10-30 19:32:49 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:2] yii\base\ErrorException: A non-numeric value encountered in C:\OpenServer\domains\parse.shops\views\updates\index.php:174
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\views\updates\index.php(174): yii\base\ErrorHandler->handleError()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(347): require('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile()
+#3 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile()
+#4 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Controller.php(407): yii\base\View->render()
+#5 C:\OpenServer\domains\parse.shops\controllers\UpdatesController.php(272): yii\base\Controller->render()
+#6 [internal function]: app\controllers\UpdatesController->actionNatars()
+#7 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array()
+#8 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams()
+#9 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction()
+#10 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#11 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#12 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2022-10-30 19:32:48 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'seller' => 'Natars'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/updates/eic/*?seller=Eic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '61492'
+    'REDIRECT_URL' => '/updates/natars/*'
+    'REDIRECT_QUERY_STRING' => 'seller=Natars'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'seller=Natars'
+    'REQUEST_URI' => '/updates/natars/*?seller=Natars'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667147568.2935
+    'REQUEST_TIME' => 1667147568
+]
