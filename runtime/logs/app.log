@@ -77,3 +77,993 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1667147568.2935
     'REQUEST_TIME' => 1667147568
 ]
+2022-10-30 19:40:35 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:2] yii\base\ErrorException: explode() expects at least 2 parameters, 1 given in C:\OpenServer\domains\parse.shops\controllers\EicController.php:148
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError()
+#1 C:\OpenServer\domains\parse.shops\controllers\EicController.php(148): explode()
+#2 [internal function]: app\controllers\EicController->actionSearch()
+#3 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array()
+#4 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams()
+#5 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction()
+#6 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#7 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#8 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#9 {main}
+2022-10-30 19:40:35 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'q' => 'maheev 770'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/eic/search/*?q=MAHEEV'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '61780'
+    'REDIRECT_URL' => '/eic/search/*'
+    'REDIRECT_QUERY_STRING' => 'q=maheev+770'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'q=maheev+770'
+    'REQUEST_URI' => '/eic/search/*?q=maheev+770'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148035.8809
+    'REQUEST_TIME' => 1667148035
+]
+2022-10-30 19:42:36 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:42:36 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62065'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148156.5475
+    'REQUEST_TIME' => 1667148156
+]
+2022-10-30 19:43:03 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:43:03 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62152'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148183.6077
+    'REQUEST_TIME' => 1667148183
+]
+2022-10-30 19:44:05 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:1] yii\base\ErrorException: Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\db\Command.php:1304
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2022-10-30 19:43:05 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'q' => ''
+    'select' => 'null'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62154'
+    'REDIRECT_URL' => '/site/search/*'
+    'REDIRECT_QUERY_STRING' => 'q=&select=null'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'q=&select=null'
+    'REQUEST_URI' => '/site/search/*?q=&select=null'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148185.9295
+    'REQUEST_TIME' => 1667148185
+]
+2022-10-30 19:44:19 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:44:19 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62163'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148259.091
+    'REQUEST_TIME' => 1667148259
+]
+2022-10-30 19:44:38 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:44:38 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62239'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148278.8032
+    'REQUEST_TIME' => 1667148278
+]
+2022-10-30 19:45:38 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:2] yii\base\ErrorException: A non-numeric value encountered in C:\OpenServer\domains\parse.shops\views\updates\index.php:174
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\views\updates\index.php(174): yii\base\ErrorHandler->handleError()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(347): require('C:\\OpenServer\\d...')
+#2 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(257): yii\base\View->renderPhpFile()
+#3 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\View.php(156): yii\base\View->renderFile()
+#4 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Controller.php(407): yii\base\View->render()
+#5 C:\OpenServer\domains\parse.shops\controllers\UpdatesController.php(273): yii\base\Controller->render()
+#6 [internal function]: app\controllers\UpdatesController->actionNatars()
+#7 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array()
+#8 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Controller.php(178): yii\base\InlineAction->runWithParams()
+#9 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php(552): yii\base\Controller->runAction()
+#10 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#11 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#12 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#13 {main}
+2022-10-30 19:45:36 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'seller' => 'Natars'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/updates/lea/*?seller=Lea'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62241'
+    'REDIRECT_URL' => '/updates/natars/*'
+    'REDIRECT_QUERY_STRING' => 'seller=Natars'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'seller=Natars'
+    'REQUEST_URI' => '/updates/natars/*?seller=Natars'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148336.9195
+    'REQUEST_TIME' => 1667148336
+]
+2022-10-30 19:48:11 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:1] yii\base\ErrorException: Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\db\Command.php:1304
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2022-10-30 19:47:11 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'q' => ''
+    'select' => ''
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62309'
+    'REDIRECT_URL' => '/site/search/*'
+    'REDIRECT_QUERY_STRING' => 'q=&select='
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'q=&select='
+    'REQUEST_URI' => '/site/search/*?q=&select='
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148431.6748
+    'REQUEST_TIME' => 1667148431
+]
+2022-10-30 19:49:16 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:1] yii\base\ErrorException: Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\db\Command.php:1304
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2022-10-30 19:48:16 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = [
+    'q' => ''
+    'select' => ''
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62408'
+    'REDIRECT_URL' => '/site/search/*'
+    'REDIRECT_QUERY_STRING' => 'q=&select='
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'q=&select='
+    'REQUEST_URI' => '/site/search/*?q=&select='
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148496.7621
+    'REQUEST_TIME' => 1667148496
+]
+2022-10-30 19:49:19 [127.0.0.1][-][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\base\ErrorException:1] yii\base\ErrorException: Maximum execution time of 60 seconds exceeded in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Session.php:150
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleFatalError()
+#1 {main}
+2022-10-30 19:48:19 [127.0.0.1][-][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/updates/eic/*?seller=Eic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62412'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148499.0863
+    'REQUEST_TIME' => 1667148499
+]
+2022-10-30 19:49:57 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314770.png". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:49:57 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/site/search/*?q=maheev+770&select='
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62425'
+    'REDIRECT_URL' => '/uploads/baltic/314770.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314770.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148597.7441
+    'REQUEST_TIME' => 1667148597
+]
+2022-10-30 19:50:13 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314770.png". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:50:13 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/site/search/*?q=770&select=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62513'
+    'REDIRECT_URL' => '/uploads/baltic/314770.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314770.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148613.1919
+    'REQUEST_TIME' => 1667148613
+]
+2022-10-30 19:50:18 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314770.png". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:50:18 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/site/search/*?q=maheev+770&select=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62503'
+    'REDIRECT_URL' => '/uploads/baltic/314770.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314770.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148618.4138
+    'REQUEST_TIME' => 1667148618
+]
+2022-10-30 19:50:46 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314770.png". in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Module.php:561
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction()
+#1 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#2 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\OpenServer\domains\parse.shops\vendor\yiisoft\yii2\base\Application.php(384): yii\web\Application->handleRequest()
+#1 C:\OpenServer\domains\parse.shops\web\index.php(15): yii\base\Application->run()
+#2 {main}
+2022-10-30 19:50:46 [127.0.0.1][1][vik6kiihcqlu8akavsg6coeeokf8nj8u][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'vik6kiihcqlu8akavsg6coeeokf8nj8u'
+    '_csrf' => '2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/site/search/*?q=maheev+770&select=1'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=vik6kiihcqlu8akavsg6coeeokf8nj8u; _csrf=2665decbbb538dc7b8563cef7dded61a17c779d5466911835b72190aec1ec9bea%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22Cd_AAhou3zsauwLEoIXSC4Y7hRMqu0WG%22%3B%7D'
+    'PATH' => 'c:\\openserver\\modules\\php\\PHP_7.4\\ext;c:\\openserver\\modules\\php\\PHP_7.4\\pear;c:\\openserver\\modules\\php\\PHP_7.4\\pear\\bin;c:\\openserver\\modules\\php\\PHP_7.4;c:\\openserver\\modules\\wget\\bin;c:\\openserver\\modules\\database\\MariaDB-10.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4\\bin;c:\\openserver\\modules\\http\\Apache_2.4-PHP_7.2-7.4;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\system32\\Wbem;C:\\Windows\\SysWOW64;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files\\dotnet\\;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\nodejs\\;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Users\\igorf\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\igorf\\AppData\\Local\\GitHubDesktop\\bin;C:\\Program Files\\JetBrains\\PhpStorm 2022.2\\bin;C:\\Users\\igorf\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Program Files\\JetBrains\\PyCharm 2022.2\\bin;C:\\Program Files\\JetBrains\\WebStorm 2022.2.1\\bin;C:\\Users\\igorf\\AppData\\Roaming\\npm'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/OpenServer/domains/parse.shops/web'
+    'SERVER_ADMIN' => '[no address given]'
+    'SCRIPT_FILENAME' => 'C:/OpenServer/domains/parse.shops/web/index.php'
+    'REMOTE_PORT' => '62541'
+    'REDIRECT_URL' => '/uploads/baltic/314770.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314770.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'PHP_AUTH_USER' => '***'
+    'PHP_AUTH_PW' => '***'
+    'REQUEST_TIME_FLOAT' => 1667148646.2679
+    'REQUEST_TIME' => 1667148646
+]

@@ -29,7 +29,7 @@ use dosamigos\chartjs\ChartJs;
                               action="<?= \yii\helpers\Url::to(['site/search']) ?>" method="get" style="display: flex;">
                             <div class="col-sm-6">
                                 <input class="au-input--w300 au-input--style2" type="text"
-                                       placeholder="Search everything..." name="q" value="<?= $q ?>">
+                                       placeholder="Search everything..." name="q" value="<?= $input ?>">
                             </div>
                             <div class="col-sm-6">
                                 <select id="select-out_stock" name="select"

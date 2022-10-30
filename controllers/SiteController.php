@@ -123,83 +123,87 @@ class SiteController extends AppController
 
     public function actionSearch($q, $select)
     {
-        $q = Yii::$app->request->get('q');
+        $input = Yii::$app->request->get('q');
         $select = Yii::$app->request->get('select');
-        if(empty($select)) {
-            $products_alex = AlexmeatProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_baltic = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_eic = EicProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_euphoria = EuphoriaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_gmi = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_grantefoods = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_lea = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_leader = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_mamta = MamtaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_megafood = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_natars = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_psv = PsvProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_redoctober = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_royal = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_sakhalin = SakhalinProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_stradiva = StradivaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_tamani = TamaniProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_three = ThreeProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_zakuson = ZakusonProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_zenith = ZenithProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
-            $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
-        }
-        elseif($select === 'null') {
-            $products_alex = AlexmeatProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_baltic = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_eic = EicProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_euphoria = EuphoriaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_gmi = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_grantefoods = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_lea = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_leader = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_mamta = MamtaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_megafood = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_natars = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_psv = PsvProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_redoctober = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_royal = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_sakhalin = SakhalinProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_stradiva = StradivaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_tamani = TamaniProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_three = ThreeProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_zakuson = ZakusonProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_zenith = ZenithProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
-            $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
-        }
-        else{
-            $products_alex = AlexmeatProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_baltic = BalticProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_eic = EicProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_euphoria = EuphoriaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_gmi = GmiProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_grantefoods = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_lea = LeaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_leader = LeaderProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_mamta = MamtaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_megafood = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_natars = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_psv = PsvProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_redoctober = RedoctoberProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_royal = RoyalProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_sakhalin = SakhalinProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_stradiva = StradivaProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_tamani = TamaniProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_three = ThreeProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_zakuson = ZakusonProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_zenith = ZenithProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
-            $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-                $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+        $words = explode(' ', $input);
+        foreach ($words as $q) {
+            if(empty($select)) {
+                $products_alex = AlexmeatProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_baltic = BalticProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_eic = EicProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_euphoria = EuphoriaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_gmi = GmiProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_grantefoods = GrantefoodsProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_lea = LeaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_leader = LeaderProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_mamta = MamtaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_megafood = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_natars = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_psv = PsvProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_redoctober = RedoctoberProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_royal = RoyalProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_sakhalin = SakhalinProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_stradiva = StradivaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_tamani = TamaniProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_three = ThreeProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_zakuson = ZakusonProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_zenith = ZenithProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->all();
+                $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
+                    $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+            }
+            elseif($select === 'null') {
+                $products_alex = AlexmeatProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_baltic = BalticProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_eic = EicProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_euphoria = EuphoriaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_gmi = GmiProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_grantefoods = GrantefoodsProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_lea = LeaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_leader = LeaderProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_mamta = MamtaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_megafood = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_natars = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_psv = PsvProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_redoctober = RedoctoberProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_royal = RoyalProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_sakhalin = SakhalinProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_stradiva = StradivaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_tamani = TamaniProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_three = ThreeProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_zakuson = ZakusonProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_zenith = ZenithProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => null])->all();
+                $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
+                    $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+            }
+            else{
+                $products_alex = AlexmeatProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_baltic = BalticProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_eic = EicProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_euphoria = EuphoriaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_gmi = GmiProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_grantefoods = GrantefoodsProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_lea = LeaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_leader = LeaderProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_mamta = MamtaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_megafood = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_natars = MegafoodProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_psv = PsvProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_redoctober = RedoctoberProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_royal = RoyalProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_sakhalin = SakhalinProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_stradiva = StradivaProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_tamani = TamaniProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_three = ThreeProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_zakuson = ZakusonProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_zenith = ZenithProducts::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andWhere(['instock' => '1'])->all();
+                $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
+                    $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+            }
         }
 
+
         $this->setMeta('Search - ' . $q);
-        return $this->render('search', compact('products_all', 'q', 'select'));
+        return $this->render('search', compact('products_all', 'q', 'select', 'input'));
     }
 
     public function actionUpdate()

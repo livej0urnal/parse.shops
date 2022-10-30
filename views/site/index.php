@@ -22,17 +22,29 @@
                     </div>
                     <div class="col-md-6">
                         <form id="search-everything" class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['site/search']) ?>" method="get" style="display: flex;">
-                            <div class="col-sm-6">
-                                <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q">
-                            </div>
-                            <div class="col-sm-6">
-                                <select id="select-out_stock" name="select"  class="form-control au-input--w300 au-input--style2" name="stock" style="min-height: 45px;">
-                                    <option value=""> Stock </option>
-                                    <option value="null" > Out stock </option>
-                                    <option value="1" > In stock </option>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <input class="au-input--w300 au-input--style2" type="text" placeholder="Search everything..." name="q">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select id="select-out_stock" name="select"  class="form-control au-input--w300 au-input--style2" name="stock" style="min-height: 45px;">
+                                            <option value=""> Stock </option>
+                                            <option value="null" > Out stock </option>
+                                            <option value="1" > In stock </option>
 
-                                </select>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <select name="" id="">12</select>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <button>Search</button>
+                                    </div>
+                                </div>
+
                             </div>
+
                         </form>
                     </div>
                 </div>
