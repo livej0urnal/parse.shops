@@ -150,11 +150,15 @@
                                 <?php $updates = $product->updates; ?>
                                 <?php
                                 $last_update = null;
-                                foreach ($updates as $single) {
-                                    if ($single->price != $product->price) {
-                                        $last_update = $single;
+                                $single = null;
+                                if($single === null) {
+                                    foreach ($updates as $single) {
+                                        if ($single->price != $product->price) {
+                                            $last_update = $single;
+                                        }
                                     }
                                 }
+
                                 ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
