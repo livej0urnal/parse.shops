@@ -122,7 +122,7 @@ class StradivaController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = StradivaProducts::find()->orderBy($sort->orders);
+        $query = StradivaProducts::find()->indexBy('sku')->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = StradivaProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();

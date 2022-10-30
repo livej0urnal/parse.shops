@@ -122,7 +122,7 @@ class ZenithController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = ZenithProducts::find()->orderBy($sort->orders);
+        $query = ZenithProducts::find()->indexBy('sku')->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = ZenithProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();

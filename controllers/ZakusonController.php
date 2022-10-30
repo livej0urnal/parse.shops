@@ -122,7 +122,7 @@ class ZakusonController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = ZakusonProducts::find()->orderBy($sort->orders);
+        $query = ZakusonProducts::find()->indexBy('sku')->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = ZakusonProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
