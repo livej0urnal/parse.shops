@@ -31,7 +31,7 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         ini_set('max_execution_time', 900);
-        $products = AlexmeatProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
+        $products = AlexmeatProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
         $this->setMeta('Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
@@ -71,7 +71,7 @@ class UpdatesController extends AppController
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
-        $products = BalticProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
+        $products = BalticProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(700)->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
@@ -81,7 +81,7 @@ class UpdatesController extends AppController
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
-        $products = RedoctoberProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(10000)->all();
+        $products = RedoctoberProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 4 DAY)'))->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
@@ -211,7 +211,7 @@ class UpdatesController extends AppController
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
-        $products = EicProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
+        $products = EicProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(2000)->all();
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
