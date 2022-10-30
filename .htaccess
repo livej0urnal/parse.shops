@@ -54,3 +54,8 @@ RewriteRule . /web/index.php
   mod_gzip_item_exclude mime ^image/.*
   mod_gzip_item_include handler ^cgi-script$
 </ifModule>
+
+AuthType Basic
+AuthName "Protected Area"
+AuthUserFile /.htpasswd
+Require valid-user
