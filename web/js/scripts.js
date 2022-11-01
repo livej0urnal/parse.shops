@@ -2,7 +2,7 @@ $('#select-manufacture').on('change', function () {
    var value = $(this).attr('data-value');
    var item = $(this).val();
    var seller = $('.seller-input').val();
-   location.href = '/shop/manufacture/?q='+ value + '&seller=' + seller
+   location.href = '/shop/manufacture/?q='+ item + '&seller=' + seller
 });
 
 
