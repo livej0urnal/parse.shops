@@ -33,6 +33,50 @@ class ShopController extends AppController
         return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages'));
     }
 
+    public function actionSearch($q, $seller)
+    {
+        $q = Yii::$app->request->get('q');
+        $shop = Shops::findOne(['short' => $seller]);
+        $seller = Yii::$app->request->get('seller');
+        $products = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->orderBy($sort->orders);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $manufactures = Products::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta($shop->value);
+        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures', 'sort', 'shop'));
+    }
+
+    public function actionManufacture($q, $seller)
+    {
+        $q = Yii::$app->request->get('q');
+        $seller = Yii::$app->request->get('seller');
+        $shop = Shops::findOne(['short' => $seller]);
+        $products = Products::find()->where(['like', 'article', $q])->andWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
+        $sort = new Sort([
+            'attributes' => [
+                'updated_at',
+                'price',
+                'instock',
+            ],
+            'defaultOrder' => ['updated_at' => SORT_DESC]
+        ]);
+        $query = Products::find()->where(['like', 'article', $q])->andWhere(['seller' => $seller])->orderBy($sort->orders);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
+        $manufactures = Products::find()->select('article')->where(['seller' => $seller])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $this->setMeta($shop->value);
+        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop'));
+    }
+
     public function actionChange()
     {
         ini_set('max_execution_time', 900);
