@@ -36,6 +36,11 @@ class Products extends ActiveRecord
     }
 
 
+    public function getLast()
+    {
+        return $this->hasOne(Updates::className(), ['update_at'  => 'updated_at' , 'sku_product' => 'sku']);
+    }
+
     /**
      * {@inheritdoc}
      */

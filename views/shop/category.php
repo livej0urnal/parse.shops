@@ -82,8 +82,8 @@ use dosamigos\chartjs\ChartJs;
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = \app\models\Updates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(['update_at' => $product->updated_at])->limit(1)->one(); ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                <?php $last_update = $product->last; ?>
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
