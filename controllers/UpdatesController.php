@@ -9,18 +9,18 @@ use Yii;
 class UpdatesController extends AppController
 {
 
-//    public function behaviors()
-//    {
-//        return [
-//
-//            'cache' => [
-//                'class' => 'yii\filters\PageCache',
-//                'only' => ['index', 'gmi', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
-//                    'zenith', 'psv', 'natars', 'stradiva', 'zakuson', 'sakhalin', 'royal'],
-//                'duration' => 36000,
-//            ],
-//        ];
-//    }
+    public function behaviors()
+    {
+        return [
+
+            'cache' => [
+                'class' => 'yii\filters\PageCache',
+                'only' => ['index', 'gmi', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
+                    'zenith', 'psv', 'natars', 'stradiva', 'zakuson', 'sakhalin', 'royal'],
+                'duration' => 36000,
+            ],
+        ];
+    }
 
     public function actionIndex()
     {
