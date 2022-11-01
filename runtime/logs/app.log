@@ -126,3 +126,835 @@ $_SERVER = [
     'argv' => []
     'argc' => 0
 ]
+2022-11-01 19:22:10 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\di\NotInstantiableException] ReflectionException: Class sku does not exist in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php:507
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(507): ReflectionClass->__construct('sku')
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(385): yii\di\Container->getDependencies('sku')
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('sku', Array, Array)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('sku', Array, Array)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/validators/Validator.php(230): yii\BaseYii::createObject(Array)
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(461): yii\validators\Validator::createValidator('sku', Object(app\models\Products), Array, Array)
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(413): yii\base\Model->createValidators()
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(188): yii\base\Model->getValidators()
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(787): yii\base\Model->scenarios()
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(731): yii\base\Model->safeAttributes()
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(180): yii\base\Model->setAttributes(Array)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(322): yii\base\Component->__set('attributes', Array)
+#12 /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php(19): yii\db\BaseActiveRecord->__set('attributes', Array)
+#13 [internal function]: app\controllers\ProductsController->actionChange()
+#14 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('change', Array)
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('products/change', Array)
+#18 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#19 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#20 {main}
+
+Next yii\di\NotInstantiableException: Failed to instantiate component or class "sku". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php:509
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(385): yii\di\Container->getDependencies('sku')
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('sku', Array, Array)
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('sku', Array, Array)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/validators/Validator.php(230): yii\BaseYii::createObject(Array)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(461): yii\validators\Validator::createValidator('sku', Object(app\models\Products), Array, Array)
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(413): yii\base\Model->createValidators()
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(188): yii\base\Model->getValidators()
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(787): yii\base\Model->scenarios()
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Model.php(731): yii\base\Model->safeAttributes()
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(180): yii\base\Model->setAttributes(Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(322): yii\base\Component->__set('attributes', Array)
+#11 /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php(19): yii\db\BaseActiveRecord->__set('attributes', Array)
+#12 [internal function]: app\controllers\ProductsController->actionChange()
+#13 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#14 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('change', Array)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('products/change', Array)
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#18 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#19 {main}
+2022-11-01 19:22:10 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FVwn8AAAEAAAZZBC0AAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FVwn8AAAEAAAZZBC0AAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50289'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323330.321
+    'REQUEST_TIME' => 1667323330
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:23:32 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:23:31 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FWE38AAAEAAAZZBC4AAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FWE38AAAEAAAZZBC4AAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50330'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323411.594
+    'REQUEST_TIME' => 1667323411
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:24:06 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 23. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:24:02 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FWMn8AAAEAABkcl08AAAAM'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FWMn8AAAEAABkcl08AAAAM'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50345'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323442.138
+    'REQUEST_TIME' => 1667323442
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:24:54 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 21. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:24:50 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FWYn8AAAEAAAZVA6kAAAAA'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FWYn8AAAEAAAZVA6kAAAAA'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50353'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323490.663
+    'REQUEST_TIME' => 1667323490
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:25:44 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 21. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:25:36 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FWkH8AAAEAABvxKHgAAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FWkH8AAAEAABvxKHgAAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50365'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323536.111
+    'REQUEST_TIME' => 1667323536
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:26:46 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 21. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:26:15 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FWt38AAAEAABmePjQAAAAG'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FWt38AAAEAABmePjQAAAAG'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50379'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323575.261
+    'REQUEST_TIME' => 1667323575
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:31:50 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:31:49 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FYBX8AAAEAABkcl1sAAAAM'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FYBX8AAAEAABkcl1sAAAAM'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50606'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323909.449
+    'REQUEST_TIME' => 1667323909
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:33:01 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:32:56 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FYSH8AAAEAAApMMf8AAAAF'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FYSH8AAAEAAApMMf8AAAAF'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50619'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667323976.55
+    'REQUEST_TIME' => 1667323976
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:34:24 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:34:21 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FYnX8AAAEAABmePj0AAAAG'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FYnX8AAAEAABmePj0AAAAG'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50651'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667324061.159
+    'REQUEST_TIME' => 1667324061
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:35:14 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:35:05 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FYyX8AAAEAABj2aHcAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FYyX8AAAEAABj2aHcAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50663'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667324105.265
+    'REQUEST_TIME' => 1667324105
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:36:49 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:36:17 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FZEX8AAAEAABkbl3YAAAAK'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FZEX8AAAEAABkbl3YAAAAK'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50687'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667324177.858
+    'REQUEST_TIME' => 1667324177
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:38:13 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:38:08 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FZgH8AAAEAABj2aHgAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FZgH8AAAEAABj2aHgAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50706'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667324288.58
+    'REQUEST_TIME' => 1667324288
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 19:38:57 [::1][1][-][error][yii\web\HeadersAlreadySentException] yii\web\HeadersAlreadySentException: Headers already sent in /Users/mymac/Local Projects/parse.shops/controllers/ProductsController.php on line 22. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php:368
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Response.php(341): yii\web\Response->sendHeaders()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(390): yii\web\Response->send()
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+2022-11-01 19:38:51 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FZq38AAAEAABkaikYAAAAH'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FZq38AAAEAABkaikYAAAAH'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '50718'
+    'REDIRECT_URL' => '/products/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/products/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667324331.272
+    'REQUEST_TIME' => 1667324331
+    'argv' => []
+    'argc' => 0
+]

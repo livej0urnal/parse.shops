@@ -44,6 +44,7 @@ class Products extends ActiveRecord
             [['image', 'title', 'sku', 'article', 'units', 'per', 'price', 'updated_at'], 'required'],
             [['price', 'instock'], 'string'],
             [['image', 'title', 'sku', 'article', 'units', 'per', 'updated_at', 'seller'], 'string', 'max' => 255],
+            [['sku'] , 'unique' , 'targetClass' => 'app\models\Products'],
         ];
     }
 
