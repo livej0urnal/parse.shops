@@ -90,8 +90,6 @@
 <!-- END WELCOME-->
 
 <section class="statistic statistic2">
-    <button type="button" class="btn btn-outline-secondary btn-sm" style="float: right;" onclick="location.href='/site/update/'">
-        <i class="fa fa-lightbulb-o"></i>&nbsp; Update</button>
     <div class="container">
 
         <div class="row">

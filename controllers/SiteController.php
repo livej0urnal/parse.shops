@@ -61,7 +61,7 @@ class SiteController extends AppController
             ],
             'cache' => [
                 'class' => 'yii\filters\PageCache',
-                'only' => ['last'],
+                'only' => ['last', ''],
                 'duration' => 36000,
             ],
         ];
@@ -92,9 +92,9 @@ class SiteController extends AppController
     {
         $id = Yii::$app->request->get('id');
         $users = User::find()->all();
-        $products = Products::find()->all();
-        $out_stock = Products::find()->where(['instock' => null])->all();
-        $today = Products::find()->where(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)'))->all();
+        $products = Products::find()->indexBy('id')->all();
+        $out_stock = Products::find()->indexBy('id')->where(['instock' => null])->all();
+        $today = Products::find()->indexBy('id')->where(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)'))->all();
         $this->setMeta('Dashboard Panel');
         return $this->render('index', compact('products', 'out_stock', 'today', 'users','products'));
     }
