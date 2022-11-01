@@ -55,7 +55,7 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #1</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Gmi']) ?>">GMI - Tranding</a>
                                 </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
@@ -153,6 +153,9 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['leader/index']) ?>">Leader</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="<?= \yii\helpers\Url::to(['shops/index']) ?>">Shops</a>
                         </li>
 
                     </ul>
