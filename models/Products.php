@@ -35,6 +35,7 @@ class Products extends ActiveRecord
         return $this->hasMany(Updates::className(), ['sku_product' => 'sku']);
     }
 
+
     /**
      * {@inheritdoc}
      */

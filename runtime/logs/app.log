@@ -3598,3 +3598,151 @@ $_SERVER = [
     ]
     'argc' => 1
 ]
+2022-11-01 21:18:21 [::1][1][bmkmbr7174f7if1rji30le3me5][error][Error] Error: Class 'app\models\GmiProducts' not found in /Users/mymac/Local Projects/parse.shops/controllers/GmiController.php:62
+Stack trace:
+#0 [internal function]: app\controllers\GmiController->actionManufacture('            VPR...')
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('manufacture', Array)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('gmi/manufacture', Array)
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#6 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#7 {main}
+2022-11-01 21:18:21 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = [
+    'q' => '            VPROK'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2Fw-X8AAAEAAD-0H5YAAAAC'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2Fw-X8AAAEAAD-0H5YAAAAC'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Gmi'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '54182'
+    'REDIRECT_QUERY_STRING' => 'q=%20%20%20%20%20%20%20%20%20%20%20%20VPROK'
+    'REDIRECT_URL' => '/gmi/manufacture'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'q=%20%20%20%20%20%20%20%20%20%20%20%20VPROK'
+    'REQUEST_URI' => '/gmi/manufacture?q=%20%20%20%20%20%20%20%20%20%20%20%20VPROK'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667330301.839
+    'REQUEST_TIME' => 1667330301
+    'argv' => [
+        0 => 'q=%20%20%20%20%20%20%20%20%20%20%20%20VPROK'
+    ]
+    'argc' => 1
+]
+2022-11-01 21:31:44 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: app\models\Products::update_at in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(296): yii\base\Component->__get('update_at')
+#1 /Users/mymac/Local Projects/parse.shops/views/shop/category.php(85): yii\db\BaseActiveRecord->__get('update_at')
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(347): require('/Users/mymac/Lo...')
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/Users/mymac/Lo...', Array)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/Users/mymac/Lo...', Array, Object(app\controllers\ShopController))
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('category', Array, Object(app\controllers\ShopController))
+#6 /Users/mymac/Local Projects/parse.shops/controllers/ShopController.php(33): yii\base\Controller->render('category', Array)
+#7 [internal function]: app\controllers\ShopController->actionCategory('Gmi')
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('category', Array)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('shop/category', Array)
+#12 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#14 {main}
+2022-11-01 21:31:43 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = [
+    'seller' => 'Gmi'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F0H38AAAEAAD-0H5kAAAAC'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F0H38AAAEAAD-0H5kAAAAC'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Gmi&page=2'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '55239'
+    'REDIRECT_QUERY_STRING' => 'seller=Gmi'
+    'REDIRECT_URL' => '/shop/category/*'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'seller=Gmi'
+    'REQUEST_URI' => '/shop/category/*?seller=Gmi'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667331103.835
+    'REQUEST_TIME' => 1667331103
+    'argv' => [
+        0 => 'seller=Gmi'
+    ]
+    'argc' => 1
+]

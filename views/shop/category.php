@@ -82,7 +82,7 @@ use dosamigos\chartjs\ChartJs;
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = \app\models\Updates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one(); ?>
+                                <?php $last_update = \app\models\Updates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(['update_at' => $product->updated_at])->limit(1)->one(); ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""

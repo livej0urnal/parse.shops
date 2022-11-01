@@ -26,7 +26,7 @@ class ShopController extends AppController
         ]);
         $products = Products::find()->where(['seller' => $seller])->indexBy('id')->orderBy(['updated_at' => SORT_DESC])->all();
         $query = Products::find()->where(['seller' => $seller])->indexBy('id')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 300, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->where(['seller' => $seller])->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $this->setMeta($shop->value);
