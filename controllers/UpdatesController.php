@@ -15,7 +15,7 @@ class UpdatesController extends AppController
 
             'cache' => [
                 'class' => 'yii\filters\PageCache',
-                'only' => ['index', '', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
+                'only' => ['index', 'gmi', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
                     'zenith', 'psv', 'natars', 'stradiva', 'zakuson', 'sakhalin', 'royal'],
                 'duration' => 36000,
             ],
@@ -50,8 +50,8 @@ class UpdatesController extends AppController
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
 //        $products = MegafoodProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(3000)->all();
-        $products = MegafoodProducts::getDb()->cache(function (){
-            return MegafoodProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(3000)->all();
+        $products = Products::getDb()->cache(function (){
+            return Products::find()->where(['seller' => 'Megafood'])->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(3000)->all();
         }, 3600);
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -63,8 +63,8 @@ class UpdatesController extends AppController
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
 //        $products = EuphoriaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
-        $products = EuphoriaProducts::getDb()->cache(function (){
-            return EuphoriaProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
+        $products = Products::getDb()->cache(function (){
+            return Products::find()->where(['seller' => 'Euphoria'])->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(1500)->all();
         }, 3600);
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
@@ -76,8 +76,8 @@ class UpdatesController extends AppController
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
 //        $products = BalticProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(700)->all();
-        $products = BalticProducts::getDb()->cache(function (){
-            return BalticProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
+        $products = Products::getDb()->cache(function (){
+            return Products::find()->where(['seller' => 'Baltic'])->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
         }, 3600);
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
