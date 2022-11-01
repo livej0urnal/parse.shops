@@ -77,19 +77,4 @@ class ShopController extends AppController
         $this->setMeta($shop->value);
         return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop'));
     }
-
-    public function actionChange()
-    {
-//        ini_set('max_execution_time', 900);
-        $products = Products::find()->where(['seller' => 'Megafood'])->indexBy('sku')->all();
-        foreach ($products as $product)
-        {
-            $updates = Updates::find()->where(['sku_product' => $product->sku])->andWhere(['price' => $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)'))
-                        ->orderBy(['update_at' => SORT_DESC])->all();
-            foreach ($updates as $update)
-            {
-                $update->delete();
-            }
-        }
-    }
 }
