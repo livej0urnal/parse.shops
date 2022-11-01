@@ -32,6 +32,7 @@ class GmiController extends AppController
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = GmiProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+
         $this->setMeta('GMI Trading LLC');
         return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
     }

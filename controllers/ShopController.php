@@ -29,8 +29,9 @@ class ShopController extends AppController
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 100, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->where(['seller' => $seller])->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $seller = $shop->short;
         $this->setMeta($shop->value);
-        return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages'));
+        return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages', 'seller'));
     }
 
     public function actionSearch($q, $seller)

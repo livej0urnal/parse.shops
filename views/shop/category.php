@@ -23,17 +23,17 @@ use dosamigos\chartjs\ChartJs;
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search', 'seller' => $shop['short']]) ?>" method="get">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="get">
                         <input class="au-input--w300 au-input--style2" name="q" type="text"
                                placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
-                        <input type="text" name="seller" class="disabled" value="<?= $shop['short'] ?>">
+                        <input type="text" name="seller" style="visibility: hidden;" class="disabled seller-input" value="<?= $seller ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
                     <?php if (!empty($manufactures)) : ?>
                         <div class="col-md-4">
-                            <select name="select" id="select-manufacture" class="form-control" data-value="gmi">
+                            <select name="select" id="select-manufacture" class="form-control" data-value="<?= $seller ?>">
                                 <option value="0"><?php if ($q): ?> <?= $q ?><?php else : ?> Select Manufacture <?php endif; ?></option>
                                 <?php foreach ($manufactures as $item) : ?>
                                     <option <?php if ($q == $item->article): ?> selected <?php endif; ?>
