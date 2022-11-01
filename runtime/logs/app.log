@@ -16102,3 +16102,78 @@ $_SERVER = [
     'argv' => []
     'argc' => 0
 ]
+2022-11-02 00:55:07 [::1][1][bmkmbr7174f7if1rji30le3me5][error][Error] Error: Class 'app\models\GmiUpdates' not found in /Users/mymac/Local Projects/parse.shops/views/updates/index.php:151
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(347): require()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/Users/mymac/Lo...', Array)
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/Users/mymac/Lo...', Array, Object(app\controllers\UpdatesController))
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('index', Array, Object(app\controllers\UpdatesController))
+#4 /Users/mymac/Local Projects/parse.shops/controllers/UpdatesController.php(44): yii\base\Controller->render('index', Array)
+#5 [internal function]: app\controllers\UpdatesController->actionGmi('Gmi')
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('gmi', Array)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('updates/gmi', Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#11 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#12 {main}
+2022-11-02 00:55:06 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = [
+    'seller' => 'Gmi'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2Gjyn8AAAEAAGJXIyQAAAAH'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2Gjyn8AAAEAAGJXIyQAAAAH'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/updates/index/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '61224'
+    'REDIRECT_QUERY_STRING' => 'seller=Gmi'
+    'REDIRECT_URL' => '/updates/gmi/*'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'seller=Gmi'
+    'REQUEST_URI' => '/updates/gmi/*?seller=Gmi'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667343306.777
+    'REQUEST_TIME' => 1667343306
+    'argv' => [
+        0 => 'seller=Gmi'
+    ]
+    'argc' => 1
+]

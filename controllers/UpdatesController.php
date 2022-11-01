@@ -3,26 +3,7 @@
 namespace app\controllers;
 
 use app\controllers\AppController;
-use app\models\AlexmeatProducts;
-use app\models\BalticProducts;
-use app\models\EicProducts;
-use app\models\EuphoriaProducts;
-use app\models\GmiProducts;
-use app\models\GrantefoodsProducts;
-use app\models\LeaderProducts;
-use app\models\LeaProducts;
-use app\models\MamtaProducts;
-use app\models\MegafoodProducts;
-use app\models\NatarsProducts;
-use app\models\PsvProducts;
-use app\models\RedoctoberProducts;
-use app\models\RoyalProducts;
-use app\models\SakhalinProducts;
-use app\models\StradivaProducts;
-use app\models\TamaniProducts;
-use app\models\ThreeProducts;
-use app\models\ZakusonProducts;
-use app\models\ZenithProducts;
+use app\models\Products;
 use Yii;
 
 class UpdatesController extends AppController
@@ -34,7 +15,7 @@ class UpdatesController extends AppController
 
             'cache' => [
                 'class' => 'yii\filters\PageCache',
-                'only' => ['index', 'gmi', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
+                'only' => ['index', '', 'baltic', 'megafood', 'grantefoods', 'eic', 'leader', 'three', 'euphoria', 'redoctober', 'tamani', 'mamta', 'lea',
                     'zenith', 'psv', 'natars', 'stradiva', 'zakuson', 'sakhalin', 'royal'],
                 'duration' => 36000,
             ],
@@ -44,10 +25,9 @@ class UpdatesController extends AppController
     {
         $id = Yii::$app->request->get('id');
         ini_set('max_execution_time', 900);
-        $products = AlexmeatProducts::getDb()->cache(function (){
-            return AlexmeatProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
+        $products = Products::getDb()->cache(function (){
+            return Products::find()->where(['seller' => 'Alexmeat'])->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
         }, 3600);
-//        $products = AlexmeatProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(500)->all();
         $this->setMeta('Last Updates from 7 Days');
         return $this->render('index', compact('products'));
     }
@@ -57,9 +37,8 @@ class UpdatesController extends AppController
         $id = Yii::$app->request->get('id');
         $seller = Yii::$app->request->get('seller');
         ini_set('max_execution_time', 900);
-//        $products = GmiProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(2800)->all();
-        $products = GmiProducts::getDb()->cache(function (){
-            return GmiProducts::find()->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(2800)->all();
+        $products = Products::getDb()->cache(function (){
+            return Products::find()->where(['seller' => 'Gmi'])->indexby('sku')->orderBy(['updated_at' => SORT_DESC])->andWhere(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->limit(2800)->all();
         }, 3600);
         $this->setMeta($seller . ' - Last Updates from 7 Days');
         return $this->render('index', compact('products'));
