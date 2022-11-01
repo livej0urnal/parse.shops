@@ -1,9 +1,9 @@
 <?php
-    use yii\helpers\Url;
-    use yii\helpers\Html;
-    use dosamigos\chartjs\ChartJs;
-    use yii\bootstrap5\Modal;
-    use yii\widgets\LinkPager;
+use yii\helpers\Url;
+use yii\helpers\Html;
+use dosamigos\chartjs\ChartJs;
+use yii\bootstrap5\Modal;
+use yii\widgets\LinkPager;
 ?>
 
 <section class="au-breadcrumb2">
@@ -147,19 +147,23 @@
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $updates = $product->updates; ?>
-                                <?php
-                                $last_update = null;
-                                $single = null;
-                                if($single === null) {
-                                    foreach ($updates as $single) {
-                                        if ($single->price != $product->price) {
-                                            $last_update = $single;
+                                <?php if($product->seller === 'Gmi') : ?>
+                                    <?php $last_update = \app\models\GmiUpdates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 7 DAY)'))->orderBy(['update_at' => SORT_DESC])->one(); ?>
+                                <?php else : ?>
+                                    <?php $updates = $product->updates; ?>
+                                    <?php
+                                    $last_update = null;
+                                    $single = null;
+                                    if($single === null) {
+                                        foreach ($updates as $single) {
+                                            if ($single->price != $product->price) {
+                                                $last_update = $single;
+                                            }
                                         }
                                     }
-                                }
 
-                                ?>
+                                    ?>
+                                <?php endif; ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
@@ -221,7 +225,7 @@
                                     <tr class="spacer"></tr>
                                 <?php endif; ?>
                                 <?php if(!empty($last_update)) : ?>
-                                <tr class="spacer"></tr>
+                                    <tr class="spacer"></tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
