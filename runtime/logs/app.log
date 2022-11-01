@@ -1,0 +1,128 @@
+2022-11-01 18:44:32 [::1][-][3l2qku0mb0hr9o8hoep9poco2d][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/login/css/font-face.css". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/login/css/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 18:44:32 [::1][-][3l2qku0mb0hr9o8hoep9poco2d][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf' => '669ae4a4c1b249227ae8aa7096f2cb5960b112ed39dd9ee9115d75d6cc677582a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"VBWzHbqt1V5xttCIGIBaN7TCULbWHWt9\";}'
+    'PHPSESSID' => '3l2qku0mb0hr9o8hoep9poco2d'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FM8H8AAAEAABjAImEAAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FM8H8AAAEAABjAImEAAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_REFERER' => 'http://parse.shops/site/login/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => '_csrf=669ae4a4c1b249227ae8aa7096f2cb5960b112ed39dd9ee9115d75d6cc677582a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22VBWzHbqt1V5xttCIGIBaN7TCULbWHWt9%22%3B%7D; PHPSESSID=3l2qku0mb0hr9o8hoep9poco2d'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '49736'
+    'REDIRECT_URL' => '/site/login/css/font-face.css'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login/css/font-face.css'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667321072.559
+    'REQUEST_TIME' => 1667321072
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 18:46:00 [::1][-][7tue7eu544a7q7dqtt0ku3mc8r][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "site/login/css/font-face.css". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/login/css/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 18:46:00 [::1][-][7tue7eu544a7q7dqtt0ku3mc8r][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => '7tue7eu544a7q7dqtt0ku3mc8r'
+    '_csrf' => '59acdccfef725f331cd89fc8423b1182538e2a73bf0893edebe09ecd751c511ba:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"S9uCI03gO9Jd6YD-G7txQlDbuTwyWPZM\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2FNSH8AAAEAAAstauIAAAAL'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2FNSH8AAAEAAAstauIAAAAL'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/css,*/*;q=0.1'
+    'HTTP_REFERER' => 'http://parse.shops/site/login/*'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=7tue7eu544a7q7dqtt0ku3mc8r; _csrf=59acdccfef725f331cd89fc8423b1182538e2a73bf0893edebe09ecd751c511ba%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22S9uCI03gO9Jd6YD-G7txQlDbuTwyWPZM%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '49771'
+    'REDIRECT_URL' => '/site/login/css/font-face.css'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login/css/font-face.css'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667321160.703
+    'REQUEST_TIME' => 1667321160
+    'argv' => []
+    'argc' => 0
+]

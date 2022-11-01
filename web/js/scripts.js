@@ -22,15 +22,24 @@ $('.find-gmi-updates').on('click', function (){
 
 });
 
-
-
-$('#select-out_stock').on('change', function () {
-   $('#search-everything').submit();
-});
-
 $('.find-product-updates').on('click', function(){
    var sku = $(this).attr('data-value');
    var seller = $(this).attr('data-seller');
    console.log(sku + ' ' + seller);
    $('#mediumModal').show();
+});
+
+
+$('#search-success').on('click', function (e) {
+   e.preventDefault();
+   var input = $('#search-input');
+   var select = $('#select-out_stock');
+   var seller = $('#seller-search');
+   var value = input.val();
+   if(value.length > 1) {
+      location.href = '/site/search?q=' + input.val() + '&select=' + select.val() + '&seller=' + seller.val();
+
+   }else{
+      alert('Empty search input');
+   }
 });
