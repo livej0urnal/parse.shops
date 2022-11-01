@@ -12,6 +12,7 @@ use app\models\LeaderProducts;
 use app\models\LeaProducts;
 use app\models\MamtaProducts;
 use app\models\MegafoodProducts;
+use app\models\Products;
 use app\models\PsvProducts;
 use app\models\RedoctoberProducts;
 use app\models\RoyalProducts;
@@ -94,31 +95,10 @@ class SiteController extends AppController
         $today = Setting::findOne(['name' => 'today']);
         $users = User::find()->all();
         $out_stock = Setting::findOne(['name' => 'out_stock']);
-        $products_alex = AlexmeatProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_baltic = BalticProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_eic = EicProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_euphoria = EuphoriaProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_gmi = GmiProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_grantefoods = GrantefoodsProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_lea = LeaProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_leader = LeaderProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_mamta = MamtaProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_megafood = MegafoodProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_natars = MegafoodProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_psv = PsvProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_redoctober = RedoctoberProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_royal = RoyalProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_sakhalin = SakhalinProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_stradiva = StradivaProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_tamani = TamaniProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_three = ThreeProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_zakuson = ZakusonProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_zenith = ZenithProducts::find()->orderBy(['updated_at' => SORT_DESC])->limit(5)->all();
-        $products_all = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-            $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
+        $products = Products::find()->all();
 
         $this->setMeta('Dashboard Panel');
-        return $this->render('index', compact('products', 'out_stock', 'today', 'users', 'products_alex', 'products_all'));
+        return $this->render('index', compact('products', 'out_stock', 'today', 'users','products'));
     }
 
     public function actionSearch($q, $select, $seller = null)
