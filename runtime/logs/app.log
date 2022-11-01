@@ -5787,3 +5787,1580 @@ $_SERVER = [
     ]
     'argc' => 1
 ]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314762.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAWIEAAAAAA'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAWIEAAAAAA'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59418'
+    'REDIRECT_URL' => '/uploads/baltic/314762.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314762.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.294
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162996.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAYILwAAAAC'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAYILwAAAAC'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59419'
+    'REDIRECT_URL' => '/uploads/baltic/162996.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162996.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.295
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162999.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAXIFcAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAXIFcAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59421'
+    'REDIRECT_URL' => '/uploads/baltic/162999.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162999.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.294
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163003.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAaINkAAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAaINkAAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59422'
+    'REDIRECT_URL' => '/uploads/baltic/163003.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163003.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.295
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162997.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAZIKMAAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAZIKMAAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59420'
+    'REDIRECT_URL' => '/uploads/baltic/162997.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162997.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.294
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163004.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAbPL4AAAAF'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAbPL4AAAAF'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59423'
+    'REDIRECT_URL' => '/uploads/baltic/163004.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163004.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.298
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:01 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163026.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAWIEEAAAAA'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAWIEEAAAAA'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59424'
+    'REDIRECT_URL' => '/uploads/baltic/163026.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163026.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.475
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:01 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163029.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:00 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOH8AAAEAAFAYIL0AAAAC'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOH8AAAEAAFAYIL0AAAAC'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59425'
+    'REDIRECT_URL' => '/uploads/baltic/163029.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163029.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336760.596
+    'REQUEST_TIME' => 1667336760
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163003.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAXIFkAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAXIFkAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59426'
+    'REDIRECT_URL' => '/uploads/baltic/163003.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163003.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.014
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162999.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAZIKUAAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAZIKUAAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59428'
+    'REDIRECT_URL' => '/uploads/baltic/162999.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162999.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.013
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/314762.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAYIL8AAAAC'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAYIL8AAAAC'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59431'
+    'REDIRECT_URL' => '/uploads/baltic/314762.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/314762.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.013
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162997.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAbPMAAAAAF'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAbPMAAAAAF'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59429'
+    'REDIRECT_URL' => '/uploads/baltic/162997.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162997.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.013
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/162996.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAWIEMAAAAA'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAWIEMAAAAA'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59430'
+    'REDIRECT_URL' => '/uploads/baltic/162996.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/162996.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.013
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163025.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAaIN0AAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAaIN0AAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59427'
+    'REDIRECT_URL' => '/uploads/baltic/163025.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163025.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.147
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163004.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFA@WewAAAAG'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFA@WewAAAAG'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59432'
+    'REDIRECT_URL' => '/uploads/baltic/163004.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163004.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.216
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163029.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFA-Wd8AAAAH'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFA-Wd8AAAAH'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59433'
+    'REDIRECT_URL' => '/uploads/baltic/163029.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163029.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.3
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163026.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAXIFoAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAXIFoAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59434'
+    'REDIRECT_URL' => '/uploads/baltic/163026.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163026.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.405
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:03 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "uploads/baltic/163028.png". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('uploads/baltic/...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 23:06:02 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKOn8AAAEAAFAZIKYAAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKOn8AAAEAAFAZIKYAAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8'
+    'HTTP_REFERER' => 'http://parse.shops/shop/category/*?seller=Baltic'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59435'
+    'REDIRECT_URL' => '/uploads/baltic/163028.png'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/uploads/baltic/163028.png'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336762.506
+    'REQUEST_TIME' => 1667336762
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:51 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\db\Exception] PDOException: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php:1302
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1302): PDOStatement->execute()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /Users/mymac/Local Projects/parse.shops/controllers/ShopController.php(87): yii\db\ActiveQuery->all()
+#6 [internal function]: app\controllers\ShopController->actionChange()
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('change', Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('shop/change', Array)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#13 {main}
+
+Next yii\db\Exception: SQLSTATE[08S01]: Communication link failure: 1053 Server shutdown in progress
+The SQL being executed was: SELECT * FROM `updates` WHERE (`sku_product`='227503') AND (`price`='6.00') AND (update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)) in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php:676
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1307): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1168): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Query.php(249): yii\db\Command->queryAll()
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /Users/mymac/Local Projects/parse.shops/controllers/ShopController.php(87): yii\db\ActiveQuery->all()
+#6 [internal function]: app\controllers\ShopController->actionChange()
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('change', Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('shop/change', Array)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#13 {main}
+Additional Information:
+Array
+(
+    [0] => 08S01
+    [1] => 1053
+    [2] => Server shutdown in progress
+)
+
+2022-11-01 23:06:08 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKQH8AAAEAAFBTd8AAAAAK'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKQH8AAAEAAFBTd8AAAAAK'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59438'
+    'REDIRECT_URL' => '/shop/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/shop/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336768.203
+    'REQUEST_TIME' => 1667336768
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:06:58 [::1][-][bmkmbr7174f7if1rji30le3me5][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php:722
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1163): yii\db\Command->prepare(true)
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(320): yii\db\Command->queryAll()
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('user')
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(439): yii\db\Schema->getTableSchema('{{%user}}')
+#12 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#13 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#14 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition(Array, Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition(Array)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/mdmsoft/yii2-admin/models/User.php(67): yii\db\BaseActiveRecord::findOne(Array)
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(698): mdm\admin\models\User::findIdentity(1)
+#18 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#19 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#20 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#21 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get('isGuest')
+#22 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#23 [internal function]: yii\base\BaseObject->__construct(Array)
+#24 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#25 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#26 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#27 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject(Array)
+#28 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#29 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#30 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct(Array)
+#31 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#32 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#33 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#34 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#35 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject(Array, Array)
+#36 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule('debug')
+#37 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#38 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#39 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#40 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct(Array)
+#41 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->__construct('[<span class="s...')
+#42 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php:648
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1163): yii\db\Command->prepare(true)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(320): yii\db\Command->queryAll()
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('user')
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(439): yii\db\Schema->getTableSchema('{{%user}}')
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#12 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition(Array, Array)
+#13 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition(Array)
+#14 /Users/mymac/Local Projects/parse.shops/vendor/mdmsoft/yii2-admin/models/User.php(67): yii\db\BaseActiveRecord::findOne(Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(698): mdm\admin\models\User::findIdentity(1)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#18 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#19 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get('isGuest')
+#20 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#24 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#25 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject(Array)
+#26 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#27 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#28 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct(Array)
+#29 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#30 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#31 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#32 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#33 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject(Array, Array)
+#34 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule('debug')
+#35 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#36 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#37 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#38 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct(Array)
+#39 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->__construct('[<span class="s...')
+#40 {main}
+Additional Information:
+
+2022-11-01 23:06:58 [::1][-][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKcn8AAAEAAFHRISQAAAAB'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKcn8AAAEAAFHRISQAAAAB'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59451'
+    'REDIRECT_URL' => '/shop/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/shop/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336818.192
+    'REQUEST_TIME' => 1667336818
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 23:07:05 [::1][-][bmkmbr7174f7if1rji30le3me5][error][yii\db\Exception] PDOException: SQLSTATE[HY000] [2002] No such file or directory in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php:722
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(722): PDO->__construct('mysql:host=loca...', 'root', 'root', NULL)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(637): yii\db\Connection->createPdoInstance()
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1163): yii\db\Command->prepare(true)
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(320): yii\db\Command->queryAll()
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('user')
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(439): yii\db\Schema->getTableSchema('{{%user}}')
+#12 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#13 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#14 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition(Array, Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition(Array)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/mdmsoft/yii2-admin/models/User.php(67): yii\db\BaseActiveRecord::findOne(Array)
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(698): mdm\admin\models\User::findIdentity(1)
+#18 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#19 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#20 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#21 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get('isGuest')
+#22 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#23 [internal function]: yii\base\BaseObject->__construct(Array)
+#24 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#25 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#26 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#27 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject(Array)
+#28 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#29 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#30 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct(Array)
+#31 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#32 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#33 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#34 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#35 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject(Array, Array)
+#36 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule('debug')
+#37 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#38 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#39 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#40 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct(Array)
+#41 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->__construct('[<span class="s...')
+#42 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2002] No such file or directory in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php:648
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1067): yii\db\Connection->open()
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Connection.php(1054): yii\db\Connection->getMasterPdo()
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(261): yii\db\Connection->getSlavePdo()
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(1163): yii\db\Command->prepare(true)
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Command.php(410): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(320): yii\db\Command->queryAll()
+#6 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/mysql/Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(756): yii\db\mysql\Schema->loadTableSchema('user')
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/Schema.php(192): yii\db\Schema->getTableMetadata('{{%user}}', 'schema', false)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(439): yii\db\Schema->getTableSchema('{{%user}}')
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(266): yii\db\ActiveRecord::getTableSchema()
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(238): yii\db\ActiveRecord::filterValidColumnNames(Object(yii\db\Connection), Array)
+#12 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/ActiveRecord.php(195): yii\db\ActiveRecord::filterCondition(Array, Array)
+#13 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/db/BaseActiveRecord.php(110): yii\db\ActiveRecord::findByCondition(Array)
+#14 /Users/mymac/Local Projects/parse.shops/vendor/mdmsoft/yii2-admin/models/User.php(67): yii\db\BaseActiveRecord::findOne(Array)
+#15 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(698): mdm\admin\models\User::findIdentity(1)
+#16 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(199): yii\web\User->renewAuthStatus()
+#17 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/User.php(367): yii\web\User->getIdentity()
+#18 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php(139): yii\web\User->getIsGuest()
+#19 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/panels/UserPanel.php(83): yii\base\Component->__get('isGuest')
+#20 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\panels\UserPanel->init()
+#21 [internal function]: yii\base\BaseObject->__construct(Array)
+#22 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#23 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\panel...', Array, Array)
+#24 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\panel...', Array, Array)
+#25 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(253): yii\BaseYii::createObject(Array)
+#26 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2-debug/src/Module.php(225): yii\debug\Module->initPanels()
+#27 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\debug\Module->init()
+#28 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(161): yii\base\BaseObject->__construct(Array)
+#29 [internal function]: yii\base\Module->__construct('debug', Object(yii\web\Application), Array)
+#30 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(419): ReflectionClass->newInstanceArgs(Array)
+#31 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/di/Container.php(170): yii\di\Container->build('yii\\debug\\Modul...', Array, Array)
+#32 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('yii\\debug\\Modul...', Array, Array)
+#33 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(445): yii\BaseYii::createObject(Array, Array)
+#34 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(313): yii\base\Module->getModule('debug')
+#35 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(69): yii\base\Application->bootstrap()
+#36 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(271): yii\web\Application->bootstrap()
+#37 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\base\Application->init()
+#38 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(204): yii\base\BaseObject->__construct(Array)
+#39 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->__construct('[<span class="s...')
+#40 {main}
+Additional Information:
+
+2022-11-01 23:07:04 [::1][-][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2GKeH8AAAEAAFHUIb0AAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2GKeH8AAAEAAFHUIb0AAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '59452'
+    'REDIRECT_URL' => '/shop/change'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/shop/change'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667336824.933
+    'REQUEST_TIME' => 1667336824
+    'argv' => []
+    'argc' => 0
+]

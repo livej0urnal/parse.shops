@@ -84,7 +84,8 @@ class ShopController extends AppController
         $products = Products::find()->indexBy('sku')->all();
         foreach ($products as $product)
         {
-            $updates = Updates::find()->indexBy(['sku_product'])->where(['sku_product' => $product->sku])->andWhere(['price' => $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)'))->all();
+            $updates = Updates::find()->indexBy(['sku_product'])->where(['sku_product' => $product->sku])->andWhere(['price' => $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)'))
+                        ->orderBy(['update_at' => SORT_DESC])->all();
             foreach ($updates as $update)
             {
                 $update->delete();
