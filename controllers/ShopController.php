@@ -77,4 +77,18 @@ class ShopController extends AppController
         $this->setMeta($shop->value);
         return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop'));
     }
+
+    public function actionChange()
+    {
+//        ini_set('max_execution_time', 900);
+        $products = Products::find()->where(['seller' => 'Alexmeat'])->indexBy('sku')->all();
+        foreach ($products as $product)
+        {
+            $update = Updates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->orderBy(['update_at' => SORT_DESC])->one();
+            $product->updated_at = $update->update_at;
+            if($update->update_at != null) {
+                $product->save(false);
+            }
+        }
+    }
 }
