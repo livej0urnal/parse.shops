@@ -155,7 +155,7 @@ AppAsset::register($this);
                             </ul>
                         </li>
                         <li>
-                            <a href="<?= \yii\helpers\Url::to(['shops/index']) ?>">Shops</a>
+                            <a href="<?= \yii\helpers\Url::to(['shops/index']) ?>"><i class="far fa-check-square"></i>Shops</a>
                         </li>
 
                     </ul>
