@@ -91,12 +91,10 @@ class SiteController extends AppController
     public function actionIndex()
     {
         $id = Yii::$app->request->get('id');
-        $products = Setting::findOne(['name' => 'products']);
-        $today = Setting::findOne(['name' => 'today']);
         $users = User::find()->all();
-        $out_stock = Setting::findOne(['name' => 'out_stock']);
         $products = Products::find()->all();
-
+        $out_stock = Products::find()->where(['instock' => null])->all();
+        $today = Products::find()->where(('updated_at >= DATE_SUB(CURRENT_DATE, INTERVAL 1 DAY)'))->all();
         $this->setMeta('Dashboard Panel');
         return $this->render('index', compact('products', 'out_stock', 'today', 'users','products'));
     }
