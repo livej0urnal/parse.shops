@@ -32,4 +32,17 @@ class ShopController extends AppController
         $this->setMeta($shop->value);
         return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages'));
     }
+
+    public function actionChange()
+    {
+        $products = Products::find()->indexBy('sku')->all();
+        foreach ($products as $product)
+        {
+            $updates = Updates::find()->where(['sku_product' => $product->sku])->andWhere(['price' => $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)'))->all();
+            foreach ($updates as $update)
+            {
+                $update->delete();
+            }
+        }
+    }
 }

@@ -3746,3 +3746,674 @@ $_SERVER = [
     ]
     'argc' => 1
 ]
+2022-11-01 21:42:58 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:42:58 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F2wn8AAAEAAD-2H-0AAAAE'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F2wn8AAAEAAD-2H-0AAAAE'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '55464'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667331778.609
+    'REQUEST_TIME' => 1667331778
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:43:11 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:43:11 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F2z38AAAEAAEFbC3UAAAAL'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F2z38AAAEAAEFbC3UAAAAL'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '55473'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667331791.865
+    'REQUEST_TIME' => 1667331791
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:46:59 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:46:59 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F3s38AAAEAAD-3N8sAAAAF'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F3s38AAAEAAD-3N8sAAAAF'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '56514'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332019.189
+    'REQUEST_TIME' => 1667332019
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:47:11 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:47:10 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F3vn8AAAEAAD-1H78AAAAD'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F3vn8AAAEAAD-1H78AAAAD'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '56519'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332030.914
+    'REQUEST_TIME' => 1667332030
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:48:10 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:48:09 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F3@X8AAAEAAECN0o4AAAAH'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F3@X8AAAEAAECN0o4AAAAH'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '56776'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332089.966
+    'REQUEST_TIME' => 1667332089
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:48:31 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:48:31 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F4D38AAAEAAEFZC0YAAAAJ'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F4D38AAAEAAEFZC0YAAAAJ'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '56871'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332111.021
+    'REQUEST_TIME' => 1667332111
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:50:13 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:50:13 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F4dX8AAAEAAEBDDAMAAAAG'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F4dX8AAAEAAEBDDAMAAAAG'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '57336'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332213.305
+    'REQUEST_TIME' => 1667332213
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:51:17 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:51:17 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F4tX8AAAEAAECN0o8AAAAH'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F4tX8AAAEAAECN0o8AAAAH'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '57375'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332277.423
+    'REQUEST_TIME' => 1667332277
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:51:17 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "vendor/bootstrap-4.1/bootstrap.min.css.map". in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php:561
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('vendor/bootstra...', Array)
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Страница не найдена. in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#2 {main}
+2022-11-01 21:51:17 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F4tX8AAAEAAD-yH3QAAAAA'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F4tX8AAAEAAD-yH3QAAAAA'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_PRAGMA' => 'no-cache'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '57380'
+    'REDIRECT_URL' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/vendor/bootstrap-4.1/bootstrap.min.css.map'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332277.596
+    'REQUEST_TIME' => 1667332277
+    'argv' => []
+    'argc' => 0
+]
+2022-11-01 21:52:37 [::1][1][bmkmbr7174f7if1rji30le3me5][error][yii\base\UnknownPropertyException] yii\base\UnknownPropertyException: Getting unknown property: yii\db\ActiveQuery::price in /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Component.php:154
+Stack trace:
+#0 /Users/mymac/Local Projects/parse.shops/views/shop/category.php(86): yii\base\Component->__get('price')
+#1 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(347): require('/Users/mymac/Lo...')
+#2 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/Users/mymac/Lo...', Array)
+#3 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/Users/mymac/Lo...', Array, Object(app\controllers\ShopController))
+#4 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(407): yii\base\View->render('category', Array, Object(app\controllers\ShopController))
+#5 /Users/mymac/Local Projects/parse.shops/controllers/ShopController.php(33): yii\base\Controller->render('category', Array)
+#6 [internal function]: app\controllers\ShopController->actionCategory('Gmi')
+#7 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#8 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Controller.php(178): yii\base\InlineAction->runWithParams(Array)
+#9 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Module.php(552): yii\base\Controller->runAction('category', Array)
+#10 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('shop/category', Array)
+#11 /Users/mymac/Local Projects/parse.shops/vendor/yiisoft/yii2/base/Application.php(384): yii\web\Application->handleRequest(Object(yii\web\Request))
+#12 /Users/mymac/Local Projects/parse.shops/web/index.php(15): yii\base\Application->run()
+#13 {main}
+2022-11-01 21:52:37 [::1][1][bmkmbr7174f7if1rji30le3me5][info][application] $_GET = [
+    'seller' => 'Gmi'
+]
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'bmkmbr7174f7if1rji30le3me5'
+    '_csrf' => 'fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"1xZ_NLBRJTOgcFRufyhn8CdIvyIVretV\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://parse.shops/debug/default/index'
+    '__id' => 1
+    '__authKey' => 'A0sBAcxysmgUOtP9b4j1H1OnCVhMz3TR'
+]
+
+$_SERVER = [
+    'REDIRECT_UNIQUE_ID' => 'Y2F5BX8AAAEAAEFaC2gAAAAK'
+    'REDIRECT_STATUS' => '200'
+    'UNIQUE_ID' => 'Y2F5BX8AAAEAAEFaC2gAAAAK'
+    'HTTP_HOST' => 'parse.shops'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://parse.shops/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,uk-UA;q=0.8,uk;q=0.7,en-US;q=0.6,en;q=0.5'
+    'HTTP_COOKIE' => 'PHPSESSID=bmkmbr7174f7if1rji30le3me5; _csrf=fc87c3350858ab0204cde93a727e65f049ed2a308884fb5a973904fe681bc55fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%221xZ_NLBRJTOgcFRufyhn8CdIvyIVretV%22%3B%7D'
+    'PATH' => '/usr/bin:/bin:/usr/sbin:/sbin'
+    'SERVER_SIGNATURE' => ''
+    'SERVER_SOFTWARE' => 'Apache'
+    'SERVER_NAME' => 'parse.shops'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => '/Users/mymac/Local Projects/parse.shops/web'
+    'SERVER_ADMIN' => 'you@example.com'
+    'SCRIPT_FILENAME' => '/Users/mymac/Local Projects/parse.shops/web/index.php'
+    'REMOTE_PORT' => '57626'
+    'REDIRECT_QUERY_STRING' => 'seller=Gmi'
+    'REDIRECT_URL' => '/shop/category/*'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => 'seller=Gmi'
+    'REQUEST_URI' => '/shop/category/*?seller=Gmi'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1667332357.28
+    'REQUEST_TIME' => 1667332357
+    'argv' => [
+        0 => 'seller=Gmi'
+    ]
+    'argc' => 1
+]
