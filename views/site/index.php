@@ -95,7 +95,7 @@
         <div class="row">
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--green">
-                    <h2 class="number"> <?php echo count($products); ?></h2>
+                    <h2 class="number"> <?= $products ?></h2>
                     <span class="desc">Products </span>
                     <div class="icon">
                         <i class="zmdi zmdi-account-o"></i>
@@ -104,7 +104,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--orange">
-                    <h2 class="number"><?php echo count($today) ?></h2>
+                    <h2 class="number"><?= $today ?></h2>
                     <span class="desc">upgrade this day</span>
                     <div class="icon">
                         <i class="zmdi zmdi-shopping-cart"></i>
@@ -113,7 +113,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--blue">
-                    <h2 class="number"><?php echo count($users); ?></h2>
+                    <h2 class="number"><?= $users ?></h2>
                     <span class="desc">users</span>
                     <div class="icon">
                         <i class="zmdi zmdi-calendar-note"></i>
@@ -122,7 +122,7 @@
             </div>
             <div class="col-md-6 col-lg-3">
                 <div class="statistic__item statistic__item--red">
-                    <h2 class="number"><?php echo count($out_stock);; ?></h2>
+                    <h2 class="number"><?= $out_stock ?></h2>
                     <span class="desc">out of stock</span>
                     <div class="icon">
                         <i class="zmdi zmdi-money"></i>
