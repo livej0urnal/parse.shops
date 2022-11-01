@@ -80,8 +80,8 @@ class ShopController extends AppController
 
     public function actionChange()
     {
-        ini_set('max_execution_time', 900);
-        $products = Products::find()->where(['seller' => 'Gmi'])->indexBy('sku')->all();
+//        ini_set('max_execution_time', 900);
+        $products = Products::find()->where(['seller' => 'Zenith'])->indexBy('sku')->all();
         foreach ($products as $product)
         {
             $updates = Updates::find()->where(['sku_product' => $product->sku])->andWhere(['price' => $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 10 DAY)'))

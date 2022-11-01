@@ -55,7 +55,8 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #1</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Gmi']) ?>">GMI - Tranding</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Gmi']) ?>">GMI -
+                                        Tranding</a>
                                 </li>
                                 <li>
                                     <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Megafood']) ?>">Megafood</a>
@@ -74,17 +75,19 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #2</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['redoctober/index']) ?>">Redoctober</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'RedOctober']) ?>">RedOctober</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Grantefoods</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Grantefoods']) ?>">Grantefoods</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Lea']) ?>">Lea</a>
+
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Mamta']) ?>">Mamta</a>
+
                                 </li>
                             </ul>
                         </li>
@@ -94,18 +97,18 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #3</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">Three</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Three']) ?>">Three</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">Tamani</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Tamani']) ?>">Tamani</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Psv']) ?>">Psv</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Alexmeat']) ?>">Alexmeat</a>
                                 </li>
                             </ul>
                         </li>
@@ -115,16 +118,16 @@ AppAsset::register($this);
                                 <span class="bot-line"></span>Package #4</a>
                             <ul class="header3-sub-list list-unstyled">
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Zenith']) ?>">Zenith</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Royal']) ?>">Royal</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['sakhalin/index']) ?>">Sakhalin</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Sakhalin']) ?>">Sakhalin</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['stradiva/index']) ?>">Stradiva</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Stradiva']) ?>">Stradiva</a>
                                 </li>
 
 
@@ -138,19 +141,19 @@ AppAsset::register($this);
 
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Zakuson']) ?>">Zakuson</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Natars']) ?>">Natars</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['eic/index']) ?>">Eic</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Eic']) ?>">Eic</a>
                                 </li>
 
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['leader/index']) ?>">Leader</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Leader']) ?>">Leader</a>
                                 </li>
                             </ul>
                         </li>
@@ -164,7 +167,7 @@ AppAsset::register($this);
                     <div class="account-wrap">
                         <div class="account-item account-item--style2 clearfix js-item-menu">
                             <div class="image">
-                                <img src="/images/icon/avatar-01.jpg" alt="<?= Yii::$app->user->identity->username ?>" />
+                                <img src="/images/icon/avatar-01.jpg" alt="<?= Yii::$app->user->identity->username ?>"/>
                             </div>
                             <div class="content">
                                 <a class="js-acc-btn" href="#"><?= Yii::$app->user->identity->username ?></a>
@@ -173,7 +176,7 @@ AppAsset::register($this);
                                 <div class="info clearfix">
                                     <div class="image">
                                         <a href="#">
-                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="/images/icon/avatar-01.jpg" alt="John Doe"/>
                                         </a>
                                     </div>
                                     <div class="content">
@@ -299,7 +302,7 @@ AppAsset::register($this);
             <div class="account-wrap">
                 <div class="account-item account-item--style2 clearfix js-item-menu">
                     <div class="image">
-                        <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
+                        <img src="/images/icon/avatar-01.jpg" alt="John Doe"/>
                     </div>
                     <div class="content">
                         <a class="js-acc-btn" href="#"><?= Yii::$app->user->identity->username ?></a>
@@ -308,7 +311,7 @@ AppAsset::register($this);
                         <div class="info clearfix">
                             <div class="image">
                                 <a href="#">
-                                    <img src="/images/icon/avatar-01.jpg" alt="John Doe" />
+                                    <img src="/images/icon/avatar-01.jpg" alt="John Doe"/>
                                 </a>
                             </div>
                             <div class="content">
@@ -341,7 +344,9 @@ AppAsset::register($this);
 </div>
 <script>
     // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function () {
+        scrollFunction()
+    };
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
