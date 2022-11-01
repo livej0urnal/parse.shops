@@ -81,7 +81,7 @@ class ShopController extends AppController
     public function actionChange()
     {
 //        ini_set('max_execution_time', 900);
-        $products = Products::find()->where(['seller' => 'Baltic'])->indexBy('sku')->all();
+        $products = Products::find()->where(['seller' => 'EIC'])->indexBy('sku')->all();
         foreach ($products as $product)
         {
             $update = Updates::find()->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->orderBy(['update_at' => SORT_DESC])->one();
