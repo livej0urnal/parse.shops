@@ -58,13 +58,13 @@ AppAsset::register($this);
                                     <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Gmi']) ?>">GMI - Tranding</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Megafood']) ?>">Megafood</a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Euphoria']) ?>">Euphoria </a>
                                 </li>
                                 <li>
-                                    <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
+                                    <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Baltic']) ?>">Baltic</a>
                                 </li>
                             </ul>
                         </li>
