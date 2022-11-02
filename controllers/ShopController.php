@@ -80,11 +80,13 @@ class ShopController extends AppController
 
     public function actionChange()
     {
-//        ini_set('max_execution_time', 900);
-        $products = Products::find()->where(['like', 'price', '$'])->indexBy('sku')->all();
-        foreach ($products as $product)
+        $updates = Updates::find()->all();
+        foreach ($updates as $update)
         {
-            $product->delete();
+            $other = Updates::find()->where(['price' => $update->price])->andWhere(['sku_product' => $update->sku_product])->andWhere(['!=', 'id', $update->id])->all();
+            foreach ($other as $item) {
+                $item->delete();
+            }
         }
     }
 }
