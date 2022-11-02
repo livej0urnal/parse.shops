@@ -6,37 +6,20 @@ use Yii;
 use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Sakhalin;
-use app\models\SakhalinProducts;
-use app\models\SakhalinUpdates;
+use app\models\Products;
+use app\models\Updates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
 class SakhalinController extends AppController
 {
-    public function behaviors()
-    {
-        return [
-            [
-                'class' => 'yii\filters\PageCache',
-                'only' => ['index'],
-                'duration' => 3600,
-                'variations' => [
-                    Yii::$app->language,
-                ],
-                'dependency' => [
-                    'class' => 'yii\caching\DbDependency',
-                    'sql' => 'SELECT MAX(id) FROM ' . SakhalinProducts::tableName(),
-                ]
-            ]
-        ];
-    }
     public function actionLinks()
     {
         $links = Sakhalin::find()->all();
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = SakhalinProducts::find()->all();
+        $products = Products::find()->where(['seller' => 'Sakhalin'])->all();
         foreach ($products as $product)
         {
             $product->instock = null;
@@ -62,34 +45,32 @@ class SakhalinController extends AppController
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
-                $find_product = SakhalinProducts::findOne(['sku' => $product->sku]);
+                $find_product = Products::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = SakhalinUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if(!$need_update->price) {
-                        $product_update = SakhalinProducts::findOne(['sku' => $product->sku]);
+                    $need_update = Updates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
+                    if($need_update->price != $product->price) {
+                        $product_update = Products::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        if(!empty($product->find('div.description', 1)->plaintext)) {
+                            $product_update->per = $product->find('div.description', 1)->plaintext;
+                        }
                         $product_update->instock = '1';
-                        $product_update->seller = 'Sakhalin';
+                        $product->updated_at = new Expression('NOW()');
                         $product_update->save(false);
+                        $new_updates = new Updates();
+                        $new_updates->price = $product->price;
+                        $new_updates->sku_product = $product->sku;
+                        $new_updates->update_at = $product->updated_at;
+                        $new_updates->save(false);
                     }
                     else{
-                        $new_updates = new SakhalinUpdates();
-                        $new_updates->sku_product = htmlspecialchars($product->sku);
-                        $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = SakhalinProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
-                        $product_update->instock = '1';
-                        $product_update->seller = 'Sakhalin';
-                        $product_update->save(false);
-                        $new_updates->save(false);
-
-                        $update_products++;
+                        $find_product->instock = '1';
+                        $find_product->save(false);
                     }
 
                 }
                 else{
-                    $new_product = new SakhalinProducts();
+                    $new_product = new Products();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
@@ -113,11 +94,6 @@ class SakhalinController extends AppController
                     $new_product->seller = 'Sakhalin';
                     $new_product->save(false);
 
-                    $new_updates = new SakhalinUpdates();
-                    $new_updates->sku_product = htmlspecialchars($product->sku);
-                    $new_updates->price = htmlspecialchars($product->price);
-                    $new_updates->save(false);
-
                     $new_products ++ ;
                 }
                 $parse_products ++ ;
@@ -127,63 +103,4 @@ class SakhalinController extends AppController
         return $this->render('parse', compact('links', 'parse_products', 'update_products' , 'new_products'));
     }
 
-    public function actionIndex()
-    {
-        $id = Yii::$app->request->get('id');
-        $products = SakhalinProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = SakhalinProducts::find()->indexBy('sku')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = SakhalinProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Sakhalin,inc');
-        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
-    }
-
-    public function actionSearch($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = SakhalinProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = SakhalinProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = SakhalinProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Sakhalin,inc');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
-    }
-
-    public function actionManufacture($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = SakhalinProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = SakhalinProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = SakhalinProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Sakhalin,inc');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
-    }
 }
