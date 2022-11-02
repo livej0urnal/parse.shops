@@ -7,8 +7,6 @@ use Yii;
 use yii\data\Sort;
 use yii\web\Controller;
 use app\models\Alexmeat;
-use app\models\AlexmeatProducts;
-use app\models\AlexmeatUpdates;
 use yii\db\Expression;
 use yii\data\Pagination;
 
