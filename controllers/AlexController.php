@@ -2,7 +2,9 @@
 
 namespace app\controllers;
 
+use app\models\Products;
 use app\models\SakhalinProducts;
+use app\models\Updates;
 use Yii;
 use yii\data\Sort;
 use yii\web\Controller;
@@ -20,7 +22,7 @@ class AlexController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = AlexmeatProducts::find()->all();
+        $products = Products::find()->where(['seller' => 'Alexmeat'])->indexBy('seller')->all();
         foreach ($products as $product)
         {
             $product->instock = null;
@@ -46,32 +48,29 @@ class AlexController extends AppController
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
-                $find_product = AlexmeatProducts::findOne(['sku' => $product->sku]);
+                $find_product = Products::findOne(['sku' => $product->sku, 'seller' => $product->seller]);
                 if(!empty($find_product)) {
-                    $need_update = AlexmeatUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if(!$need_update->price) {
-                        $product_update = AlexmeatProducts::findOne(['sku' => $product->sku]);
+                    $need_update = Updates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
+                    if($need_update->price != $product->price) {
+                        $product_update = Products::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         $product_update->instock = '1';
+                        $product->updated_at = new Expression('NOW()');
                         $product_update->save(false);
+                        $new_updates = new Updates();
+                        $new_updates->price = $product->price;
+                        $new_updates->sku_product = $product->sku;
+                        $new_updates->update_at = $product->updated_at;
+                        $new_updates->save(false);
                     }
                     else{
-                        $new_updates = new AlexmeatUpdates();
-                        $new_updates->sku_product = htmlspecialchars($product->sku);
-                        $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = AlexmeatProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $product->price;
-                        $product_update->updated_at = new Expression('NOW()');
-                        $product_update->instock = '1';
-                        $product_update->save(false);
-                        $new_updates->save(false);
-
-                        $update_products++;
+                        $find_product->instock = '1';
+                        $find_product->save(false);
                     }
 
                 }
                 else{
-                    $new_product = new AlexmeatProducts();
+                    $new_product = new Products();
                     $new_product->sku = $product->sku;
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
                     $product->title = $product->find('div.product-title' , 0)->plaintext;
@@ -94,16 +93,7 @@ class AlexController extends AppController
                     $new_product->instock = '1';
                     $new_product->seller = 'Alexmeat';
                     $new_product->save(false);
-
-                    $new_updates = new AlexmeatUpdates();
-                    $new_updates->sku_product = htmlspecialchars($product->sku);
-                    $new_updates->price = htmlspecialchars($product->price);
-
-                    $new_updates->save(false);
-
-                    $new_products ++ ;
                 }
-                $parse_products ++ ;
 
             }
         }
