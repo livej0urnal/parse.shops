@@ -83,7 +83,7 @@ class ShopController extends AppController
         $updates = Updates::find()->all();
         foreach ($updates as $update)
         {
-            $other = Updates::find()->where(['price' => $update->price])->andWhere(['sku_product' => $update->sku_product])->andWhere(['!=', 'id', $update->id])->all();
+            $other = Updates::find()->indexBy('sku_product')->where(['price' => $update->price])->andWhere(['sku_product' => $update->sku_product])->andWhere(['!=', 'id', $update->id])->all();
             foreach ($other as $item) {
                 $item->delete();
             }
