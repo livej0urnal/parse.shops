@@ -129,7 +129,6 @@ use yii\widgets\LinkPager;
             <div class="col-md-12">
 
                 <div class="table-responsive table-responsive-data2">
-                    <?php debug($products); ?>
                     <table class="table table-data2">
                         <thead>
                         <tr>
