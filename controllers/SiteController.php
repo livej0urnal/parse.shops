@@ -190,54 +190,6 @@ class SiteController extends AppController
         return $this->render('search', compact('products_all', 'q', 'select', 'input'));
     }
 
-    public function actionUpdate()
-    {
-        $total = Setting::find()->where(['name' => 'products'])->one();
-        $products = array();
-        $products_alex = AlexmeatProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_baltic = BalticProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_eic = EicProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_euphoria = EuphoriaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_gmi = GmiProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_grantefoods = GrantefoodsProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_lea = LeaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_leader = LeaderProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_mamta = MamtaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_megafood = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_natars = MegafoodProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_psv = PsvProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_redoctober = RedoctoberProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_royal = RoyalProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_sakhalin = SakhalinProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_stradiva = StradivaProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_tamani = TamaniProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_three = ThreeProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_zakuson = ZakusonProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products_zenith = ZenithProducts::find()->select(['id', 'instock' , 'updated_at'])->all();
-        $products = array_merge($products_baltic, $products_alex, $products_eic, $products_euphoria, $products_gmi, $products_grantefoods, $products_lea, $products_leader, $products_mamta, $products_megafood,
-            $products_natars, $products_psv, $products_redoctober, $products_royal, $products_sakhalin, $products_stradiva, $products_tamani, $products_three, $products_zakuson, $products_zenith);
-        $new_total = Setting::findOne(['name' => 'products']);
-        $new_total->value = count($products);
-        $new_total->save();
-
-        $out_stock = 0;
-        $today = 0;
-        $date_today = Yii::$app->formatter->asDate('now', 'php:Y-m-d');
-        foreach ($products as $product) {
-            if($product->instock === null) {
-                $out_stock += 1;
-            }
-            if( Yii::$app->formatter->asDate($product->updated_at, 'php:Y-m-d') === $date_today) {
-                $today += 1;
-            }
-        }
-        $outstock = Setting::findOne(['name' => 'out_stock']);
-        $outstock->value = $out_stock;
-        $outstock->update();
-        return $this->redirect(['site/index']);
-    }
-
-
     /**
      * Login action.
      *
