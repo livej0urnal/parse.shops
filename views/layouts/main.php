@@ -225,72 +225,75 @@ AppAsset::register($this);
                         <a href="<?= \yii\helpers\Url::to(['updates/index']) ?>">Last Updates</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['gmi/index']) ?>">GMI - Tranding</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Gmi']) ?>">Gmi</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['megafood/index']) ?>">Megafood</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Megafood']) ?>">Megafood</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['euphoria/index']) ?>">Euphoria </a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Euphoria']) ?>">Euphoria</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['baltic/index']) ?>">Baltic</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Baltic']) ?>">Baltic</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['redoctober/index']) ?>">Redoctober</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Redoctober']) ?>">Redoctober</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['grantefoods/index']) ?>">Grantefoods</a>
-                    </li>
-
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['lea/index']) ?>">Lea </a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['mamta/index']) ?>">Mamta</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Grantefoods']) ?>">Grantefoods</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['three/index']) ?>">Three</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Lea']) ?>">Lea</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Mamta']) ?>">Mamta</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['tamani/index']) ?>">Tamani</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Three']) ?>">Three</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['psv/index']) ?>">psv</a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['alex/index']) ?>">Alexmeat</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Tamani']) ?>">Tamani</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['zenith/index']) ?>">zenith</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Psv']) ?>">Psv</a>
                     </li>
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['royal/index']) ?>">Royal</a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['sakhalin/index']) ?>">Sakhalin</a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['stradiva/index']) ?>">Stradiva</a>
-                    </li>
-                    <li>
-                        <a href="<?= \yii\helpers\Url::to(['zakuson/index']) ?>">Zakuson</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Alexmeat']) ?>">Alexmeat</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['natars/index']) ?>">Natars</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Zenith']) ?>">Zenith</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Royal']) ?>">Royal</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Sakhalin']) ?>">Sakhalin</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Stradiva']) ?>">Stradiva</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Zakuson']) ?>">Zakuson</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['eic/index']) ?>">Eic</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Natars']) ?>">Natars</a>
                     </li>
 
                     <li>
-                        <a href="<?= \yii\helpers\Url::to(['leader/index']) ?>">Leader</a>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Eic']) ?>">Eic</a>
+                    </li>
+
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shop/category', 'seller' => 'Leader']) ?>">Leader</a>
+                    </li>
+                    <li>
+                        <a href="<?= \yii\helpers\Url::to(['shops/index']) ?>">Shops</a>
                     </li>
 
                 </ul>
