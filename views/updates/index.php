@@ -127,9 +127,7 @@ use yii\widgets\LinkPager;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-
                 <div class="table-responsive table-responsive-data2">
-
                     <table class="table table-data2">
                         <thead>
                         <tr>
@@ -147,7 +145,7 @@ use yii\widgets\LinkPager;
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = \app\models\Updates::find()->select(['sku_product', 'price', 'update_at'])->where(['sku_product' => $product->sku])->andWhere(['!=', 'price', $product->price])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->orderBy(['update_at' => SORT_DESC])->limit(1)->one(); ?>
+                                <?php $last_update = \app\models\Updates::find()->select(['sku_product', 'price', 'update_at'])->where(['sku_product' => $product['sku']])->andWhere(['!=', 'price', $product['price']])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->orderBy(['update_at' => SORT_DESC])->limit(1)->one(); ?>
 
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
                                     data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
@@ -219,19 +217,6 @@ use yii\widgets\LinkPager;
                         <?php endif; ?>
                     </table>
                 </div>
-                <?php if (!empty($pages)) : ?>
-                    <div class="demo-inline-spacing">
-                        <!-- Basic Pagination -->
-                        <nav aria-label="Page navigation" class="item-pagination">
-                            <?php echo LinkPager::widget([
-                                'pagination' => $pages,
-                                'options' => ['class' => 'pagination tab-paginations'],
-                                'linkOptions' => ['class' => 'page-link'],
-                            ]); ?>
-                        </nav>
-                        <!--/ Basic Pagination -->
-                    </div>
-                <?php endif; ?>
             </div>
         </div>
     </div>
