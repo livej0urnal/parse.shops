@@ -9,8 +9,8 @@ use Yii;
 class UpdatesController extends AppController
 {
 
-//    public function behaviors()
-//    {
+    public function behaviors()
+    {
 //        return [
 //
 //            'cache' => [
@@ -20,7 +20,7 @@ class UpdatesController extends AppController
 //                'duration' => 36000,
 //            ],
 //        ];
-//    }
+    }
 
     public function actionIndex()
     {
