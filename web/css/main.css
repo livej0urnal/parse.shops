@@ -121,3 +121,6 @@ li.active > .page-link {
     opacity: 0.9;
     cursor: pointer;
 }
+.au-input--style2{
+    width: 100%;
+}
