@@ -8,73 +8,13 @@ use yii\db\Expression;
 use yii\helpers\Json;
 use yii\web\Controller;
 use Yii;
-use app\models\GrantefoodsUpdates;
-use app\models\GrantefoodsProducts;
 use yii\data\Pagination;
 use app\controllers\AppController;
+use app\models\Products;
+use app\models\Updates;
 
 class GrantefoodsController extends AppController
 {
-    public function actionIndex()
-    {
-        $id = Yii::$app->request->get('id');
-
-        $products = GrantefoodsProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = GrantefoodsProducts::find()->indexBy('sku')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Grante Foods International LLC');
-        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
-    }
-
-    public function actionSearch($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = GrantefoodsProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Grante Foods International LLC');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
-    }
-
-    public function actionManufacture($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = GrantefoodsProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = GrantefoodsProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Grante Foods International LLC');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures' , 'sort'));
-    }
 
     public function actionParse()
     {
@@ -95,34 +35,32 @@ class GrantefoodsController extends AppController
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
-                $find_product = GrantefoodsProducts::findOne(['sku' => $product->sku]);
+                $find_product = Products::findOne(['sku' => $product->sku]);
                 if(!empty($find_product)) {
-                    $need_update = GrantefoodsUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if(!$need_update->price) {
-                        $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
+                    $need_update = Updates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
+                    if($need_update->price != $find_product->price) {
+                        $product_update = Products::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
+                        if(!empty($product->find('div.description', 1)->plaintext)) {
+                            $product_update->per = $product->find('div.description', 1)->plaintext;
+                        }
                         $product_update->instock = '1';
-                        $product_update->seller = 'Grantefoods';
+                        $product->updated_at = new Expression('NOW()');
                         $product_update->save(false);
+                        $new_updates = new Updates();
+                        $new_updates->price = $product->price;
+                        $new_updates->sku_product = $product->sku;
+                        $new_updates->update_at = $product->updated_at;
+                        $new_updates->save(false);
                     }
                     else{
-                        $new_updates = new GrantefoodsUpdates();
-                        $new_updates->sku_product = htmlspecialchars($product->sku);
-                        $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = GrantefoodsProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $product->price;
-                        $product_update->instock = '1';
-                        $product_update->seller = 'Grantefoods';
-                        $product_update->updated_at = new Expression('NOW()');
-                        $product_update->save(false);
-                        $new_updates->save(false);
-
-                        $update_products++;
+                        $find_product->instock = '1';
+                        $find_product->save(false);
                     }
 
                 }
                 else{
-                    $new_product = new GrantefoodsProducts();
+                    $new_product = new Products();
                     $new_product->sku = $product->sku;
 
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
@@ -147,11 +85,6 @@ class GrantefoodsController extends AppController
                     $new_product->seller = 'Grantefoods';
                     $new_product->save(false);
 
-                    $new_updates = new GrantefoodsUpdates();
-                    $new_updates->sku_product = htmlspecialchars($product->sku);
-                    $new_updates->price = htmlspecialchars($product->price);
-                    $new_updates->save(false);
-
                     $new_products ++ ;
                 }
                 $parse_products ++ ;
@@ -171,19 +104,12 @@ class GrantefoodsController extends AppController
             $link->delete();
         }
 
-        $products = GrantefoodsProducts::find()->all();
+        $products = Products::find()->where(['seller' => 'Grantefoods'])->all();
         foreach ($products as $product)
         {
             $product->instock = null;
             $product->save(false);
         }
         return $this->render('links');
-    }
-
-    public function actionUpdates($sku)
-    {
-        $sku = Yii::$app->request->get('sku');
-        $updates = GrantefoodsUpdates::find()->where(['sku_product' => $sku])->orderBy(['update_at' => SORT_DESC])->asArray()->all();
-        return Json::encode($updates);
     }
 }

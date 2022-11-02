@@ -48,7 +48,7 @@ class BalticController extends AppController
                 $find_product = Products::findOne(['sku' => $product->sku, 'seller' => $product->seller]);
                 if(!empty($find_product)) {
                     $need_update = Updates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if($need_update->price != $product->price) {
+                    if($need_update->price != $find_product->price) {
                         $product_update = Products::findOne(['sku' => $product->sku]);
                         $product_update->price = $product->price;
                         if(!empty($product->find('div.description', 1)->plaintext)) {
