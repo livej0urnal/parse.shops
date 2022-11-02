@@ -31,18 +31,6 @@ class AlexController extends AppController
         return $this->render('links');
     }
 
-    public function actionImages()
-    {
-        $products = AlexmeatProducts::find()->all();
-        foreach ($products as $product)
-        {
-            if($product->image != '/Content/Images/NoImage.png') {
-                $product->image = '/uploads/alex/' . $product->sku . '.png';
-                $product->save(false);
-            }
-        }
-    }
-
     public function actionParse()
     {
         $id = Yii::$app->request->get('id');
@@ -124,63 +112,5 @@ class AlexController extends AppController
         return $this->render('parse', compact('links', 'parse_products', 'update_products' , 'new_products'));
     }
 
-    public function actionIndex()
-    {
-        $id = Yii::$app->request->get('id');
-        $products = AlexmeatProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = AlexmeatProducts::find()->indexBy('sku')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Alex\'s Meat Distributors Corp.');
-        return $this->render('index' , compact('products', 'pages', 'manufactures', 'sort'));
-    }
 
-    public function actionSearch($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = AlexmeatProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = AlexmeatProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Alex\'s Meat Distributors Corp.');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
-    }
-
-    public function actionManufacture($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = AlexmeatProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = AlexmeatProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = AlexmeatProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Alex\'s Meat Distributors Corp.');
-        return $this->render('index' , compact('products', 'pages', 'q', 'manufactures', 'sort'));
-    }
 }
