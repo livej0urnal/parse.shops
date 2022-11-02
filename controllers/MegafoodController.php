@@ -2,8 +2,6 @@
 
 namespace app\controllers;
 
-use app\models\MegafoodProducts;
-use app\models\MegafoodUpdates;
 use yii\web\Controller;
 use Yii;
 use app\models\Megafood;
@@ -11,6 +9,8 @@ use yii\db\Expression;
 use yii\data\Pagination;
 use app\controllers\AppController;
 use yii\data\Sort;
+use app\models\Products;
+use app\models\Updates;
 
 class MegafoodController extends AppController
 {
@@ -20,7 +20,7 @@ class MegafoodController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = MegafoodProducts::find()->all();
+        $products = Products::find()->where(['seller' => 'MegaFood'])->all();
         foreach ($products as $product) {
             $product->instock = null;
             $product->save(false);
@@ -44,33 +44,31 @@ class MegafoodController extends AppController
                 $product->sku = preg_replace("/[^0-9]/", '', $product->sku);
                 $product->price = trim($product->find('span.price1', 0)->plaintext);
                 $product->price = preg_replace("/[^,.0-9]/", '', $product->price);
-                $find_product = MegafoodProducts::findOne(['sku' => $product->sku]);
-                if (!empty($find_product)) {
-                    $need_update = MegafoodUpdates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
-                    if ($need_update->price) {
-                        $product_update = MegafoodProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $product->price;
+                $find_product = Products::findOne(['sku' => $product->sku]);
+                if(!empty($find_product)) {
+                    $need_update = Updates::find()->where(['sku_product' => $product->sku])->orderBy(['id' => SORT_DESC])->one();
+                    if($need_update->price != $product->price) {
+                        $product_update = Products::findOne(['sku' => $product->sku]);
+                        $product_update->price = $find_product->price;
+                        if(!empty($product->find('div.description', 1)->plaintext)) {
+                            $product_update->per = $product->find('div.description', 1)->plaintext;
+                        }
                         $product_update->instock = '1';
-                        $product_update->seller = 'MegaFood';
-                        $product_update->updated_at = new Expression('NOW()');
+                        $product->updated_at = new Expression('NOW()');
                         $product_update->save(false);
-                    } else {
-                        $new_updates = new MegafoodUpdates();
-                        $new_updates->sku_product = htmlspecialchars($product->sku);
-                        $new_updates->price = htmlspecialchars($product->price);
-                        $product_update = MegafoodProducts::findOne(['sku' => $product->sku]);
-                        $product_update->price = $product->price;
-                        $product_update->instock = '1';
-                        $product_update->seller = 'MegaFood';
-                        $product_update->updated_at = new Expression('NOW()');
-                        $product_update->save(false);
+                        $new_updates = new Updates();
+                        $new_updates->price = $product->price;
+                        $new_updates->sku_product = $product->sku;
+                        $new_updates->update_at = $product->updated_at;
                         $new_updates->save(false);
-
-                        $update_products++;
+                    }
+                    else{
+                        $find_product->instock = '1';
+                        $find_product->save(false);
                     }
 
-                } else {
-                    $new_product = new MegafoodProducts();
+                }else {
+                    $new_product = new Products();
                     $new_product->sku = $product->sku;
 
                     $product->image = $product->find('img.catalog-img ', 0)->getAttribute('src');
@@ -90,11 +88,6 @@ class MegafoodController extends AppController
                     $new_product->seller = 'MegaFood';
                     $new_product->save(false);
 
-                    $new_updates = new MegafoodUpdates();
-                    $new_updates->sku_product = htmlspecialchars($product->sku);
-                    $new_updates->price = htmlspecialchars($product->price);
-                    $new_updates->save(false);
-
                     $new_products++;
                 }
                 $parse_products++;
@@ -104,63 +97,4 @@ class MegafoodController extends AppController
         return $this->render('parse', compact('links', 'parse_products', 'update_products', 'new_products'));
     }
 
-    public function actionIndex()
-    {
-        $id = Yii::$app->request->get('id');
-        $products = MegafoodProducts::find()->orderBy(['id' => SORT_DESC])->limit(10)->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = MegafoodProducts::find()->indexBy('sku')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Megafood International');
-        return $this->render('index', compact('products', 'pages', 'manufactures', 'sort'));
-    }
-
-    public function actionSearch($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku', $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = MegafoodProducts::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Megafood International');
-        return $this->render('index', compact('products', 'pages', 'q', 'manufactures' , 'sort'));
-    }
-
-    public function actionManufacture($q)
-    {
-        $q = Yii::$app->request->get('q');
-        $products = MegafoodProducts::find()->where(['like', 'article', $q])->orderBy(['id' => SORT_DESC])->all();
-        $sort = new Sort([
-            'attributes' => [
-                'updated_at',
-                'price',
-                'instock',
-            ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
-        ]);
-        $query = MegafoodProducts::find()->where(['like', 'article', $q])->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
-        $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = MegafoodProducts::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
-        $this->setMeta('Megafood International');
-        return $this->render('index', compact('products', 'pages', 'q', 'manufactures' , 'sort'));
-    }
 }
