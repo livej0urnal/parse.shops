@@ -3,7 +3,6 @@
 namespace app\controllers;
 
 use app\models\Products;
-use app\models\SakhalinProducts;
 use app\models\Updates;
 use Yii;
 use yii\data\Sort;
