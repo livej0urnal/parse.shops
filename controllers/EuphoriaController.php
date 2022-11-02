@@ -20,7 +20,7 @@ class EuphoriaController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = Products::find()->where(['seller' => 'Euphoria'])->indexBy('seller')->all();
+        $products = Products::find()->where(['seller' => 'Euphoria'])->all();
         foreach ($products as $product) {
             $product->instock = null;
             $product->save(false);

@@ -19,7 +19,7 @@ class EicController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = Products::find()->where(['seller' => 'EIC'])->indexBy('seller')->all();
+        $products = Products::find()->where(['seller' => 'EIC'])->all();
         foreach ($products as $product)
         {
             $product->instock = null;

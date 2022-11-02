@@ -19,7 +19,7 @@ class BalticController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = Products::find()->where(['seller' => 'Baltic'])->indexBy('seller')->all();
+        $products = Products::find()->where(['seller' => 'Baltic'])->all();
         foreach ($products as $product)
         {
             $product->instock = null;

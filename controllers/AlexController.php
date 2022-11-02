@@ -21,7 +21,7 @@ class AlexController extends AppController
         foreach ($links as $link) {
             $link->delete();
         }
-        $products = Products::find()->where(['seller' => 'Alexmeat'])->indexBy('seller')->all();
+        $products = Products::find()->where(['seller' => 'Alexmeat'])->all();
         foreach ($products as $product)
         {
             $product->instock = null;
