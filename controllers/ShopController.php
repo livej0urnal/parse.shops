@@ -26,7 +26,7 @@ class ShopController extends AppController
         ]);
         $products = Products::find()->where(['seller' => $seller])->indexBy('id')->with('updates', 'last')->orderBy(['updated_at' => SORT_DESC])->all();
         $query = Products::find()->where(['seller' => $seller])->indexBy('id')->with('updates', 'last')->orderBy($sort->orders);
-        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 500, 'forcePageParam' => false, 'pageSizeParam' => false]);
+        $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 200, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->where(['seller' => $seller])->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $seller = $shop->short;
@@ -36,7 +36,7 @@ class ShopController extends AppController
 
     public function actionSearch($q, $seller)
     {
-        $q = Yii::$app->request->get('q');
+        $q = trim(Yii::$app->request->get('q'));
         $shop = Shops::findOne(['short' => $seller]);
         $seller = Yii::$app->request->get('seller');
         $products = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->with('updates', 'last')->orderBy(['id' => SORT_DESC])->all();
