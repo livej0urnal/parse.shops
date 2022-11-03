@@ -93,6 +93,11 @@ class LeaController extends AppController
                     $new_product->instock = '1';
                     $new_product->seller = 'Lea';
                     $new_product->save(false);
+                    $new_updates = new Updates();
+                    $new_updates->price = $product->price;
+                    $new_updates->sku_product = $product->sku;
+                    $new_updates->update_at = $product->updated_at;
+                    $new_updates->save(false);
 
                     $new_products ++ ;
                 }
