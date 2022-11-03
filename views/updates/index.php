@@ -78,8 +78,9 @@ use yii\widgets\LinkPager;
                             <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = $product->last; ?>
-                                    <?php if($product->price != $last_update->price ) : ?>
-                                     <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                    <?php if(!empty($last_update)) : ?>
+                                        <?php if($product->price != $last_update->price ) : ?>
+                                     <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger <?php else:  ?> disabled<?php endif; ?><?php endif; ?>"
                                         data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
                                         <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                                  width="300" height="300"></td>
@@ -142,15 +143,16 @@ use yii\widgets\LinkPager;
                                                 <td colspan="6"></td>
 
                                             </tr>
-                                            <?php $dates = [];
-                                            $prices = []; ?>
+                                            <?php
+                                            $dates = [];
+                                            $prices = [];
+                                            ?>
                                         <?php endif; ?>
                                         <tr class="spacer"></tr>
                                     <?php endif; ?>
-                                    <?php if(!empty($last_update)) : ?>
-                                        <tr class="spacer"></tr>
-                                    <?php endif; ?>
+                                    <tr class="spacer"></tr>
                                 <?php endif; ?>
+                                    <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
                         <?php else: ?>
