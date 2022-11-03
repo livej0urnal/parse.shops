@@ -50,75 +50,6 @@ use yii\widgets\LinkPager;
                     </div>
 
                 </div>
-
-                <ul class="nav nav-tabs updates-tabs">
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/index']) ?>">Alexmeat</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/gmi', 'seller' => 'Gmi']) ?>">Gmi</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/megafood', 'seller' => 'Megafood']) ?>">Megafood</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/euphoria', 'seller' => 'Euphoria']) ?>">Euphoria</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/baltic', 'seller' => 'Baltic']) ?>">Baltic</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/redoctober', 'seller' => 'Redoctober']) ?>">Redoctober</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/grantefoods', 'seller' => 'GranteFoods']) ?>">GranteFoods</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/lea', 'seller' => 'Lea']) ?>">Lea</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/mamta', 'seller' => 'Mamta']) ?>">Mamta</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/three', 'seller' => 'Three']) ?>">Three</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/tamani', 'seller' => 'Tamani']) ?>">Tamani</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/psv', 'seller' => 'Psv']) ?>">Psv</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/zenith', 'seller' => 'Zenith']) ?>">Zenith</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/royal', 'seller' => 'Royal']) ?>">Royal</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/sakhalin', 'seller' => 'Sakhalin']) ?>">Sakhalin</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/stradiva', 'seller' => 'Stradiva']) ?>">Stradiva</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/zakuson', 'seller' => 'Zakuson']) ?>">Zakuson</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/natars', 'seller' => 'Natars']) ?>">Natars</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/eic', 'seller' => 'Eic']) ?>">Eic</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= Url::to(['updates/leader', 'seller' => 'Leader']) ?>">Leader</a>
-                    </li>
-                </ul>
             </div>
         </div>
     </div>
@@ -146,73 +77,78 @@ use yii\widgets\LinkPager;
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = $product->last ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
-                                    data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
-                                             width="300" height="300"></td>
-                                    <td><?= $product->title ?></td>
-                                    <td><?= $product->sku ?></td>
-                                    <td><?= $product->article ?></td>
-                                    <td><?= $product->units ?></td>
-                                    <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?>
-                                        <?php if (!empty($last_update)) : ?>
-                                            <?php if($last_update->price != $product->price) : ?>
-                                                <br>
-                                                <span
-                                                        class="mark title--sbold"
-                                                        style="color: red">
-                                                <?php echo round($product->price - $last_update->price, 2);?>
-                                                </span>
+                                <?php $last_update = $product->last; ?>
+                                    <?php if($product->price != $last_update->price ) : ?>
+                                     <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                        data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
+                                        <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
+                                                 width="300" height="300"></td>
+                                        <td><?= $product->title ?></td>
+                                        <td><?= $product->sku ?></td>
+                                        <td><?= $product->article ?></td>
+                                        <td><?= $product->units ?></td>
+                                        <td><?= $product->per ?></td>
+                                        <td>$<?= $product->price ?>
+                                            <?php if (!empty($last_update)) : ?>
+                                                <?php if($last_update->price != $product->price) : ?>
+                                                    <br>
+                                                    <span
+                                                            class="mark title--sbold"
+                                                            style="color: red">
+                                                    <?php echo round($product->price - $last_update->price, 2);?>
+                                                    </span>
+                                                <?php endif; ?>
                                             <?php endif; ?>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td><?php if ($product->instock === null) : ?> <span
-                                                style="color:red;">out</span> <?php else : ?> <span
-                                                style="color:green;">in</span> <?php endif; ?></td>
-                                    <td><?= $product->seller ?></td>
-                                    <td><?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?></td>
-                                </tr>
-                                <?php if (!empty($last_update)) : ?>
-                                    <?php $updates = $product->updates; ?>
-                                    <?php if (count($updates) > 1) : ?>
-                                        <?php
-                                        foreach ($updates as $item) {
-                                            $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
-                                            $prices[] = $item->price;
-                                        }
+                                        </td>
+                                        <td><?php if ($product->instock === null) : ?> <span
+                                                    style="color:red;">out</span> <?php else : ?> <span
+                                                    style="color:green;">in</span> <?php endif; ?></td>
+                                        <td><?= $product->seller ?></td>
+                                    </tr>
+                                    <?php if(!empty($last_update)) : ?>
+                                        <?php $updates = $product->updates; ?>
+                                        <?php if (count($updates) > 1) : ?>
+                                            <?php
+                                            foreach ($updates as $item) {
+                                                $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
+                                                $prices[] = $item['price'];
+                                            }
 
-                                        ?>
-                                        <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                            <td colspan="9">
-                                                <?= ChartJs::widget([
-                                                    'type' => 'line',
-                                                    'data' => [
-                                                        'labels' => $dates,
-                                                        'datasets' => [
-                                                            [
-                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
-                                                                'borderColor' => "rgba(179,181,198,1)",
-                                                                'pointBackgroundColor' => "rgba(179,181,198,1)",
-                                                                'pointBorderColor' => "#fff",
-                                                                'pointHoverBackgroundColor' => "#fff",
-                                                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                                'data' => $prices,
-                                                                'fill' => false,
-                                                                'stepped' => true
-                                                            ],
+                                            ?>
+                                            <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                                <td colspan="3">
+                                                    <?= ChartJs::widget([
+                                                        'type' => 'line',
+                                                        'data' => [
+                                                            'labels' => $dates,
+                                                            'datasets' => [
+                                                                [
+                                                                    'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                                    'borderColor' => "rgba(179,181,198,1)",
+                                                                    'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                                    'pointBorderColor' => "#fff",
+                                                                    'pointHoverBackgroundColor' => "#fff",
+                                                                    'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                                    'data' => $prices,
+                                                                    'fill' => false,
+                                                                    'stepped' => true
+                                                                ],
 
+                                                            ]
                                                         ]
-                                                    ]
-                                                ]);
-                                                ?>
-                                            </td>
+                                                    ]);
+                                                    ?>
+                                                </td>
+                                                <td colspan="6"></td>
 
-                                        </tr>
+                                            </tr>
+                                            <?php $dates = [];
+                                            $prices = []; ?>
+                                        <?php endif; ?>
                                         <tr class="spacer"></tr>
-                                        <?php $dates = [];
-                                        $prices = []; ?>
+                                    <?php endif; ?>
+                                    <?php if(!empty($last_update)) : ?>
+                                        <tr class="spacer"></tr>
                                     <?php endif; ?>
                                 <?php endif; ?>
                             <?php endforeach; ?>
