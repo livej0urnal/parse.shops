@@ -36,7 +36,6 @@ class AppAsset extends AssetBundle
         '/css/main.css'
     ];
     public $js = [
-        '/js/jquery.loupe.min.js',
         '/vendor/slick/slick.min.js',
         '/vendor/wow/wow.min.js',
         '/vendor/animsition/animsition.min.js',
