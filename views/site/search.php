@@ -142,7 +142,6 @@ use dosamigos\chartjs\ChartJs;
                                                 style="color:red;">out</span> <?php else : ?> <span
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
-                                    <td><?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?></td>
                                 </tr>
                                 <?php if (!empty($last_update)) : ?>
                                     <?php $updates = $product->updates; ?>

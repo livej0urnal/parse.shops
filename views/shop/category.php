@@ -78,7 +78,6 @@ use dosamigos\chartjs\ChartJs;
                             <th><?php echo $sort->link('price'); ?></th>
                             <th><?php echo $sort->link('instock'); ?></th>
                             <th>Seller</th>
-                            <th><?php echo $sort->link('updated_at') ?></th>
                         </tr>
                         </thead>
                         <?php if (!empty($products)) : ?>
@@ -110,7 +109,6 @@ use dosamigos\chartjs\ChartJs;
                                             style="color:red;">out</span> <?php else : ?> <span
                                             style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
-                                    <td><?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?></td>
                                 </tr>
                                 <?php if (!empty($last_update)) : ?>
                                     <?php $updates = $product->updates; ?>
