@@ -5,6 +5,13 @@ use yii\helpers\Url;
 use dosamigos\chartjs\ChartJs;
 
 ?>
+<?= coderius\lightbox2\Lightbox2::widget([
+    'clientOptions' => [
+        'resizeDuration' => 200,
+        'wrapAround' => true,
+
+    ]
+]); ?>
 <section class="au-breadcrumb2">
     <div class="container">
         <div class="row">
@@ -119,8 +126,15 @@ use dosamigos\chartjs\ChartJs;
                                 <?php $last_update = $product->last ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
-                                             width="300" height="300"></td>
+                                    <td>
+
+                                        <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip" >
+                                            <!-- Thumbnail picture -->
+                                            <img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
+                                                 width="100" height="50">
+                                        </a>
+
+                                    </td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
