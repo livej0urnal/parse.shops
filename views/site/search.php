@@ -116,16 +116,8 @@ use dosamigos\chartjs\ChartJs;
                         <?php if (!empty($products_all)) : ?>
                             <tbody>
                             <?php foreach ($products_all as $product) : ?>
-                                <?php $updates = $product->updates; ?>
-                                <?php
-                                $last_update = null;
-                                foreach ($updates as $single) {
-                                    if ($single->price != $product->price) {
-                                        $last_update = $single;
-                                    }
-                                }
-                                ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?><?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                <?php $last_update = $product->last ?>
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
@@ -134,56 +126,65 @@ use dosamigos\chartjs\ChartJs;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?> <?php if (!empty($last_update)) : ?><br><span
-                                                class="mark title--sbold"
-                                                style="color: red"><?php echo round($product->price - $last_update->price, 2); ?></span><?php endif; ?>
+                                    <td>$<?= $product->price ?>
+                                        <?php if (!empty($last_update)) : ?>
+                                            <?php if($last_update->price != $product->price) : ?>
+                                                <br>
+                                                <span
+                                                        class="mark title--sbold"
+                                                        style="color: red">
+                                                <?php echo round($product->price - $last_update->price, 2);?>
+                                                </span>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </td>
                                     <td><?php if ($product->instock === null) : ?> <span
                                                 style="color:red;">out</span> <?php else : ?> <span
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
+                                    <td><?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?></td>
                                 </tr>
+                                <?php if (!empty($last_update)) : ?>
+                                    <?php $updates = $product->updates; ?>
+                                    <?php if (count($updates) > 1) : ?>
+                                        <?php
+                                        foreach ($updates as $item) {
+                                            $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
+                                            $prices[] = $item->price;
+                                        }
 
-                                <?php $updates = $product->updates; ?>
-                                <?php if (count($updates) > 1) : ?>
-                                    <?php
-                                    foreach ($updates as $item) {
-                                        $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
-                                        $prices[] = $item['price'];
-                                    }
+                                        ?>
+                                        <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
+                                            <td colspan="9">
+                                                <?= ChartJs::widget([
+                                                    'type' => 'line',
+                                                    'data' => [
+                                                        'labels' => $dates,
+                                                        'datasets' => [
+                                                            [
+                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
+                                                                'borderColor' => "rgba(179,181,198,1)",
+                                                                'pointBackgroundColor' => "rgba(179,181,198,1)",
+                                                                'pointBorderColor' => "#fff",
+                                                                'pointHoverBackgroundColor' => "#fff",
+                                                                'pointHoverBorderColor' => "rgba(179,181,198,1)",
+                                                                'data' => $prices,
+                                                                'fill' => false,
+                                                                'stepped' => true
+                                                            ],
 
-                                    ?>
-                                    <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                        <td colspan="4">
-                                            <?= ChartJs::widget([
-                                                'type' => 'line',
-                                                'data' => [
-                                                    'labels' => $dates,
-                                                    'datasets' => [
-                                                        [
-                                                            'backgroundColor' => "rgba(179,181,198,0.2)",
-                                                            'borderColor' => "rgba(179,181,198,1)",
-                                                            'pointBackgroundColor' => "rgba(179,181,198,1)",
-                                                            'pointBorderColor' => "#fff",
-                                                            'pointHoverBackgroundColor' => "#fff",
-                                                            'pointHoverBorderColor' => "rgba(179,181,198,1)",
-                                                            'data' => $prices,
-                                                            'fill' => false,
-                                                            'stepped' => true
-                                                        ],
-
+                                                        ]
                                                     ]
-                                                ]
-                                            ]);
-                                            ?>
-                                        </td>
+                                                ]);
+                                                ?>
+                                            </td>
 
-                                    </tr>
-                                    <tr class="spacer"></tr>
-                                    <?php $dates = [];
-                                    $prices = []; ?>
+                                        </tr>
+                                        <tr class="spacer"></tr>
+                                        <?php $dates = [];
+                                        $prices = []; ?>
+                                    <?php endif; ?>
                                 <?php endif; ?>
-                                <tr class="spacer"></tr>
 
                             <?php endforeach; ?>
                             </tbody>
