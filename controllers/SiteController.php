@@ -101,7 +101,7 @@ class SiteController extends AppController
 
     public function actionSearch($q, $select, $seller = null)
     {
-        $input = Yii::$app->request->get('q');
+        $input = trim(Yii::$app->request->get('q'));
         $select = Yii::$app->request->get('select');
         $seller = Yii::$app->request->get('seller');
         $shops = explode(',', $seller);
@@ -110,13 +110,13 @@ class SiteController extends AppController
         foreach ($words as $q) {
             foreach ($shops as $shop) {
                 if(empty($select)) {
-                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->with('updates', 'last')->andFilterWhere([ 'like', 'seller', $shop])->all();
+                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->indexBy('id')->with('updates', 'last')->all();
                 }
                 elseif($select === 'null') {
-                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->with('updates', 'last')->andWhere(['instock' => null])->all();
+                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => null])->indexBy('id')->with('updates', 'last')->all();
                 }
                 else{
-                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => '1'])->with('updates', 'last')->all();
+                    $products_all = Products::find()->indexBy('sku')->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->orWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => '1'])->indexBy('id')->with('updates', 'last')->all();
                 }
             }
             
