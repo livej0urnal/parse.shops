@@ -38,7 +38,7 @@ class Products extends ActiveRecord
 
     public function getLast()
     {
-        return $this->hasOne(Updates::className(), ['update_at'  => 'updated_at' , 'sku_product' => 'sku'])->orderBy(['id' => SORT_DESC]);
+        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->where(['!=', 'price', 'price']);
     }
 
     /**

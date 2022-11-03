@@ -95,9 +95,17 @@ use dosamigos\chartjs\ChartJs;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?> <?php if (!empty($last_update)) : ?><br><span
-                                            class="mark title--sbold"
-                                            style="color: red"><?php echo round($product->price - $last_update->price, 2); ?></span><?php endif; ?>
+                                    <td>$<?= $product->price ?>
+                                        <?php if (!empty($last_update)) : ?>
+                                            <?php if($last_update->price != $product->price) : ?>
+                                                <br>
+                                                <span
+                                                class="mark title--sbold"
+                                                style="color: red">
+                                                <?php echo round($product->price - $last_update->price, 2);?>
+                                                </span>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </td>
                                     <td><?php if ($product->instock === null) : ?> <span
                                             style="color:red;">out</span> <?php else : ?> <span
