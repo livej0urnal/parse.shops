@@ -39,7 +39,7 @@ class ShopController extends AppController
         $q = Yii::$app->request->get('q');
         $shop = Shops::findOne(['short' => $seller]);
         $seller = Yii::$app->request->get('seller');
-        $products = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
+        $products = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->with('updates', 'last')->orderBy(['id' => SORT_DESC])->all();
         $sort = new Sort([
             'attributes' => [
                 'updated_at',
@@ -48,7 +48,7 @@ class ShopController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->orderBy($sort->orders);
+        $query = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->with('updates', 'last')->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
