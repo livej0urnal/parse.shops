@@ -45,8 +45,8 @@ $('#search-success').on('click', function (e) {
 });
 
 $('selector').loupe({
-   width: 200, // width of magnifier
-   height: 150, // height of magnifier
+   width: 500, // width of magnifier
+   height: 500, // height of magnifier
    loupe: 'loupe' // css class for magnifier
 });
 
