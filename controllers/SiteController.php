@@ -110,13 +110,13 @@ class SiteController extends AppController
         foreach ($words as $q) {
             foreach ($shops as $shop) {
                 if(empty($select)) {
-                    $products_all = Products::find()->indexBy('sku')->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->indexBy('id')->with('updates', 'last')->all();
                 }
                 elseif($select === 'null') {
-                    $products_all = Products::find()->indexBy('sku')->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => null])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => null])->indexBy('id')->with('updates', 'last')->all();
                 }
                 else{
-                    $products_all = Products::find()->indexBy('sku')->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => '1'])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => '1'])->indexBy('id')->with('updates', 'last')->all();
                 }
             }
             
