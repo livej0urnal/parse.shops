@@ -105,24 +105,21 @@ class SiteController extends AppController
         $select = Yii::$app->request->get('select');
         $seller = Yii::$app->request->get('seller');
         $shops = explode(',', $seller);
-        
         $words = explode(' ', $input);
         foreach ($words as $q) {
             foreach ($shops as $shop) {
                 if(empty($select)) {
-                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->where(['like', 'seller', $shop])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article', $q])->andFilterHaving(['like', 'title', $words])->indexBy('id')->with('last', 'updates')->all();
                 }
                 elseif($select === 'null') {
-                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => null])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->where(['like', 'seller', $shop])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article', $q])->andFilterHaving(['like', 'title', $words])->andWhere(['instock' => null])->indexBy('id')->with('last', 'updates')->all();
                 }
                 else{
-                    $products_all = Products::find()->filterWhere(['like', 'title', $q])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article' , $q])->andFilterWhere([ 'like', 'seller', $shop])->andWhere(['instock' => '1'])->indexBy('id')->with('updates', 'last')->all();
+                    $products_all = Products::find()->where(['like', 'seller', $shop])->orFilterWhere(['like', 'sku' , $q])->orFilterWhere(['like', 'article', $q])->andFilterHaving(['like', 'title', $words])->andWhere(['instock' => '1'])->indexBy('id')->with('last', 'updates')->all();
                 }
+
             }
-            
         }
-
-
         $this->setMeta('Search - ' . $input . ' in ' . $seller);
         return $this->render('search', compact('products_all', 'q', 'select', 'input'));
     }
