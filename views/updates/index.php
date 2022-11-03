@@ -146,10 +146,9 @@ use yii\widgets\LinkPager;
                         <?php if (!empty($products)) : ?>
                             <tbody>
                             <?php foreach ($products as $product) : ?>
-                                <?php $last_update = \app\models\Updates::find()->select(['sku_product', 'price', 'update_at'])->where(['sku_product' => $product['sku']])->andWhere(['!=', 'price', $product['price']])->andWhere(('update_at >= DATE_SUB(CURRENT_DATE, INTERVAL 2 DAY)'))->orderBy(['update_at' => SORT_DESC])->one(); ?>
-
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if($last_update->price > $product->price) : ?> bg-success <?php else : ?> bg-danger<?php endif; ?><?php else: ?> disabled <?php endif; ?>"
-                                    data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
+                                <?php $last_update = $product->last ?>
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                    data-value="<?= $product->sku ?>">
                                     <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
@@ -157,27 +156,36 @@ use yii\widgets\LinkPager;
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
                                     <td><?= $product->per ?></td>
-                                    <td>$<?= $product->price ?> <?php if (!empty($last_update)) : ?><br><span
-                                                class="mark title--sbold"
-                                                style="color: red"><?php echo round($product->price - $last_update->price, 2); ?></span><?php endif; ?>
+                                    <td>$<?= $product->price ?>
+                                        <?php if (!empty($last_update)) : ?>
+                                            <?php if($last_update->price != $product->price) : ?>
+                                                <br>
+                                                <span
+                                                        class="mark title--sbold"
+                                                        style="color: red">
+                                                <?php echo round($product->price - $last_update->price, 2);?>
+                                                </span>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
                                     </td>
                                     <td><?php if ($product->instock === null) : ?> <span
                                                 style="color:red;">out</span> <?php else : ?> <span
                                                 style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
+                                    <td><?php echo Yii::$app->formatter->asDatetime($product->updated_at, 'short'); ?></td>
                                 </tr>
-                                <?php if(!empty($last_update)) : ?>
+                                <?php if (!empty($last_update)) : ?>
                                     <?php $updates = $product->updates; ?>
                                     <?php if (count($updates) > 1) : ?>
                                         <?php
                                         foreach ($updates as $item) {
-                                            $dates[] = Yii::$app->formatter->asDate($item['update_at'], 'php:m-d');
-                                            $prices[] = $item['price'];
+                                            $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
+                                            $prices[] = $item->price;
                                         }
 
                                         ?>
                                         <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                            <td colspan="3">
+                                            <td colspan="9">
                                                 <?= ChartJs::widget([
                                                     'type' => 'line',
                                                     'data' => [
@@ -200,16 +208,12 @@ use yii\widgets\LinkPager;
                                                 ]);
                                                 ?>
                                             </td>
-                                            <td colspan="6"></td>
 
                                         </tr>
+                                        <tr class="spacer"></tr>
                                         <?php $dates = [];
                                         $prices = []; ?>
                                     <?php endif; ?>
-                                    <tr class="spacer"></tr>
-                                <?php endif; ?>
-                                <?php if(!empty($last_update)) : ?>
-                                    <tr class="spacer"></tr>
                                 <?php endif; ?>
                             <?php endforeach; ?>
                             </tbody>
