@@ -86,7 +86,7 @@ use dosamigos\chartjs\ChartJs;
                                 <?php $last_update = $product->last; ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
+                                    <td><img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
                                              width="300" height="300"></td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>

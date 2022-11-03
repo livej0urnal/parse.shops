@@ -36,7 +36,7 @@ class AppAsset extends AssetBundle
         '/css/main.css'
     ];
     public $js = [
-
+        '/js/jquery.loupe.min.js',
         '/vendor/slick/slick.min.js',
         '/vendor/wow/wow.min.js',
         '/vendor/animsition/animsition.min.js',
@@ -48,6 +48,7 @@ class AppAsset extends AssetBundle
         '/vendor/chartjs/Chart.bundle.min.js',
         '/vendor/select2/select2.min.js',
         '/js/main.js',
+
         '/js/scripts.js',
     ];
     public $depends = [
