@@ -155,7 +155,7 @@ use dosamigos\chartjs\ChartJs;
 
                                         ?>
                                         <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                            <td colspan="9">
+                                            <td colspan="3">
                                                 <?= ChartJs::widget([
                                                     'type' => 'line',
                                                     'data' => [
