@@ -4,6 +4,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\LinkPager;
 use dosamigos\chartjs\ChartJs;
+use coderius\lightbox2\Lightbox2;
 
 ?>
 <section class="welcome p-t-10">
@@ -63,7 +64,13 @@ use dosamigos\chartjs\ChartJs;
 
             </div>
             <div class="col-md-12">
+                <?= coderius\lightbox2\Lightbox2::widget([
+                    'clientOptions' => [
+                        'resizeDuration' => 200,
+                        'wrapAround' => true,
 
+                    ]
+                ]); ?>
                 <div class="table-responsive table-responsive-data2">
 
                     <table class="table table-data2">
@@ -86,8 +93,15 @@ use dosamigos\chartjs\ChartJs;
                                 <?php $last_update = $product->last; ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
-                                    <td><img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
-                                             width="300" height="300"></td>
+                                    <td>
+
+                                        <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip" >
+                                            <!-- Thumbnail picture -->
+                                            <img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
+                                                 width="100" height="50">
+                                        </a>
+
+                                    </td>
                                     <td><?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
