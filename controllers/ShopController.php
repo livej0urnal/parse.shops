@@ -78,5 +78,17 @@ class ShopController extends AppController
         return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop'));
     }
 
+    public function actionImage()
+    {
+        $products = Products::find()->indexBy('id')->all();
+        foreach ($products as $product)
+        {
+            if($product->image != '/Content/Images/NoImage.png') {
+                $product->image = '/uploads/'.$product->sku . '.png';
+                $product->save();
+            }
+        }
+    }
+
 
 }
