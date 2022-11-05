@@ -61,7 +61,7 @@ class LeaderController extends AppController
                         $new_updates = new Updates();
                         $new_updates->price = $product->price;
                         $new_updates->sku_product = $product->sku;
-                        $new_updates->update_at = $product->updated_at;
+                        $new_updates->update_at = new Expression('NOW()');
                         $new_updates->save(false);
                     }
                     else{
@@ -103,7 +103,7 @@ class LeaderController extends AppController
                     $new_updates = new Updates();
                     $new_updates->price = $product->price;
                     $new_updates->sku_product = $product->sku;
-                    $new_updates->update_at = $product->updated_at;
+                    $new_updates->update_at = new Expression('NOW()');
                     $new_updates->save(false);
 
                     $new_products ++ ;
