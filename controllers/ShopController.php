@@ -85,7 +85,7 @@ class ShopController extends AppController
         {
             if($product->image != '/Content/Images/NoImage.png') {
                 $product->image = '/uploads/'.$product->sku . '.png';
-                $product->save();
+                $product->save(false);
             }
         }
     }
