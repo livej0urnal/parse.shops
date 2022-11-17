@@ -74,7 +74,9 @@ $config = [
             'eic/parse',
             'leader/links',
             'leader/parse',
-            'site/last'
+            'site/last',
+            'shop/megafood',
+            'shop/image',
 
         ],
     ],
