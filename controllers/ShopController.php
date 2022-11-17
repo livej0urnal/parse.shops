@@ -122,7 +122,6 @@ class ShopController extends AppController
         $products = Products::find()->where(['instock' => null])->all();
         foreach ($products as $product) {
             $product->price = 0;
-            $product->per = 0;
             $product->save(false);
             $update = new Updates();
             $update->sku_product = $product->sku;
