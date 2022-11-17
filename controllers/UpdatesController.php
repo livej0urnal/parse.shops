@@ -15,7 +15,7 @@ class UpdatesController extends AppController
 
             'cache' => [
                 'class' => 'yii\filters\PageCache',
-                'only' => [''],
+                'only' => ['index'],
                 'duration' => 36000,
             ],
         ];
