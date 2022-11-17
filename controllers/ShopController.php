@@ -135,5 +135,10 @@ class ShopController extends AppController
         return $this->render('stock', compact('products'));
     }
 
+    public function actionResult()
+    {
+
+    }
+
 
 }
