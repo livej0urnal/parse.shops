@@ -168,15 +168,15 @@ use dosamigos\chartjs\ChartJs;
 
                                         ?>
                                         <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                            <td colspan="3">
+                                            <td colspan="2">
                                                 <?= ChartJs::widget([
                                                     'type' => 'bar',
                                                     'data' => [
                                                         'labels' => $dates,
                                                         'datasets' => [
                                                             [
-                                                                'backgroundColor' => "rgba(179,181,198,0.2)",
-                                                                'borderColor' => "rgba(179,181,198,1)",
+                                                                'backgroundColor' => "rgba(255, 99, 132, 0.2)",
+                                                                'borderColor' => "rgba(255, 99, 132, 0.2)",
                                                                 'pointBackgroundColor' => "rgba(179,181,198,1)",
                                                                 'pointBorderColor' => "#fff",
                                                                 'pointHoverBackgroundColor' => "#fff",

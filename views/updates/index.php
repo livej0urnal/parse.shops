@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use dosamigos\chartjs\ChartJs;
 use yii\bootstrap5\Modal;
 use yii\widgets\LinkPager;
+use coderius\lightbox2\Lightbox2;
 ?>
 
 <section class="au-breadcrumb2">
@@ -84,7 +85,13 @@ use yii\widgets\LinkPager;
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <?= coderius\lightbox2\Lightbox2::widget([
+                    'clientOptions' => [
+                        'resizeDuration' => 200,
+                        'wrapAround' => true,
 
+                    ]
+                ]); ?>
                 <div class="table-responsive table-responsive-data2">
                     <table class="table table-data2">
                         <thead>
@@ -108,8 +115,13 @@ use yii\widgets\LinkPager;
                                         <?php if($product->price != $last_update->price ) : ?>
                                      <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger <?php else:  ?> disabled<?php endif; ?><?php endif; ?>"
                                         data-value="<?= $product->sku ?>" data-seller="<?= $product->seller ?>">
-                                        <td><img loading="lazy" class="img-product" src="<?= $product->image ?>" alt=""
-                                                 width="300" height="300"></td>
+                                        <td>
+                                            <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip" >
+                                                <!-- Thumbnail picture -->
+                                                <img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
+                                                     width="100" height="50">
+                                            </a>
+                                        </td>
                                         <td><?= $product->title ?></td>
                                         <td><?= $product->sku ?></td>
                                         <td><?= $product->article ?></td>
@@ -143,7 +155,7 @@ use yii\widgets\LinkPager;
 
                                             ?>
                                             <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
-                                                <td colspan="3">
+                                                <td colspan="2">
                                                     <?= ChartJs::widget([
                                                         'type' => 'bar',
                                                         'data' => [
@@ -166,7 +178,6 @@ use yii\widgets\LinkPager;
                                                     ]);
                                                     ?>
                                                 </td>
-                                                <td colspan="6"></td>
 
                                             </tr>
                                             <?php
