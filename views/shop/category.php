@@ -137,7 +137,7 @@ use coderius\lightbox2\Lightbox2;
                                         <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
                                             <td colspan="3">
                                                 <?= ChartJs::widget([
-                                                    'type' => 'line',
+                                                    'type' => 'bar',
                                                     'data' => [
                                                         'labels' => $dates,
                                                         'datasets' => [
