@@ -115,4 +115,12 @@ class ShopController extends AppController
     }
 
 
+    public function actionStock()
+    {
+        $id = Yii::$app->request->get('id');
+        $products = Products::find()->where(['instock' => null])->all();
+        return $this->render('stock', compact('products'));
+    }
+
+
 }
