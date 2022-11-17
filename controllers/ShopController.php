@@ -90,5 +90,29 @@ class ShopController extends AppController
         }
     }
 
+    public function actionMegafood()
+    {
+        $id = Yii::$app->request->get('id');
+        $products = Products::find()->where(['seller' => 'MegaFood'])->andWhere(['like', 'title', '/'])->all();
+        foreach ($products as $product) {
+            echo $product->title . '<br>';
+            $string = $product->title;
+            $result = explode("/", $string);
+            if(strlen($result[1]) > 3) {
+                $result_number = strstr($result[1], ' ', true);
+            }
+            else{
+                $result_number = $result[1];
+            }
+            $per = (int)$result_number;
+            $result_price = $product->price / $per;
+            echo $product->price . '/' . (int)$result_number . '=' . $result_price . '<br>';
+            $product->per = $per;
+            $product->save(false);
+        }
+
+        return $this->render('regular', compact('products'));
+    }
+
 
 }
