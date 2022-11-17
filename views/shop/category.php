@@ -27,18 +27,20 @@ use coderius\lightbox2\Lightbox2;
                     <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="get">
                         <input class="au-input--w300 au-input--style2" name="q" type="text"
                                placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
-                        <input type="text" name="seller" style="visibility: hidden;" class="disabled seller-input" value="<?= $seller ?>">
+                        <input type="text" name="seller" style="visibility: hidden;" class="disabled seller-input"
+                               value="<?= $seller ?>">
                         <button class="au-btn--submit2" type="submit">
                             <i class="zmdi zmdi-search"></i>
                         </button>
                     </form>
                     <?php if (!empty($manufactures)) : ?>
                         <div class="col-md-4">
-                            <select name="select" id="select-manufacture" class="form-control" data-value="<?= $seller ?>">
+                            <select name="select" id="select-manufacture" class="form-control"
+                                    data-value="<?= $seller ?>">
                                 <option value="0"><?php if ($q): ?> <?= $q ?><?php else : ?> Select Manufacture <?php endif; ?></option>
                                 <?php foreach ($manufactures as $item) : ?>
                                     <option <?php if ($q == $item->article): ?> selected <?php endif; ?>
-                                        value="<?= $item->article ?>"><?= $item->article ?></option>
+                                            value="<?= $item->article ?>"><?= $item->article ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>
@@ -91,13 +93,14 @@ use coderius\lightbox2\Lightbox2;
                             <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = $product->last; ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
+                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif ($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
                                     <td>
 
-                                        <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip" >
+                                        <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip">
                                             <!-- Thumbnail picture -->
-                                            <img loading="lazy" class="img-product loupe-image"  src="<?= $product->image ?>" alt=""
+                                            <img loading="lazy" class="img-product loupe-image"
+                                                 src="<?= $product->image ?>" alt=""
                                                  width="100" height="50">
                                         </a>
 
@@ -109,19 +112,19 @@ use coderius\lightbox2\Lightbox2;
                                     <td><?= $product->per ?></td>
                                     <td>$<?= $product->price ?>
                                         <?php if (!empty($last_update)) : ?>
-                                            <?php if($last_update->price != $product->price) : ?>
+                                            <?php if ($last_update->price != $product->price) : ?>
                                                 <br>
                                                 <span
-                                                class="mark title--sbold"
-                                                style="color: red">
-                                                <?php echo round($product->price - $last_update->price, 2);?>
+                                                        class="mark title--sbold"
+                                                        style="color: red">
+                                                <?php echo round($product->price - $last_update->price, 2); ?>
                                                 </span>
                                             <?php endif; ?>
                                         <?php endif; ?>
                                     </td>
                                     <td><?php if ($product->instock === null) : ?> <span
-                                            style="color:red;">out</span> <?php else : ?> <span
-                                            style="color:green;">in</span> <?php endif; ?></td>
+                                                style="color:red;">out</span> <?php else : ?> <span
+                                                style="color:green;">in</span> <?php endif; ?></td>
                                     <td><?= $product->seller ?></td>
                                 </tr>
                                 <?php if (!empty($last_update)) : ?>
@@ -138,6 +141,16 @@ use coderius\lightbox2\Lightbox2;
                                             <td colspan="2">
                                                 <?= ChartJs::widget([
                                                     'type' => 'bar',
+                                                    'options' => [
+                                                        'scales' => [
+                                                            'x' => [
+                                                                'beginAtZero' => true
+                                                            ],
+                                                            'y' => [
+                                                                'beginAtZero' => true
+                                                            ]
+                                                        ]
+                                                    ],
                                                     'data' => [
                                                         'labels' => $dates,
                                                         'datasets' => [
@@ -149,12 +162,15 @@ use coderius\lightbox2\Lightbox2;
                                                                 'pointHoverBackgroundColor' => "#fff",
                                                                 'pointHoverBorderColor' => "rgba(179,181,198,1)",
                                                                 'data' => $prices,
-                                                                'fill' => false,
+                                                                'fill' => true,
                                                                 'stepped' => true
                                                             ],
 
-                                                        ]
-                                                    ]
+                                                        ],
+
+
+                                                    ],
+
                                                 ]);
                                                 ?>
                                             </td>
