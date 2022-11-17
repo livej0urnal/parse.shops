@@ -128,7 +128,7 @@ use coderius\lightbox2\Lightbox2;
                                         <td><?= $product->units ?></td>
                                         <td><?= $product->per ?></td>
                                         <td>$<?= $product->price ?>
-                                            <?php if (!empty($last_update)) : ?>
+                                            <?php if (!empty($last_update) and $product->price != 0) : ?>
                                                 <?php if($last_update->price != $product->price) : ?>
                                                     <br>
                                                     <span
