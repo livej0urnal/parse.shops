@@ -121,13 +121,16 @@ class ShopController extends AppController
         $id = Yii::$app->request->get('id');
         $products = Products::find()->where(['instock' => null])->all();
         foreach ($products as $product) {
-            $product->price = 0;
-            $product->save(false);
-            $update = new Updates();
-            $update->sku_product = $product->sku;
-            $update->price = 0;
-            $update->update_at = new Expression('NOW()');
-            $update->save(false);
+            if($product->price != 0) {
+                $product->price = 0;
+                $product->save(false);
+                $update = new Updates();
+                $update->sku_product = $product->sku;
+                $update->price = 0;
+                $update->update_at = new Expression('NOW()');
+                $update->save(false);
+            }
+
         }
         return $this->render('stock', compact('products'));
     }
