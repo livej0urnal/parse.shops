@@ -107,7 +107,7 @@ class ShopController extends AppController
             $per = (int)$result_number;
             $result_price = $product->price / $per;
             echo $product->price . '/' . (int)$result_number . '=' . $result_price . '<br>';
-            $product->per = $per;
+            $product->per = '$'. round($result_price,1);
             $product->save(false);
         }
 
