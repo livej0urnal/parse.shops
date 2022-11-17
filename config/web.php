@@ -77,7 +77,7 @@ $config = [
             'site/last',
             'shop/megafood',
             'shop/image',
-
+            'shop/stock',
         ],
     ],
     'components' => [
