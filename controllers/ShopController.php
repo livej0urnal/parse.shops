@@ -57,12 +57,12 @@ class ShopController extends AppController
         return $this->render('category' , compact('products', 'pages', 'q', 'manufactures', 'sort', 'shop'));
     }
 
-    public function actionManufacture($q, $seller)
+    public function actionManufacture($q = null, $seller = null)
     {
         $q = Yii::$app->request->get('q');
         $seller = Yii::$app->request->get('seller');
         $shop = Shops::findOne(['short' => $seller]);
-        $products = Products::find()->where(['like', 'article', $q])->andWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
+        $products = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
         $sort = new Sort([
             'attributes' => [
                 'updated_at',
@@ -71,7 +71,7 @@ class ShopController extends AppController
             ],
             'defaultOrder' => ['updated_at' => SORT_DESC]
         ]);
-        $query = Products::find()->where(['like', 'article', $q])->andWhere(['seller' => $seller])->orderBy($sort->orders);
+        $query = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->select('article')->where(['seller' => $seller])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
