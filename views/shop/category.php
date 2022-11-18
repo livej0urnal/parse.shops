@@ -132,10 +132,10 @@ use coderius\lightbox2\Lightbox2;
                                     <?php if (count($updates) > 1) : ?>
                                         <?php
 
-                                        foreach ($updates as $item) {
-                                            $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
-                                            $prices[] = $item->price;
-                                        }
+                                            foreach ($updates as $item) {
+                                                $dates[] = Yii::$app->formatter->asDate($item->update_at, 'php:m-d');
+                                                $prices[] = $item->price;
+                                            }
                                         ?>
                                         <tr class="spacer tr-shadow-hidden disabled disabled-<?= $product->sku ?>">
                                             <td colspan="2">
