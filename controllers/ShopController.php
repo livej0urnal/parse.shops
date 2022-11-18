@@ -57,10 +57,10 @@ class ShopController extends AppController
         return $this->render('category' , compact('products', 'pages', 'q', 'manufactures', 'sort', 'shop'));
     }
 
-    public function actionManufacture($q = null, $seller = null)
+    public function actionManufacture($q, $seller)
     {
-        $q = Yii::$app->request->get('q');
-        $seller = Yii::$app->request->get('seller');
+        $q = Yii::$app->request->post('q');
+        $seller = Yii::$app->request->post('seller');
         $shop = Shops::findOne(['short' => $seller]);
         $products = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
         $sort = new Sort([
@@ -74,9 +74,9 @@ class ShopController extends AppController
         $query = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
-        $manufactures = Products::find()->select('article')->where(['seller' => $seller])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
+        $manufactures = Products::find()->select('article')->filterWhere(['seller' => $seller])->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $this->setMeta($shop->value);
-        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop'));
+        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures' , 'sort', 'shop', 'seller'));
     }
 
     public function actionImage()

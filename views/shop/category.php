@@ -24,7 +24,7 @@ use coderius\lightbox2\Lightbox2;
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="get">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="post">
                         <input class="au-input--w300 au-input--style2" name="q" type="text"
                                placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
                         <input type="text" name="seller" style="visibility: hidden;" class="disabled seller-input"
@@ -35,7 +35,7 @@ use coderius\lightbox2\Lightbox2;
                     </form>
                     <?php if (!empty($manufactures)) : ?>
                         <div class="col-md-4">
-                            <select name="select" id="select-manufacture" class="form-control"
+                            <select name="seller" id="select-manufacture" class="form-control"
                                     data-value="<?= $seller ?>">
                                 <option value="0"><?php if ($q): ?> <?= $q ?><?php else : ?> Select Manufacture <?php endif; ?></option>
                                 <?php foreach ($manufactures as $item) : ?>
