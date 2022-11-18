@@ -41,6 +41,18 @@ class Products extends ActiveRecord
         return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->where(['!=', 'price', 'price']);
     }
 
+    public function getFirst()
+    {
+        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->orderBy(['id' => SORT_ASC]);
+
+    }
+
+    public function getOut()
+    {
+        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->orderBy(['id' => SORT_DESC]);
+
+    }
+
     /**
      * {@inheritdoc}
      */
