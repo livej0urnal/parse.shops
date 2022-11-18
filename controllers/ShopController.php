@@ -31,8 +31,9 @@ class ShopController extends AppController
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->where(['seller' => $seller])->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $seller = $shop->short;
+        $q = '';
         $this->setMeta($shop->value);
-        return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages', 'seller'));
+        return $this->render('category', compact('products', 'sort', 'manufactures' , 'pages', 'seller', 'q'));
     }
 
     public function actionSearch($q, $seller)
@@ -46,8 +47,9 @@ class ShopController extends AppController
                 'updated_at',
                 'price',
                 'instock',
+                'title',
             ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
+            'defaultOrder' => ['title' => SORT_DESC]
         ]);
         $query = Products::find()->where(['like', 'title', $q])->orWhere(['like', 'sku' , $q])->andWhere(['seller' => $seller])->with('updates', 'last')->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 50, 'forcePageParam' => false, 'pageSizeParam' => false]);
@@ -68,8 +70,9 @@ class ShopController extends AppController
                 'updated_at',
                 'price',
                 'instock',
+                'title',
             ],
-            'defaultOrder' => ['updated_at' => SORT_DESC]
+            'defaultOrder' => ['title' => SORT_ASC]
         ]);
         $query = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy($sort->orders);
         $pages = new Pagination(['totalCount' => $query->count(), 'pageSize' => 10, 'forcePageParam' => false, 'pageSizeParam' => false]);
