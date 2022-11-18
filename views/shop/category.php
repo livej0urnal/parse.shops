@@ -158,8 +158,20 @@ use coderius\lightbox2\Lightbox2;
 
                                                         ],
 
-
                                                     ],
+                                                    'clientOptions' => [
+                                                        'scales' => [
+                                                            'yAxes' => [
+                                                                'ticks' => [
+                                                                    'min' => 0
+                                                                ]
+                                                            ],
+                                                            'xAxes' => [
+                                                                'type' => 'time',
+                                                                'ticks' => ['min' => 0]
+                                                            ]
+                                                        ]
+                                                    ]
 
                                                 ]);
                                                 ?>
