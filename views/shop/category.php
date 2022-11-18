@@ -152,8 +152,7 @@ use coderius\lightbox2\Lightbox2;
                                                                 'pointHoverBackgroundColor' => "#fff",
                                                                 'pointHoverBorderColor' => "rgba(179,181,198,1)",
                                                                 'data' => $prices,
-                                                                'fill' => true,
-                                                                'stepped' => true
+                                                                'fill' => false,
                                                             ],
 
                                                         ],
@@ -168,7 +167,7 @@ use coderius\lightbox2\Lightbox2;
                                                             ],
                                                             'xAxes' => [
                                                                 'type' => 'time',
-                                                                'ticks' => ['min' => 0]
+                                                                'ticks' => ['min' => 0, 'source' => auto, 'autoSkip' => true ]
                                                             ]
                                                         ]
                                                     ]
