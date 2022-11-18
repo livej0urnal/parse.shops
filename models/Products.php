@@ -43,13 +43,13 @@ class Products extends ActiveRecord
 
     public function getFirst()
     {
-        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->orderBy(['id' => SORT_ASC]);
+        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->indexBy(['sku_product'])->orderBy(['id' => SORT_ASC]);
 
     }
 
     public function getOut()
     {
-        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->orderBy(['id' => SORT_DESC]);
+        return $this->hasOne(Updates::className(), ['sku_product' => 'sku'])->indexBy(['sku_product'])->orderBy(['id' => SORT_DESC]);
 
     }
 
