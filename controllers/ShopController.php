@@ -54,13 +54,13 @@ class ShopController extends AppController
         $products = $query->offset($pages->offset)->limit($pages->limit)->all();
         $manufactures = Products::find()->select('article')->orderBy(['article' => SORT_DESC])->groupBy(['article'])->all();
         $this->setMeta($shop->value);
-        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures', 'sort', 'shop'));
+        return $this->render('category' , compact('products', 'pages', 'q', 'manufactures', 'sort', 'shop', 'seller'));
     }
 
     public function actionManufacture($q, $seller)
     {
-        $q = Yii::$app->request->post('q');
-        $seller = Yii::$app->request->post('seller');
+        $q = Yii::$app->request->get('q');
+        $seller = Yii::$app->request->get('seller');
         $shop = Shops::findOne(['short' => $seller]);
         $products = Products::find()->filterWhere(['like', 'article', $q])->andFilterWhere(['seller' => $seller])->orderBy(['id' => SORT_DESC])->all();
         $sort = new Sort([

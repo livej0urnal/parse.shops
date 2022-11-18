@@ -24,7 +24,7 @@ use coderius\lightbox2\Lightbox2;
         <div class="row">
             <div class="col-md-12">
                 <div class="au-breadcrumb-content">
-                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="post">
+                    <form class="au-form-icon--sm" action="<?= \yii\helpers\Url::to(['shop/search']) ?>" method="get">
                         <input class="au-input--w300 au-input--style2" name="q" type="text"
                                placeholder="Search for title or sku/manufacture" value="<?= $q ?>">
                         <input type="text" name="seller" style="visibility: hidden;" class="disabled seller-input"
