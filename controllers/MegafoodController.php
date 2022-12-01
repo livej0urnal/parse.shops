@@ -64,6 +64,7 @@ class MegafoodController extends AppController
                     }
                     else{
                         $find_product->instock = '1';
+                        $find_product->price = $product->price;
                         $find_product->save(false);
                     }
 
