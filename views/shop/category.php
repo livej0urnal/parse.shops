@@ -95,7 +95,7 @@ use coderius\lightbox2\Lightbox2;
                                 <?php $last_update = $product->last; ?>
                                 <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif ($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
                                     data-value="<?= $product->sku ?>">
-                                    <td>
+                                    <td class="first-td">
 
                                         <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip">
                                             <!-- Thumbnail picture -->
