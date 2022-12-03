@@ -93,8 +93,7 @@ use coderius\lightbox2\Lightbox2;
                             <tbody>
                             <?php foreach ($products as $product) : ?>
                                 <?php $last_update = $product->last; ?>
-                                <tr class="tr-shadow find-gmi-updates <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif ($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>"
-                                    data-value="<?= $product->sku ?>">
+                                <tr class="tr-shadow  <?php if (!empty($last_update)) : ?> <?php if ($last_update->price > $product->price) : ?> bg-success <?php elseif ($last_update->price < $product->price) : ?> bg-danger<?php endif; ?><?php endif; ?>">
                                     <td class="first-td">
 
                                         <a href="<?= Yii::getAlias($product->image); ?>" data-lightbox="roadtrip">
@@ -105,7 +104,7 @@ use coderius\lightbox2\Lightbox2;
                                         </a>
 
                                     </td>
-                                    <td><?= $product->title ?></td>
+                                    <td class="find-gmi-updates" data-value="<?= $product->sku ?>"> <?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
