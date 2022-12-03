@@ -125,5 +125,14 @@ li.active > .page-link {
     width: 100%;
 }
 .link-title{
-    color: #0a53be;
+    color: #0a53be!important;
+}
+.link-title:hover{
+    cursor: pointer;
+}
+.first-td a{
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    text-align: center;
 }
