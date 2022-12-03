@@ -104,7 +104,7 @@ use coderius\lightbox2\Lightbox2;
                                         </a>
 
                                     </td>
-                                    <td class="find-gmi-updates" data-value="<?= $product->sku ?>"> <?= $product->title ?></td>
+                                    <td class="find-gmi-updates link-title" data-value="<?= $product->sku ?>"> <?= $product->title ?></td>
                                     <td><?= $product->sku ?></td>
                                     <td><?= $product->article ?></td>
                                     <td><?= $product->units ?></td>
