@@ -35,7 +35,7 @@ use coderius\lightbox2\Lightbox2;
                                 <div class="row">
                                     <div class="col-md-4">
                                         <input id="search-input" class="au-input--style2" type="text"
-                                               placeholder="Search everything..." name="q" value="<?= $input ?>">
+                                               placeholder="Search everything..." name="q" value="<?php if(!empty($input)) { $input; } ?>">
                                     </div>
                                     <div class="col-md-4">
                                         <select id="select-out_stock" name="select"
